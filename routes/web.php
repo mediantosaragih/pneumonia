@@ -18,6 +18,9 @@ use App\Http\Controllers\DiagnosaController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::get('/diagnosa', function () {
     return view('diagnosa');

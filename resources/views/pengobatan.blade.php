@@ -73,45 +73,37 @@
             </div>
             <!-- Sale & Revenue End -->
 
-
-
-            <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Kode Gejala</th>
-                                    <th scope="col">Nama Gejala</th>
-                                    <th scope="col">Jawaban</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>G001</td>
-                                    <td>Gejala</td>
-                                    <td>
-                                    <label class="radio">
-                                        <input type="radio" name="cfimb_5" id="id_cfimb_5_1" value="1">
-                                        Ya
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio" name="cfimb_5" id="id_cfimb_5_2" value="2">
-                                        Tidak
-                                    </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table><br>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="margin-left:850px" data-bs-target="#exampleModal">
-                            <i class="fa fa-search" aria-hidden="true">&nbsp&nbsp Cek</i>
-                            </button>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <div class="align-items-center">
+                                <h5 style="margin-left:150px;">Hasil Diagnosa</h5>
+                                <br>
+                                <h6 style="margin-left:80px;">Jawaban Dari Hasil Konsultasi yang telah diisi</h6>
+                                <br>
+                                <h5 style="text-align:center" >Tingkat Pneumonia yang ada pada anak adalah Jenis Pneumonia Ringan</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <div>
+                                <h5 style="text-align:center">Pertolongan Pertama yang dapat dilakukan kepada anak adalah</h5>
+                                <br>
+                                <h6>
+                                    1. Bawa Posyandu
+                                </h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- Recent Sales Start -->
+
             <!-- Recent Sales End -->
 
             @endsection
