@@ -4,11 +4,12 @@
 		<div class="login_box">
 			<div class="left">
 				<div class="contact">
-					<form action="">
+					<form action="/register" method="post">
+            @csrf
 						<h3>REGISTER</h3>
-						<input type="text" placeholder="USERNAME">
-						<input type="text" placeholder="EMAIL">
-                        <input type="text" placeholder="PASSWORD">
+						  <input type="text" name="username" class="@error('username') is-invalid @enderror" id="username"placeholder="USERNAME" required>
+						  <input type="text" name="email" class="@error('email') is-invalid @enderror"id="email"placeholder="EMAIL" required>
+              <input type="password" name="password" id="password" placeholder="PASSWORD" class="@error('password') is-invalid @enderror"required>
 						<button class="submit">REGISTER</button>
 					</form>
 				</div>

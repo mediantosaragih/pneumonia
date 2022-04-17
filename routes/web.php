@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosaController;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,9 @@ Route::get('/kelolapengobatan', function () {
 Route::get('/history', function () {
     return view('admin.history');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
