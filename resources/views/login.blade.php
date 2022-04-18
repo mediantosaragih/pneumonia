@@ -34,7 +34,7 @@
                         @enderror
                         <input type="password" id="password" name="password" placeholder="PASSWORD" required>
                         <button class="submit">LOGIN</button>
-                    <a href="/register" class="submit" style="margin-top:10px;width:70%;">REGISTER</a>
+                    <a href="/register" class="submit2" style="margin-top:10px;width:70%;margin:left:100px;">REGISTER</a>
                     </form>
                 </div>
             </div>
@@ -66,7 +66,7 @@
         width: 1050px;
         height: 600px;
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #fff;
@@ -131,7 +131,20 @@
 
     .submit {
         border: none;
-        padding: 15px 70px;
+        padding: 10px 40px;
+        border-radius: 8px;
+        display: block;
+        margin: auto;
+        margin-top: 120px;
+        background: #583672;
+        color: #fff;
+        font-weight: bold;
+        -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    }
+    .submit2 {
+        padding: 10px 30px;
         border-radius: 8px;
         display: block;
         margin: auto;
