@@ -34,6 +34,7 @@ Route::get('/diagnosa', function () {
 //Gejala
 Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala');
 Route::post('/gejala', [GejalaController::class, 'create']);
+Route::post('/keloladiagnosa/delete/{id}', [GejalaController::class, 'destroy']);
 
 Route::get('/pengobatan', function () {
     return view('pengobatan');
@@ -42,6 +43,7 @@ Route::get('/pengobatan', function () {
 //Pengobatan Admin
 Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan');
 Route::post('/kelolapengobatan', [PengobatanController::class, 'create']);
+Route::post('/kelolapengobatan/delete/{id}', [PengobatanController::class, 'destroy']);
 
 //History
 Route::get('/history', function () {

@@ -101,12 +101,15 @@
                             <td>{{$pengobatan->kategori}}</td>
                             <td>{{$pengobatan->deskripsi}}</td>
                             <td>
-                                <a href="">
+                                <a href="/kelolapengobatan/update/{{$pengobatan->id}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <a href="">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>
+                                <form action="/kelolapengobatan/delete/{{$pengobatan->id}}" method="post" class="d-inline">
+                                    <!-- @method('delete') -->
+                                    @csrf
+                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                                </form>
+                                
                             </td>
                         </tr>
                         @empty

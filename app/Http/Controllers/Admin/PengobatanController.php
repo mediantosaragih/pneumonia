@@ -44,4 +44,23 @@ class PengobatanController extends Controller
                 ]);
         }
     }
+
+    public function destroy($id){
+        $pengobatan = Pengobatan::find($id);
+        $pengobatan->delete();
+        if ($pengobatan) {
+            return redirect()
+            ->intended('/kelolapengobatan')
+                ->with([
+                    'success' => 'Pengobatan has been deleted successfully'
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->with([
+                    'error' => 'Some problem has occurred, please try again'
+                ]);
+        }
+        return redirect('/kelolapengobatan')->with('success', 'Data has been deleted!');
+    }
 }
