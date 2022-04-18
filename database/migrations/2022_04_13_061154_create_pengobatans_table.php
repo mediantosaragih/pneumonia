@@ -15,10 +15,9 @@ class CreatePengobatansTable extends Migration
     {
         Schema::create('pengobatans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('gejala_id');
+            $table->enum('kategori',['Ringan','Sedang','Berat'])->nullable();
             $table->string('nama_pengobatan');
             $table->text('deskripsi');
-            $table->foreign('gejala_id')->references('id')->on('gejalas')->onDelete('cascade');
             $table->timestamps();
         });
     }

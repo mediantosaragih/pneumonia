@@ -148,8 +148,8 @@
                                 placeholder="Enter your Gejala" required />
                         </div>
                         <div class="form-group">
-                            <label for="cars">Pilih Kategori</label>
-                                <select name="kategori" required="" id="kategori" class="form-control"  >
+                            <label for="kategori">Pilih Kategori</label>
+                                <select name="kategori" required="" id="kategori" name="kategori" class="form-control"  >
                                 <option value="">-- Pilih --</option>
                                 <option value="Ringan">Ringan</option>
                                 <option value="Sedang">Sedang</option>

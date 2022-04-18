@@ -5,6 +5,7 @@ use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\GejalaController;
+use App\Http\Controllers\Admin\PengobatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,12 @@ Route::post('/gejala', [GejalaController::class, 'create']);
 Route::get('/pengobatan', function () {
     return view('pengobatan');
 });
-Route::get('/kelolapengobatan', function () {
-    return view('admin.kelolapengobatan');
-});
+
+//Pengobatan Admin
+Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan');
+Route::post('/kelolapengobatan', [PengobatanController::class, 'create']);
+
+//History
 Route::get('/history', function () {
     return view('admin.history');
 });

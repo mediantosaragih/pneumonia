@@ -56,7 +56,5 @@ class GejalaController extends Controller
                     'error' => 'Some problem occurred, please try again'
                 ]);
         }
-
-        return view('admin.keloladiagnosa');
     }
 }
