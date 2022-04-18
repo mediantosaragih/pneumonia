@@ -82,6 +82,11 @@
 
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
+        @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{session('success')}}
+            </div>
+        @endif
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Kelola Gejala</h6>

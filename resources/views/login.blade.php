@@ -3,18 +3,18 @@
 
 <body>
     <section class="login">
-        @if(session()->has('success'))
+        <!-- @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{session('success')}}
                 <!-- <button type="button" class="btn=close" data-bs-dismiss="alert" aria-label="Close"></button> -->
             </div>
-        @endif
+        @endif -->
         <div class="login_box">
             <div class="left">
                 @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success')}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
                     </div>
                 @endif
                 @if(session()->has('loginError'))

@@ -32,18 +32,18 @@ Route::get('/diagnosa', function () {
     return view('diagnosa');
 });
 //Gejala
-Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala');
-Route::post('/gejala', [GejalaController::class, 'create']);
-Route::post('/keloladiagnosa/delete/{id}', [GejalaController::class, 'destroy']);
+Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala')->middleware('auth');
+Route::post('/gejala', [GejalaController::class, 'create'])->middleware('auth');
+Route::post('/keloladiagnosa/delete/{id}', [GejalaController::class, 'destroy'])->middleware('auth');
 
 Route::get('/pengobatan', function () {
     return view('pengobatan');
 });
 
 //Pengobatan Admin
-Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan');
-Route::post('/kelolapengobatan', [PengobatanController::class, 'create']);
-Route::post('/kelolapengobatan/delete/{id}', [PengobatanController::class, 'destroy']);
+Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan')->middleware('auth');
+Route::post('/kelolapengobatan', [PengobatanController::class, 'create'])->middleware('auth');
+Route::post('/kelolapengobatan/delete/{id}', [PengobatanController::class, 'destroy'])->middleware('auth');
 
 //History
 Route::get('/history', function () {
