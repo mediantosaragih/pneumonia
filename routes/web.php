@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\PengobatanController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 Route::get('/welcome', function () {
     return view('welcome');
