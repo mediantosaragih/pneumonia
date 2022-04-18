@@ -134,8 +134,15 @@
                         <input type="text" class="form-control" id="inputEmail" placeholder="Enter your Gejala"/>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail">Bobot</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your Bobot"/>
+                        <!-- <label for="inputEmail">Bobot</label>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter your Bobot"/> -->
+                        <label for="cars">Pilih Kategori</label>
+                        <select name="cars" id="cars" class="form-control">
+                        <option value="#">-- Pilih --</option>
+                        <option value="saab">Ringan</option>
+                        <option value="mercedes">Sedang</option>
+                        <option value="mercedes">Berat</option>
+                        </select>
                     </div>
                 </form>
                 </div>
