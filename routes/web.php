@@ -17,7 +17,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::get('/welcome', function () {
     return view('welcome');
@@ -38,9 +38,12 @@ Route::get('/kelolapengobatan', function () {
 Route::get('/history', function () {
     return view('admin.history');
 });
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+// Route::post('/register', [RegisterController::class, 'store'])->middleware('auth');
