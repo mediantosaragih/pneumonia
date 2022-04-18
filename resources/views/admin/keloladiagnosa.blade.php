@@ -22,7 +22,7 @@
                             <span class="d-none d-lg-inline-flex">User</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Login</a>
+                            <a href="#" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>

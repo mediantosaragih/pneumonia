@@ -32,66 +32,56 @@
 </head>
 
 <body>
-    <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+    <nav class="container-fluid navbar navbar-expand navbar-light sticky-top;" style="background-color: rgba(200, 100, 255, .15);  position:fixed; z-index: 1; backdrop-filter: blur(5px);">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"></h2>
+        </a>
+        <form class="d-none d-md-flex ms-2">
+            <div style="width:80%; ">
+            <a href="#" class="btn" style="font-size:20px;font-family: Verdana ">Diagnosa Penyakit Pneumonia</a>
             </div>
+        </form>
+        <div class="navbar-nav align-items-center ms-auto">
+                <a href="{{url('welcome')}}"  class="btn btn-primary" style="margin:10px;">Home</a>
+                <a href="{{url('diagnosa')}}" class="btn btn-primary" style="margin:10px;">Diagnosa</a>
+                <a href="{{url('pengobatan')}}" class="btn btn-primary" style="margin:10px;">Login</a>
         </div>
-        <!-- Spinner End -->
+    </nav>
 
+            <footer>
 
+            </footer>
+
+        <!-- Spinner Start -->
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h5 class="text-primary">Diagnosa Pneumonia </h5>                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <!-- <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div> -->
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="{{url('welcome')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{url('diagnosa')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Diagnosa</a>
-                    <a href="{{url('pengobatan')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Pengobatan</a>
-                </div>
-            </nav>
-        </div>
+
         <!-- Sidebar End -->
 
         @yield('content')
+        <div class="container-xxl position-relative d-flex p-0" style="content-item:bottom; margin-top:160px;margin-bottom:-100px">
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
+            <div class="container-fluid"  style="background-color:rgba(0.1, 0.1, 0.1, 0.5);">
+                <div class="rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                            Kelompok 9
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            <!--/* This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. */-->
+                            Sistem Pakar Diagnosa Penyakit Pneumonia
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Footer End -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
         <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -109,3 +99,15 @@
 </body>
 
 </html>
+
+
+<style>
+    body{
+        background-image: url("img/baby.jpg");
+        background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+    }
+</style>
