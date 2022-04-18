@@ -4,6 +4,11 @@
 
 <!-- Content Start -->
 <div class="content">
+    @error('title')
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
         <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
@@ -111,7 +116,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td class="text-center text-mute" colspan="4">Data post tidak tersedia</td>
+                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
                         </tr>
                         @endforelse
                     </tbody>
@@ -143,9 +148,13 @@
                                 placeholder="Enter your Gejala" required />
                         </div>
                         <div class="form-group">
-                            <label for="kategori">Kategori</label>
-                            <input type="text" class="form-control" id="kategori" name="kategori"
-                                placeholder="Ganti on gabe dropdwon list" required />
+                            <label for="cars">Pilih Kategori</label>
+                                <select name="kategori" required="" id="kategori" class="form-control"  >
+                                <option value="">-- Pilih --</option>
+                                <option value="Ringan">Ringan</option>
+                                <option value="Sedang">Sedang</option>
+                                <option value="Berat">Berat</option>
+                            </select>
                         </div>
                         <div class="modal-footer">
                             <button class="submit btn btn-primary">Save changes</button>
