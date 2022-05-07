@@ -44,7 +44,7 @@
         <div class="navbar-nav align-items-center ms-auto">
                 <a href="{{url('welcome')}}"  class="btn btn-primary" style="margin:10px;">Home</a>
                 <a href="{{url('diagnosa')}}" class="btn btn-primary" style="margin:10px;">Diagnosa</a>
-                <a href="{{url('pengobatan')}}" class="btn btn-primary" style="margin:10px;">Login</a>
+                <a href="{{url('login')}}" class="btn btn-primary" style="margin:10px;">Login</a>
         </div>
     </nav>
 

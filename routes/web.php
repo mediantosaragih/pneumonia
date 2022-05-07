@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\PengobatanController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 Route::get('/welcome', function () {
     return view('welcome');
@@ -27,10 +27,10 @@ Route::get('/welcome', function () {
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
+//diagnosa
+Route::get('/diagnosa', [DiagnosaController::class, 'index']);
+Route::post('/check', [DiagnosaController::class, 'check']);
 
-Route::get('/diagnosa', function () {
-    return view('diagnosa');
-});
 //Gejala
 Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala')->middleware('auth');
 Route::post('/gejala', [GejalaController::class, 'create'])->middleware('auth');
