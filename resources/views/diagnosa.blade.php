@@ -18,7 +18,7 @@
                             :
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="nama" name="nama" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
 
                         <div class="col-md-2">
