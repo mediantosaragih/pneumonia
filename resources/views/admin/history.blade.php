@@ -22,7 +22,13 @@
                             <span class="d-none d-lg-inline-flex">User</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Logout</a>
+                            <!-- <a href="#" class="dropdown-item">Logout</a> -->
+                            <form role="form" action="/logout" method="post">
+                                @csrf
+                                <button class="submit btn btn-primary dropdown-item">
+                                    <p style="color:red">Logout</p>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

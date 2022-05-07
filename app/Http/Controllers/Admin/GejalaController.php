@@ -57,4 +57,23 @@ class GejalaController extends Controller
                 ]);
         }
     }
+
+    public function destroy($id){
+        $gejala = Gejala::find($id);
+        $gejala->delete();
+        if ($gejala) {
+            return redirect()
+            ->intended('/keloladiagnosa')
+                ->with([
+                    'success' => 'Data has been deleted successfully'
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->with([
+                    'error' => 'Some problem has occurred, please try again'
+                ]);
+        }
+        return redirect('/keloladiagnosa')->with('success', 'Data has been deleted!');
+    }
 }

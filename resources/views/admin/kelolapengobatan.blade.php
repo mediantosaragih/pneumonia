@@ -22,7 +22,13 @@
                     <span class="d-none d-lg-inline-flex">User</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">Logout</a>
+                    <!-- <a href="/logout" class="dropdown-item">Logout</a> -->
+                    <form role="form" action="/logout" method="post">
+                        @csrf
+                        <button class="submit btn btn-primary dropdown-item">
+                            <p style="color:red">Logout</p>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -77,6 +83,12 @@
 
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
+        @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success')}}
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+        @endif
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Kelola Pengobatan</h6>
@@ -101,12 +113,16 @@
                             <td>{{$pengobatan->kategori}}</td>
                             <td>{{$pengobatan->deskripsi}}</td>
                             <td>
-                                <a href="">
+                                <button href="/kelolapengobatan/update/{{$pengobatan->id}}" type="button"  class="badge bg-success"><span class="fa fa-edit"></span></button>
+                                <!-- <a href="/kelolapengobatan/update/{{$pengobatan->id}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>
+                                </a> -->
+                                <form action="/kelolapengobatan/delete/{{$pengobatan->id}}" method="post" class="d-inline">
+                                    <!-- @method('delete') -->
+                                    @csrf
+                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                                </form>
+                                
                             </td>
                         </tr>
                         @empty
@@ -130,6 +146,47 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form role="form" action="/kelolapengobatan" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Nama Pengobatan</label>
+                            <input type="text" class="form-control" id="nama_pengobatan" name="nama_pengobatan"
+                                placeholder="Enter your Kode Pengobatan" />
+                        </div>
+                        <div class="form-group">
+                            <label for="kategori">Pilih Kategori</label>
+                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Ringan">Ringan</option>
+                                <option value="Sedang">Sedang</option>
+                                <option value="Berat">Berat</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                placeholder="Enter the deskription" />
+                        </div>
+                        <div class="modal-footer">
+                            <button class="submit btn btn-primary">Save changes</button>
+                            <a class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

@@ -27,7 +27,13 @@
                     <span class="d-none d-lg-inline-flex">User</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">Logout</a>
+                    <!-- <a href="/logout" class="dropdown-item">Logout</a> -->
+                    <form role="form" action="/logout" method="post">
+                        @csrf
+                        <button class="submit btn btn-primary dropdown-item">
+                            <p style="color:red">Logout</p>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -82,6 +88,11 @@
 
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
+        @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{session('success')}}
+            </div>
+        @endif
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Kelola Gejala</h6>
@@ -109,9 +120,11 @@
                                 <a href="">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <a href="">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </a>
+                                <form action="/keloladiagnosa/delete/{{$gejala->id}}" method="post" class="d-inline">
+                                    <!-- @method('delete') -->
+                                    @csrf
+                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                                </form>
                             </td>
                         </tr>
                         @empty
