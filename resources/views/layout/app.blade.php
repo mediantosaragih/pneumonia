@@ -103,7 +103,7 @@
 
 <style>
     body{
-        background-image: url("img/baby.jpg");
+        background-image: url("img/medi.png");
         background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
