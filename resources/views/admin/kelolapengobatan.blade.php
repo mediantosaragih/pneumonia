@@ -97,7 +97,7 @@
                 </button>
             </div>
             <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <table id="datatable" class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">Pengobatan</th>
@@ -113,7 +113,10 @@
                             <td>{{$pengobatan->kategori}}</td>
                             <td>{{$pengobatan->deskripsi}}</td>
                             <td>
-                                <button href="/kelolapengobatan/update/{{$pengobatan->id}}" type="button"  class="badge bg-success"><span class="fa fa-edit"></span></button>
+                                <button type="button" id="edit" data-id="{!!$pengobatan->id !!}" class="badge bg-success edit">
+                                    <span class="fa fa-edit"></span>
+                                </button>
+                                <!-- <button href="/kelolapengobatan/update/{{$pengobatan->id}}" type="button"  class="badge bg-success"><span class="fa fa-edit"></span></button> -->
                                 <!-- <a href="/kelolapengobatan/update/{{$pengobatan->id}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a> -->
@@ -182,7 +185,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -190,12 +193,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" action="/kelolapengobatan" method="post">
-                        @csrf
+                    <form role="form" action="/kelolapengobatan" method="post" id="editForm">
+                        
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
                         <div class="form-group">
                             <label for="name">Nama Pengobatan</label>
                             <input type="text" class="form-control" id="nama_pengobatan" name="nama_pengobatan"
-                                placeholder="Enter your Kode Pengobatan" />
+                            value="{{$pengobatan->nama_pengobatan}}" />
                         </div>
                         <div class="form-group">
                             <label for="kategori">Pilih Kategori</label>
@@ -209,7 +214,7 @@
                         <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
                             <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                placeholder="Enter the deskription" />
+                                value="{{$pengobatan->deskripsi}}" />
                         </div>
                         <div class="modal-footer">
                             <button class="submit btn btn-primary">Save changes</button>
@@ -220,5 +225,17 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#datatable').Datatable();
+
+            table.on('click', '.edit', function(){
+                $tr = $(this)
+            })
+            
+        })
+
+    </script>
 
     @endsection

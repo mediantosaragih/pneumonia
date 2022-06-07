@@ -38,12 +38,12 @@
         </a>
         <form class="d-none d-md-flex ms-2">
             <div style="width:80%; ">
-            <a href="#" class="btn" style="font-size:20px;font-family: Verdana ">Diagnosa Penyakit Pneumonia</a>
+            <a href="#" class="btn" style="font-size:20px;font-family: Verdana ">Sistem Identifikasi Kepribadian</a>
             </div>
         </form>
         <div class="navbar-nav align-items-center ms-auto">
                 <a href="{{url('welcome')}}"  class="btn btn-primary" style="margin:10px;">Home</a>
-                <a href="{{url('diagnosa')}}" class="btn btn-primary" style="margin:10px;">Diagnosa</a>
+                <a href="{{url('identifikasi')}}" class="btn btn-primary" style="margin:10px;">Identifikasi</a>
                 <a href="{{url('login')}}" class="btn btn-primary" style="margin:10px;">Login</a>
         </div>
     </nav>

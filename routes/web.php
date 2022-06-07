@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\PengobatanController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +25,13 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
 //diagnosa
-Route::get('/diagnosa', [DiagnosaController::class, 'index']);
+Route::get('/identifikasi', [IdentifikasiController::class, 'index']);
 Route::post('/check', [DiagnosaController::class, 'check']);
 
-//Gejala
+//Sifat
 Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala')->middleware('auth');
 Route::post('/gejala', [GejalaController::class, 'create'])->middleware('auth');
 Route::post('/keloladiagnosa/delete/{id}', [GejalaController::class, 'destroy'])->middleware('auth');
@@ -43,6 +43,7 @@ Route::get('/pengobatan', function () {
 //Pengobatan Admin
 Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan')->middleware('auth');
 Route::post('/kelolapengobatan', [PengobatanController::class, 'create'])->middleware('auth');
+Route::post('/kelolapengobatan/edit/{id}', [PengobatanController::class, 'edit'])->name('pengobatan.edit')->middleware('auth');
 Route::post('/kelolapengobatan/delete/{id}', [PengobatanController::class, 'destroy'])->middleware('auth');
 
 //History

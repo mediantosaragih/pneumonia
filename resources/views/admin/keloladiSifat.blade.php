@@ -120,7 +120,7 @@
                                 <a href="">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <form action="/keloladiagnosa/delete/{{$gejala->id}}" method="post" class="d-inline">
+                                <form action="/kelolaSifat/delete/{{$gejala->id}}" method="post" class="d-inline">
                                     <!-- @method('delete') -->
                                     @csrf
                                     <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>

@@ -60,8 +60,8 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{url('dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{url('keloladiagnosa')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Diagnosa</a>
-                    <a href="{{url('kelolapengobatan')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Pengobatan</a>
+                    <a href="{{url('kelolaSifat')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Sifat</a>
+                    <!-- <a href="{{url('kelolapengobatan')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Pengobatan</a> -->
                     <a href="{{url('history')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>History</a>
                 </div>
             </nav>

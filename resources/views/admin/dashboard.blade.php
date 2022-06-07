@@ -87,7 +87,7 @@
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
                                     <h2 class="font-weight-bolder">Selamat Datang di </h2><br>
-                                    <h2 class="font-weight-bolder">Sistem Pakar Diagnosa Penyakit Pneumonia Balita</h2>
+                                    <h2 class="font-weight-bolder">Sistem Identifikasi Kepribadian</h2>
                                 </div>
                             </div>
                             <div class="col-lg-6">

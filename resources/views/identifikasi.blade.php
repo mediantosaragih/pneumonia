@@ -6,7 +6,7 @@
         <div style=" text-align:center; margin-top:50px;" class="item-align:center">
             <div class="table-responsive " style="padding:100px; background-color:rgba(0.5, 0.5, 0.5, 0.1);">
                 <div>
-                    <h2 style="padding:10px;margin-top:-80px">Pengisian data gejala pneumonia</h2>
+                    <h2 style="padding:10px;margin-top:-80px">Data Pengunjung</h2>
                 </div><br>
                 <form role="form" action="/check" method="post">
                     @csrf
@@ -45,8 +45,7 @@
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
                         <thead>
                             <tr class="text-dark">
-                                <th scope="col">Kode Gejala</th>
-                                <th scope="col">Nama Gejala</th>
+                                <th scope="col" width="80%">Sifat</th>
                                 <th scope="col">Jawaban</th>
                             </tr>
                         </thead>
@@ -54,18 +53,9 @@
                             @forelse ($gejalas as $gejala)
                             <tr>
                                 <td>{{$gejala->kode}}</td>
-                                <td>Apakah kamu mengalami {{$gejala->name}} ?</td>
                                 <td>
-                                    <!-- <label class="radio">
-                                    <input type="radio" name="cfimb_5" id="id_cfimb_5_1" value="{{$gejala->kode}}">
-                                    Ya
-                                </label>
-                                <label class="radio">
-                                    <input type="radio" name="cfimb_5" id="id_cfimb_5_2" value="Tidak">
-                                    Tidak
-                                </label> -->
                                     <input type="checkbox" id="gejala[]" name="gejala[]"
-                                        value="{{$gejala->id}}">
+                                        value="{{$gejala->id}}"> Ya
                                 </td>
                             </tr>
                             @empty

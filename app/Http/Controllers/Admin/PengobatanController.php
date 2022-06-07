@@ -45,6 +45,15 @@ class PengobatanController extends Controller
         }
     }
 
+    public function edit(Request $request)
+        {
+            dd($request->all());
+            $pengobatan = Pengobatan::find($id);
+            
+            return view('admin.kelolapengobatan', compact('pengobatan'));
+        
+        }
+
     public function destroy($id){
         $pengobatan = Pengobatan::find($id);
         $pengobatan->delete();
