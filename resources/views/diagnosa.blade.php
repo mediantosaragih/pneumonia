@@ -61,8 +61,8 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="{{url('diagnosa')}}">Diagnosa</a></li>
+              <li class="scroll-to-section"><a href="{{url('welcome')}}">Home</a></li>
+              <li class="scroll-to-section"><a href="{{url('diagnosa')}}"  class="active">Diagnosa</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
             </ul>
             <!-- ***** Menu End ***** -->
@@ -76,7 +76,7 @@ https://templatemo.com/tm-570-chain-app-dev
 <div class="container-fluid" style="padding:80px;">
     <div class="row">
         <div style=" text-align:center; margin-top:50px;" class="item-align:center">
-            <div class="table-responsive " style="padding:100px; background:rgba(500,500,500,0.9); border-radius: 20px; ">
+            <div class="table-responsive " style="padding:100px; background:rgba(500,500,500,1); border-radius: 20px;box-shadow:3px 2px #888888 ">
                 <div>
                     <h2 style="padding:10px;margin-top:-80px">Pengisian data gejala pneumonia</h2>
                 </div><br>

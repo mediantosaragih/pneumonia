@@ -77,17 +77,42 @@ https://templatemo.com/tm-570-chain-app-dev
     <div class="container-fluid bg1">
         <div class="row" style="padding:50px;">
             <div class="col-md-12" style="padding-top:100px">
-                <div class="align-items-center" style="background:rgba(500,500,500,0.9);height:550px">
+                <div class="align-items-center" style="background:rgba(500,500,500,1);height:550px;border-radius: 50px;box-shadow:3px 2px #888888">
                     <div class="container-fluid">
                     <div class="gradient-button" style="padding:10px;text-align:right"><a id="modal_trigger" href="#"><i class="fa fa-print"></i> Print</a></div>
-                    <h5 style="text-align:center;padding:20px;">Gejala yang dialami Anak adalah</h5>
-                    <p>1</p>
-                    <p>2</p><br>
-                    <h5 style="text-align:center;padding:20px;">Berdasarkan dari hasil gejala yang dialami penderita kami menyimpulkan bahwa jenis penyakit yang dialami penderita adalah </h5>
-                    <h6 style="text-align:center;padding:20px; font-family:elephant">Pnuemonia Jenis Ringan </h6><br>
-                    <h5 style="text-align:center;padding:20px;">Dari Jenis penyakit yang dialami penderita berikut diberikan beberapa cara mengobati atau pertolongan pertama yang dapat diberikan kepada anak </h5>
-                    <p>1</p>
-                    <p>2</p>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            Nama :
+                        </div>
+                        <div class="col  col-lg-2">
+                            <span class="input-group-text" >Medianto Saragih</span>
+                        </div>
+                        <div class="col-md-auto">
+                            Alamat :
+                        </div>
+                        <div class="col  col-lg-2">
+                            <span class="input-group-text" >Sidikalang</span>
+                        </div>
+                    </div>
+                    <div class="row " style="padding:40px">
+                        <div class="col">
+                            Sifat yang ada pada diri anda adalah
+                        </div>
+                        <p>1</p>
+                    </div>
+                    <div class="row " style="padding:40px">
+                        <div class="col">
+                        Berdasarkan Identifikasi sistem yang anda isi dengan sifat tersebut adalah
+                        </div>
+                        <p>70 %</p>
+                    </div>
+                    <div class="row " style="padding:40px">
+                        <div class="col">
+                        Cara belajar yang tepat untuk anda adalah
+                        </div>
+                        <p>1</p>
+                    </div>
+
                     </div>
                 </div>
             </div>

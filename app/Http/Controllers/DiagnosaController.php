@@ -32,7 +32,7 @@ class DiagnosaController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        $pengunjung = Pengunjung::latest('created_at')->first();        
+        $pengunjung = Pengunjung::latest('created_at')->first();
         // dd($request->gejala);
         if($request->gejala != null){
             foreach ($request->gejala as $data) {
@@ -51,17 +51,18 @@ class DiagnosaController extends Controller
                 }
             }
         }
-        if($ringan > $sedang && $ringan > $berat){
-            dd("ringan bos");
-        }if($sedang >= $ringan && $sedang > $berat){
-            dd("sedang");
-        }if($berat >= $ringan && $berat >= $sedang){
-            dd("bawa rs");
-        }if($ringan == 0 && $sedang == 0 && $berat == 0){
+        if($ringan == 0 && $sedang == 0 && $berat == 0){
             dd("bukan pneumonia");
+        }
+        if($ringan > $sedang && $ringan > $berat){
+            dd("Hasil nya adalah Pneumonia Ringan");
+        }if($sedang >= $ringan && $sedang > $berat){
+            dd("Hasil nya adalah Pneumonia Sedang");
+        }if($berat >= $ringan && $berat >= $sedang){
+            dd("Hasil nya adalah Pneumonia Berat");
         }
 
 
-        
+
     }
 }

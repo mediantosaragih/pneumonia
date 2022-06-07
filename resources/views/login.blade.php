@@ -35,6 +35,9 @@
                         {{ session('loginError')}}
                     </div>
                 @endif
+                <div style="margin-top:-10px">
+                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:purple;padding-bottom:10px" aria-hidden="true"></i></a>
+                </div>
                 <div class="contact">
                     <form action="/login" method="post">
                         @csrf
@@ -51,15 +54,11 @@
                     </form>
 
                 </div>
-                <div style="margin-top:-10px">
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:purple;padding-bottom:10px" aria-hidden="true"></i></a>
-                </div>
-
             </div>
             <div class="right">
                 <div class="right-text">
                     <h2>SELAMAT DATANG</h2>
-                    <h5>Sistem Informasi Diagnosa Penyakit Pneumonia</h5>
+                    <h5>Sistem Identifikasi Kepribadian Seseorang dengan Metode Forward Chaining</h5>
                 </div>
             </div>
         </div>
@@ -178,7 +177,7 @@
 
 
     .right {
-        background: linear-gradient(212.38deg, rgba(142, 57, 127, 0.7) 0%, rgba(10, 70, 189, 0.71) 100%), url(img/baby.jpg);
+        background: linear-gradient(212.38deg, rgba(142, 57, 127, 0.7) 0%, rgba(10, 70, 189, 0.71) 100%), url(img/wal.jpg);
         color: #fff;
         position: relative;
     }
