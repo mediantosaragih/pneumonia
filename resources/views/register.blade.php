@@ -17,7 +17,7 @@
 			<div class="right">
 				<div class="right-text">
 					<h2>SELAMAT DATANG</h2>
-					<h5>Sistem Informasi Diagnosa Penyakit Pneumonia</h5>
+					<h5>Sistem Indentifikasi Kepribadian</h5>
 				</div>
 			</div>
 		</div>

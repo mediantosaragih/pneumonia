@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Pengunjung;
 use App\Models\History;
 
-class DiagnosaController extends Controller
+class IdentifikasiController extends Controller
 {
     public function index(){
         $gejalas = Gejala::orderBy('kategori', 'ASC')->get();

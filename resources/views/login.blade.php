@@ -4,7 +4,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Sistem Diagnosa Pneumonia</title>
+    <title>Sistem Indentifikasi Kepribadian</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
@@ -36,12 +36,13 @@
                     </div>
                 @endif
                 <div style="margin-top:-10px">
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:purple;padding-bottom:10px" aria-hidden="true"></i></a>
+                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:blue;padding-bottom:10px" aria-hidden="true"></i></a>
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
                         @csrf
-                        <h3>SIGN IN</h3>
+                        <i class="fa fa-user-circle" style="font-size:80px; margin:0 0 20 50px;"></i>
+                        <h3>Login Admin</h3>
                         <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="EMAIL" autofocus value="{{old('email')}}" required>
                         @error('email')
                             <div class="invalid-feedback">
@@ -57,8 +58,7 @@
             </div>
             <div class="right">
                 <div class="right-text">
-                    <h2>SELAMAT DATANG</h2>
-                    <h5>Sistem Identifikasi Kepribadian Seseorang dengan Metode Forward Chaining</h5>
+                    <h5 style=""><b> Sistem Identifikasi Kepribadian </b></h5>
                 </div>
             </div>
         </div>
@@ -68,24 +68,27 @@
 </html>
 
 <style>
-    img {
-        width: 100%;
+
+    body{
+        position:fixed;
     }
+
 
     .login {
         height: 1000px;
         width: 100%;
-        background: radial-gradient(#653d84, #332042);
-        position: relative;
+        background: white;
+
     }
 
     .login_box {
         width: 1050px;
         height: 600px;
-        position: absolute;
-        top: 40%;
+
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        margin:100px 200px;
+
         background: #fff;
         border-radius: 10px;
         box-shadow: 1px 4px 22px -8px #0004;
@@ -94,15 +97,10 @@
     }
 
     .login_box .left {
-        width: 41%;
+        width: 51%;
         height: 100%;
         padding: 25px 25px;
 
-    }
-
-    .login_box .right {
-        width: 59%;
-        height: 100%
     }
 
     .left .top_link a {
@@ -142,18 +140,14 @@
         font-size: 14px;
     }
 
-    .left {
-        background: linear-gradient(-45deg, #dcd7e0, #fff);
-    }
-
     .submit {
         border: none;
         padding: 10px 40px;
         border-radius: 8px;
         display: block;
         margin: auto;
-        margin-top: 120px;
-        background: #583672;
+        margin-top: 50px;
+        background: rgba(38, 142, 238, 1);
         color: #fff;
         font-weight: bold;
         -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
@@ -166,7 +160,7 @@
         display: block;
         margin: auto;
         margin-top: 120px;
-        background: #583672;
+        background: rgba(38, 142, 238, 1);
         color: #fff;
         font-weight: bold;
         -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
@@ -177,14 +171,19 @@
 
 
     .right {
-        background: linear-gradient(212.38deg, rgba(142, 57, 127, 0.7) 0%, rgba(10, 70, 189, 0.71) 100%), url(img/wal.jpg);
+        background: url(img/wal.jpg);
         color: #fff;
-        position: relative;
+        border-radius: 5px;
+        margin: 20 20 10 20px ;
+        background-size:100%;
+        width:600px;
     }
 
     .right .right-text {
         height: 100%;
-        position: relative;
+        margin:0px 0px 0px 320px;
+        margin-top:-220px;
+
         transform: translate(0%, 45%);
     }
 
@@ -203,7 +202,7 @@
         font-size: 19px;
         font-weight: 400;
     }
-
+/*
     .right .right-inductor {
         position: absolute;
         width: 70px;
@@ -212,7 +211,7 @@
         left: 50%;
         bottom: 70px;
         transform: translate(-50%, 0%);
-    }
+    } */
 
     .top_link img {
         width: 28px;

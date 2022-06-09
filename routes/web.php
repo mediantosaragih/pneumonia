@@ -27,23 +27,44 @@ Route::get('/welcome', function () {
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
+Route::get('/identifikasi', function () {
+    return view('identifikasi');
+});
 //diagnosa
-Route::get('/diagnosa', [DiagnosaController::class, 'index']);
-Route::post('/check', [DiagnosaController::class, 'check']);
+// Route::get('/identifikasi', [IdentifikasiController::class, 'index']);
+Route::post('/check', [IdentifikasiController::class, 'check']);
 
 //Gejala
-Route::get('/keloladiagnosa', [GejalaController::class, 'index'])->name('gejala')->middleware('auth');
+Route::get('/kelolaIdentifikasidentifikasi', [GejalaController::class, 'index'])->name('gejala')->middleware('auth');
 Route::post('/gejala', [GejalaController::class, 'create'])->middleware('auth');
-Route::post('/keloladiagnosa/delete/{id}', [GejalaController::class, 'destroy'])->middleware('auth');
+Route::post('/kelolaIdentifikasi/delete/{id}', [GejalaController::class, 'destroy'])->middleware('auth');
+Route::get('/createIdentifikasi', function () {
+    return view('admin.createIdentifikasi');
+});
+Route::get('/updateIdentifikasi', function () {
+    return view('admin.updateIdentifikasi');
+});
+Route::get('/kelolaIdentifikasi', function () {
+    return view('admin.kelolaIdentifikasi');
+});
+Route::get('/kelolaPembelajaran', function () {
+    return view('admin.kelolaPembelajaran');
+});
 
-Route::get('/pengobatan', function () {
-    return view('pengobatan');
+Route::get('/hasilIdentifikasi', function () {
+    return view('hasilIdentifikasi');
 });
 
 //Pengobatan Admin
-Route::get('/kelolapengobatan', [PengobatanController::class, 'index'])->name('pengobatan')->middleware('auth');
-Route::post('/kelolapengobatan', [PengobatanController::class, 'create'])->middleware('auth');
-Route::post('/kelolapengobatan/delete/{id}', [PengobatanController::class, 'destroy'])->middleware('auth');
+// Route::get('/kelolaPembelajaran', [PengobatanController::class, 'index'])->name('pengobatan')->middleware('auth');
+// Route::post('/kelolaPembelajaran', [PengobatanController::class, 'create'])->middleware('auth');
+// Route::post('/kelolaPembelajaran/delete/{id}', [PengobatanController::class, 'destroy'])->middleware('auth');
+Route::get('/createPembelajaran', function () {
+    return view('admin.createPembelajaran');
+});
+Route::get('/updatePembelajaran', function () {
+    return view('admin.updatePembelajaran');
+});
 
 //History
 Route::get('/history', function () {

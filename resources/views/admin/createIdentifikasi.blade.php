@@ -24,7 +24,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                    <span class="d-none d-lg-inline-flex">User</span>
+                    <span class="d-none d-lg-inline-flex">Admin</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                     <!-- <a href="/logout" class="dropdown-item">Logout</a> -->
@@ -43,45 +43,36 @@
 
     <!-- Sale & Revenue Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-line fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Today Sale</p>
-                        <h6 class="mb-0">$1234</h6>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Pengecekan Harian</p>
+                                <h6 class="mb-0 font-weight-bolder">5</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Pengecekan</p>
+                                <h6 class="mb-0 font-weight-bolder" >123</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Pengecekan Bulan ini</p>
+                                <h6 class="mb-0 font-weight-bolder">25</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Total Sale</p>
-                        <h6 class="mb-0">$1234</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-area fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Today Revenue</p>
-                        <h6 class="mb-0">$1234</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Total Revenue</p>
-                        <h6 class="mb-0">$1234</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Sale & Revenue End -->
 
 
@@ -93,47 +84,27 @@
                 {{session('success')}}
             </div>
         @endif
-        <div class="bg-light text-center rounded p-4">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Kelola Gejala</h6>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="fa fa-plus-circle" aria-hidden="true">Tambah</i>
-                </button>
+        <div class=" text-center rounded p-4"  style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+            <div class="bg-light rounded p-4">
+                <h4 >Tambah Data Sifat</h4>
             </div>
-            <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-dark">
-                            <th scope="col">Kode Gejala</th>
-                            <th scope="col">Nama Gejala</th>
-                            <th scope="col">Bobot Gejala</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($gejalas as $gejala)
-                        <tr>
-                            <td>{{$gejala->kode}}</td>
-                            <td>{{$gejala->name}}</td>
-                            <td>{{$gejala->kategori}}</td>
-                            <td>
-                                <a href="">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                <form action="/keloladiagnosa/delete/{{$gejala->id}}" method="post" class="d-inline">
-                                    <!-- @method('delete') -->
-                                    @csrf
-                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+            <div class="text-left rounded p-4">
+                <p>
+                <label for="">Kode Sifat</label>
+                <input type="text" class="form-control" style="width:100%">
+                </p>
+                <p>
+                <label for="">Kode Sifat</label>
+                <input type="text" class="form-control" style="width:100%">
+                </p>
+                <p>
+                <label for="">Kode Sifat</label>
+                <input type="text" class="form-control" style="width:100%">
+                </p>
+            </div>
+            <div class="text-right " style="margin-right:20px">
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
             </div>
         </div>
     </div>
@@ -149,7 +120,6 @@
                 </div>
                 <div class="modal-body">
                     <form action="/gejala" method="post">
-                        @csrf
                         <div class="form-group">
                             <label for="kode">Kode Gejala</label>
                             <input type="text" class="form-control" id="kode" name="kode"
