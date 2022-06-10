@@ -24,18 +24,24 @@
                 </div>
             </div>
             <div class="right">
-                @if(session()->has('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success')}}
-                    </div>
-                @endif
-                @if(session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('loginError')}}
-                    </div>
-                @endif
                 <div style="margin-top:-10px">
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
+                    <div class="row">
+                        <div class="col-md-1">    
+                            <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col">
+                            @if(session()->has('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success')}}
+                                </div>
+                            @endif
+                            @if(session()->has('loginError'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('loginError')}}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
@@ -75,8 +81,8 @@
     }
 
     .login_box {
-        width: 1050px;
-        height: 600px;
+        width: 80%;
+        height: 100%;
         position: absolute;
         top: 40%;
         left: 50%;
@@ -106,7 +112,7 @@
     }
 
     .right .top_link {
-        height: 20px
+        height: 10%;
     }
 
     .right .contact {
@@ -121,7 +127,7 @@
 
     .right h3 {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 5%;
     }
 
     .right input {
@@ -143,11 +149,11 @@
 
     .submit {
         border: none;
-        padding: 10px 40px;
+        padding: 5% 25%;
         border-radius: 8px;
         display: block;
         margin: auto;
-        margin-top: 15%;
+        margin-top: 10%;
         background: #268EEE;
         color: #fff;
         font-weight: bold;
@@ -156,7 +162,7 @@
         box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
     }
     .submit2 {
-        padding: 10px 30px;
+        padding: 5% 20%;
         border-radius: 8px;
         display: block;
         margin: auto;

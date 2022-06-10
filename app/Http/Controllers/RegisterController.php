@@ -16,9 +16,14 @@ class RegisterController extends Controller
         $validate = $request->validate([
             'username' => "required",
             'email' => "required|email:dns|unique:users",
-            'password' => "required|min:8|max:255"
+            'password' => "required|min:6|max:255"
         ]);
 
+        if ($validate->fails()) {
+            return redirect('/register')
+                        ->withErrors($validate)
+                        ->withInput();
+        }
         $validate['password'] = bcrypt($validate['password']);
         User::create($validate);
 
