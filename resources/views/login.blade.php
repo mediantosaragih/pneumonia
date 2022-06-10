@@ -24,24 +24,18 @@
                 </div>
             </div>
             <div class="right">
-                <div style="margin-top:-10px">
-                    <div class="row">
-                        <div class="col-md-1">    
-                            <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="col">
-                            @if(session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    {{ session('success')}}
-                                </div>
-                            @endif
-                            @if(session()->has('loginError'))
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ session('loginError')}}
-                                </div>
-                            @endif
-                        </div>
+                @if(session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success')}}
                     </div>
+                @endif
+                @if(session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError')}}
+                    </div>
+                @endif
+                <div style="margin-top:-10px">
+                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
@@ -56,7 +50,7 @@
                         @enderror
                         <input type="password" id="password" name="password" placeholder="PASSWORD" required>
                         <button class="submit">LOGIN</button>
-                        <a href="/register" class="submit2" style="margin-top:10px;width:70%;margin:left:100px;">REGISTER</a>
+                        <!-- <a href="/register" class="submit2" style="margin-top:10px;width:70%;margin:left:100px;">REGISTER</a> -->
                     </form>
 
                 </div>
@@ -71,7 +65,6 @@
     img {
         width: 100%;
     }
-
     .login {
         margin-top:7%;
         height: 100%;
@@ -79,10 +72,9 @@
         /* background: radial-gradient(#653d84, #332042); */
         position: relative;
     }
-
     .login_box {
-        width: 80%;
-        height: 100%;
+        width: 1050px;
+        height: 600px;
         position: absolute;
         top: 40%;
         left: 50%;
@@ -93,28 +85,22 @@
         display: flex;
         overflow: hidden;
     }
-
     .login_box .right {
         width: 41%;
         height: 100%;
         padding: 25px 25px;
-
     }
-
     .login_box .left {
         width: 59%;
         height: 100%
     }
-
     .right .top_link a {
         color: #452A5A;
         font-weight: 400;
     }
-
     .right .top_link {
-        height: 10%;
+        height: 20px
     }
-
     .right .contact {
         display: flex;
         align-items: center;
@@ -124,12 +110,10 @@
         width: 73%;
         margin: auto;
     }
-
     .right h3 {
         text-align: center;
-        margin-bottom: 5%;
+        margin-bottom: 40px;
     }
-
     .right input {
         border: none;
         width: 80%;
@@ -142,27 +126,12 @@
         font-weight: 600;
         font-size: 14px;
     }
-
     .right {
         background: linear-gradient(-45deg, #dcd7e0, #fff);
     }
-
     .submit {
         border: none;
-        padding: 5% 25%;
-        border-radius: 8px;
-        display: block;
-        margin: auto;
-        margin-top: 10%;
-        background: #268EEE;
-        color: #fff;
-        font-weight: bold;
-        -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-        -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-        box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-    }
-    .submit2 {
-        padding: 5% 20%;
+        padding: 10px 40px;
         border-radius: 8px;
         display: block;
         margin: auto;
@@ -174,28 +143,35 @@
         -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
         box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
     }
-
-
-
+    .submit2 {
+        padding: 10px 30px;
+        border-radius: 8px;
+        display: block;
+        margin: auto;
+        margin-top: 15%;
+        background: #268EEE;
+        color: #fff;
+        font-weight: bold;
+        -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    }
     .left {
         background: url(img/wal.jpg);
         color: #fff;
         text-align : right;
     }
-
     .left .text {
         margin-right:5%;
         position: relative;
         transform: translate(0%, 45%);
     }
-
     .text h5 {
         width: 100%;
         text-align: center;
         font-size: 19px;
         font-weight: 400;
     }
-
     .left .left-inductor {
         position: absolute;
         width: 70px;
@@ -205,7 +181,6 @@
         bottom: 70px;
         transform: translate(-50%, 0%);
     }
-
     .top_link img {
         width: 28px;
         padding-right: 7px;

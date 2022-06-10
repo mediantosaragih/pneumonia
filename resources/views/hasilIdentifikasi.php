@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Sistem Diagnosa Pneumonia</title>
+    <title>Sistem Indentifikasi Kepribadian</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="{{url('diagnosa')}}">Diagnosa</a></li>
+              <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
             </ul>
             <!-- ***** Menu End ***** -->
@@ -127,7 +127,7 @@ https://templatemo.com/tm-570-chain-app-dev
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Sistem Informasi Diagnosa Penyakit Pneumonia Pada Balita</h4>
+            <h4>Sistem Indentifikasi Kepribadian</h4>
           </div>
         </div>
       </div>

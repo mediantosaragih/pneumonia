@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Sistem Identifikasi Kepribadian</title>
+    <title>Sistem Indentifikasi Kepribadian</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,14 +55,14 @@ https://templatemo.com/tm-570-chain-app-dev
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <a href="{{url('welcome')}}" class="logo">
               <img src="assets/images/logggo.png" alt="Chain App Dev" style="width:200px;">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="{{url('welcome')}}">Home</a></li>
-              <li class="scroll-to-section"><a href="{{url('/identifikasi')}}"  class="active">Identifikasi</a></li>
+              <li class="scroll-to-section"><a href="{{url('identifikasi')}}"  class="active">Identifikasi</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
             </ul>
             <!-- ***** Menu End ***** -->
@@ -78,7 +78,7 @@ https://templatemo.com/tm-570-chain-app-dev
         <div style=" text-align:center; margin-top:50px;" class="item-align:center">
             <div class="table-responsive " style="padding:100px; background:rgba(500,500,500,1); border-radius: 20px;box-shadow:3px 2px #888888 ">
                 <div>
-                    <h2 style="padding:10px;margin-top:-80px">Data Pengunjung</h2>
+                    <h2 style="padding:10px;margin-top:-80px">Pengisian data Sifat</h2>
                 </div><br>
                 <form role="form" action="/check" method="post">
                     @csrf
@@ -122,19 +122,13 @@ https://templatemo.com/tm-570-chain-app-dev
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($gejalas as $gejala)
                             <tr>
-                                <td>{{$gejala->kode}}</td>
+                                <td></td>
                                 <td>
-                                    <input type="checkbox" id="gejala[]" name="gejala[]"
-                                        value="{{$gejala->id}}"> Ya
+                                    <input type="checkbox" id="sifat[]" name="sifat[]"
+                                        value=""> Ya
                                 </td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                            </tr>
-                            @endforelse
                         </tbody>
                     </table><br>
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -157,7 +151,7 @@ https://templatemo.com/tm-570-chain-app-dev
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Sistem Informasi Diagnosa Penyakit Pneumonia Pada Balita</h4>
+            <h4>Sistem Indentifikasi Kepribadian</h4>
           </div>
         </div>
       </div>

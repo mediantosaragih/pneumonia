@@ -86,61 +86,25 @@
         @endif
         <div class=" text-center rounded p-4"  style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
             <div class="bg-light rounded p-4">
-                <h4 >Tambah Data Sifat</h4>
+                <h4 >Tambah Data Pembelajaran</h4>
             </div>
-            <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-dark">
-                            <th scope="col">Kode Gejala</th>
-                            <th scope="col">Nama Gejala</th>
-                            <th scope="col">Bobot Gejala</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($gejalas as $gejala)
-                        <tr>
-                            <td>{{$gejala->kode}}</td>
-                            <td>{{$gejala->name}}</td>
-                            <td>{{$gejala->kategori}}</td>
-                            <td>
-                                <a href="">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                <form action="/kelolaSifat/delete/{{$gejala->id}}" method="post" class="d-inline">
-                                    <!-- @method('delete') -->
-                                    @csrf
-                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-========
             <div class="text-left rounded p-4">
                 <p>
-                <label for="">Kode Sifat</label>
+                <label for="">Kode Pembelajaran</label>
                 <input type="text" class="form-control" style="width:100%">
                 </p>
                 <p>
-                <label for="">Kode Sifat</label>
+                <label for="">Kategori</label>
                 <input type="text" class="form-control" style="width:100%">
                 </p>
                 <p>
-                <label for="">Kode Sifat</label>
+                <label for="">Keterangan</label>
                 <input type="text" class="form-control" style="width:100%">
                 </p>
             </div>
             <div class="text-right " style="margin-right:20px">
                 <button type="button" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-danger">Cancel</button>
->>>>>>>> 803f6b799b7474cce685035f9eb0b1e50b400eb3:resources/views/admin/createIdentifikasi.blade.php
             </div>
         </div>
     </div>

@@ -8,9 +8,8 @@ use App\Models\Gejala;
 class IdentifikasiController extends Controller
 {
     public function index(){
-        $gejalas = Gejala::orderBy('kategori', 'ASC')->get();
 
-        return view('identifikasi',compact('gejalas') );
+        return view('identifikasi');
     }
 
     public function check(Request $request){
