@@ -85,20 +85,24 @@ https://templatemo.com/tm-570-chain-app-dev
                             Nama :
                         </div>
                         <div class="col  col-lg-2">
-                            <span class="input-group-text" >Medianto Saragih</span>
+                            <span class="input-group-text" >{{$pengunjung->nama}}</span>
                         </div>
                         <div class="col-md-auto">
                             Alamat :
                         </div>
                         <div class="col  col-lg-2">
-                            <span class="input-group-text" >Sidikalang</span>
+                            <span class="input-group-text" >{{$pengunjung->alamat}}</span>
                         </div>
                     </div>
                     <div class="row " style="padding:40px">
                         <div class="col">
                             Sifat yang ada pada diri anda adalah
                         </div>
-                        <p>1</p>
+                        @forelse($historys as $history)
+                        <p>{{ $loop->iteration }}. {{$history->kepribadian->name}}</p>
+                        @empty
+                        <p>Data tidak tersedia</p>
+                        @endforelse
                     </div>
                     <div class="row " style="padding:40px">
                         <div class="col">

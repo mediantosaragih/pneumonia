@@ -88,7 +88,7 @@
             <h4 >Data Sifat yang dialami</h4>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <a href="{{url('createIdentifikasi')}}" style="color:white">
+                <a href="{{url('createKepribadian')}}" style="color:white">
                         <i class="fa fa-plus-circle " aria-hidden="true">Tambah</i>
                 </a>
                 </button>
@@ -98,27 +98,33 @@
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">Kode Sifat</th>
-                            <th scope="col">Sifat</th>
-                            <th scope="col">Jawaban</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Kategori</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse($kepribadians as $kepribadian)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$kepribadian->kode}}</td>
+                            <td>{{$kepribadian->name}}</td>
+                            <td>{{$kepribadian->kategori}}</td>
                             <td>
-                                <a href="updateIdentifikasi">
+                                <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <form action="" method="post" class="d-inline">
+                                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
                                     <!-- @method('delete') -->
-
+                                    @csrf
                                     <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
                                 </form>
                             </td>
                         </tr>
+                        @empty
+                        <tr>
+                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Pengunjung;
-use App\Models\Gejala;
+use App\Models\Kepribadian;
 
 class History extends Model
 {
@@ -15,7 +14,7 @@ class History extends Model
         return $this->belongsTo(Pengunjung::class);
     }
 
-    public function gejala(){
-        return $this->belongsTo(Gejala::class);
+    public function kepribadian(){
+        return $this->belongsTo(Kepribadian::class);
     }
 }

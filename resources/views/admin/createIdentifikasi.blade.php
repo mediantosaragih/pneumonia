@@ -43,36 +43,36 @@
 
     <!-- Sale & Revenue Start -->
     <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">5</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >123</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">25</h6>
-                            </div>
-                        </div>
+        <div class="row g-4">
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-line fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Pengecekan Harian</p>
+                        <h6 class="mb-0 font-weight-bolder">5</h6>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-area fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Pengecekan</p>
+                        <h6 class="mb-0 font-weight-bolder">123</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Pengecekan Bulan ini</p>
+                        <h6 class="mb-0 font-weight-bolder">25</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Sale & Revenue End -->
 
 
@@ -80,13 +80,13 @@
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
         @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                {{session('success')}}
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
         @endif
-        <div class=" text-center rounded p-4"  style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <div class=" text-center rounded p-4" style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
             <div class="bg-light rounded p-4">
-                <h4 >Tambah Data Sifat</h4>
+                <h4>Tambah Data Sifat</h4>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -99,16 +99,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($gejalas as $gejala)
+                    @forelse($kepribadians as $kepribadian)
                         <tr>
-                            <td>{{$gejala->kode}}</td>
-                            <td>{{$gejala->name}}</td>
-                            <td>{{$gejala->kategori}}</td>
+                            <td>{{$kepribadian->kode}}</td>
+                            <td>{{$kepribadian->name}}</td>
+                            <td>{{$kepribadian->kategori}}</td>
                             <td>
-                                <a href="">
+                                <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <form action="/kelolaSifat/delete/{{$gejala->id}}" method="post" class="d-inline">
+                                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
                                     <!-- @method('delete') -->
                                     @csrf
                                     <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
@@ -122,67 +122,33 @@
                         @endforelse
                     </tbody>
                 </table>
-========
-            <div class="text-left rounded p-4">
-                <p>
-                <label for="">Kode Sifat</label>
-                <input type="text" class="form-control" style="width:100%">
-                </p>
-                <p>
-                <label for="">Kode Sifat</label>
-                <input type="text" class="form-control" style="width:100%">
-                </p>
-                <p>
-                <label for="">Kode Sifat</label>
-                <input type="text" class="form-control" style="width:100%">
-                </p>
-            </div>
-            <div class="text-right " style="margin-right:20px">
-                <button type="button" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-danger">Cancel</button>
->>>>>>>> 803f6b799b7474cce685035f9eb0b1e50b400eb3:resources/views/admin/createIdentifikasi.blade.php
-            </div>
-        </div>
-    </div>
-    <!-- Recent Sales End -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/gejala" method="post">
-                        <div class="form-group">
-                            <label for="kode">Kode Gejala</label>
-                            <input type="text" class="form-control" id="kode" name="kode"
-                                placeholder="Enter your Kode Gejala" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Nama Gejala</label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter your Gejala" required />
-                        </div>
-                        <div class="form-group">
+                <form role="form" action="/kelolaKepribadian" method="post">
+                    @csrf
+                    <div class="text-left rounded p-4">
+                        <p>
+                            <label for="">Kode Sifat</label>
+                            <input type="text" name="kode" id="kode" class="form-control" style="width:100%" required>
+                        </p>
+                        <p>
+                            <label for="">Sifat</label>
+                            <input type="text" name="name" id="name" class="form-control" style="width:100%" required>
+                        </p>
+                        <p>
                             <label for="kategori">Pilih Kategori</label>
-                                <select name="kategori" required="" id="kategori" name="kategori" class="form-control"  >
+                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option value="Ringan">Ringan</option>
-                                <option value="Sedang">Sedang</option>
-                                <option value="Berat">Berat</option>
+                                <option value="Visual">Visual</option>
+                                <option value="Auditorial">Auditorial</option>
+                                <option value="Kinestetik">Kinestetik</option>
                             </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="submit btn btn-primary">Save changes</button>
-                            <a class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
-                        </div>
-                    </form>
-                </div>
+                        </p>
+                    </div>
+                    <div class="text-right " style="margin-right:20px">
+                        <button class="submit btn btn-primary">Submit</button>
+                        <a href="/kelolaKepribadian" class="btn btn-danger">Cancel</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-
-    @endsection
+        <!-- Recent Sales End -->
+        @endsection

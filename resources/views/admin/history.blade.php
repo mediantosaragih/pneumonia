@@ -50,12 +50,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse($historys as $history)
                                 <tr>
-                                    <td>Medianto Saragih</td>
-                                    <td>1 Mei 2022</td>
-                                    <td>Koleris</td>
-                                    <td>Koleris</td>
+                                    <td>{{$history->pengunjung->nama}}</td>
+                                    <td>{{$history->history_date}}</td>
+                                    <td>{{$history->kepribadian->name}}</td>
+                                    <td>{{$history->kepribadian->name}}</td>
                                 </tr>
+                                @empty
+                                <tr>
+                                    <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table><br>
                     </div>

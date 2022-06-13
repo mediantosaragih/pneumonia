@@ -14,12 +14,12 @@ class CreateHistoriesTable extends Migration
     public function up()
     {
         Schema::create('histories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->unsignedBigInteger('pengunjung_id')->nullable();
-            $table->unsignedBigInteger('gejala_id');
+            $table->unsignedBigInteger('kepribadian_id');
             $table->dateTime('history_date');
             $table->foreign('pengunjung_id')->references('id')->on('pengunjungs')->onDelete('cascade');
-            $table->foreign('gejala_id')->references('id')->on('gejalas')->onDelete('cascade');
+            $table->foreign('kepribadian_id')->references('id')->on('kepribadians')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGejalasTable extends Migration
+class CreateTipeBelajarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateGejalasTable extends Migration
      */
     public function up()
     {
-        Schema::create('gejalas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('kode')->unique();
-            $table->string('name');
-            $table->enum('kategori',['Ringan','Sedang','Berat'])->nullable();
-            $table->integer('poin');
+        Schema::create('tipe_belajars', function (Blueprint $table) {
+            $table->id();
+            $table->string('kode_belajar');
+            $table->enum('kategori',['Koleris','Sanguinis','Melankolis','Phlegmatis']);
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateGejalasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gejalas');
+        Schema::dropIfExists('tipe_belajars');
     }
 }

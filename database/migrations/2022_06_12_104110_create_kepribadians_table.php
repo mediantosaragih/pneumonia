@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengunjungsTable extends Migration
+class CreateKepribadiansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePengunjungsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengunjungs', function (Blueprint $table) {
+        Schema::create('kepribadians', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('alamat');
-            $table->string('no_telp');
+            $table->string('kode');
+            $table->enum('kategori',['Koleris','Sanguinis','Melankolis','Phlegmatis']);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePengunjungsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengunjungs');
+        Schema::dropIfExists('kepribadians');
     }
 }

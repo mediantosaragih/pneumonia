@@ -15,7 +15,7 @@
     <title>Sistem Indentifikasi Kepribadian</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!--
 
@@ -27,9 +27,9 @@ https://templatemo.com/tm-570-chain-app-dev
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="../../assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="../../assets/css/animated.css">
+    <link rel="stylesheet" href="../../assets/css/owl.css">
 
   </head>
 
@@ -122,13 +122,19 @@ https://templatemo.com/tm-570-chain-app-dev
                             </tr>
                         </thead>
                         <tbody>
+                          @forelse($kepribadians as $kepribadian)
                             <tr>
-                                <td></td>
+                                <td>{{$kepribadian->name}}</td>
                                 <td>
                                     <input type="checkbox" id="sifat[]" name="sifat[]"
-                                        value=""> Ya
+                                        value="{{$kepribadian->id}}"> Ya
                                 </td>
                             </tr>
+                          @empty
+                          <tr>
+                              <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                          </tr>
+                          @endforelse
                         </tbody>
                     </table><br>
                     <div class="d-flex align-items-center justify-content-between mb-4">

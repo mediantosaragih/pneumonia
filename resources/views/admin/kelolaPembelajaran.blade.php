@@ -83,7 +83,7 @@
             <h4 class="mb-0">Data Pembelajaran yang dapat diikuti</h4><br>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <button type="button" class="btn btn-primary" >
-                    <a href="{{url('createPembelajaran')}}">
+                    <a href="/kelolaPembelajaran/add">
                         <i class="fa fa-plus-circle" style="color:white" aria-hidden="true">Tambah</i>
                     </a>
                 </button>
@@ -99,22 +99,29 @@
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> 
+                        @forelse($tipe_belajars as $tipe_belajar)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$tipe_belajar->kode_belajar}}</td>
+                            <td>{{$tipe_belajar->kode_belajar}}</td>
+                            <td>{{$tipe_belajar->kategori}}</td>
+                            <td>{{$tipe_belajar->keterangan}}</td>
                             <td>
-                                <button href="" type="button"  class="badge bg-success">
-                                <a href="{{url('updatePembelajaran')}}" style="color:white">
-                                    <span class="fa fa-edit"></span></button>
+                                <a href="/kelolaPembelajaran/edit/{{$tipe_belajar->id}}">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                <form action="" method="post" class="d-inline">
-                                    <button class="badge bg-danger" ><span class="fa fa-trash"></span></button>
+                                <form action="/kelolaPembelajaran/delete/{{$tipe_belajar->id}}" method="post" class="d-inline">
+                                    <!-- @method('delete') -->
+                                    @csrf
+                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
                                 </form>
                             </td>
                         </tr>
+                        @empty
+                        <tr>
+                            <td class="text-center text-mute" colspan="5">Data tidak tersedia</td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
