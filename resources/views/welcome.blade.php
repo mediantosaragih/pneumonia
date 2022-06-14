@@ -104,55 +104,8 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 
-  <div id="services" class="services section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Amazing <em>Services &amp; Features</em> for you</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>If you need the greatest collection of HTML templates for your business, please visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">TooCSS</a> Blog. If you need to have a contact form PHP script, go to <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more information.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="service-item first-service">
-            <div class="icon"></div>
-            <h4>App Maintenance</h4>
-            <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
-            <div class="text-button">
-              <a href="#">Klik Disini <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service-item third-service">
-            <div class="icon"></div>
-            <h4>Kepribadian</h4>
-            <p>Kepribadian adalah keseluruhan cara seorang individu bereaksi dan berinteraksi dengan individu lain...</p>
-            <div class="text-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <a data-bs-toggle="modal" data-bs-target="#modalKepribadian">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service-item fourth-service">
-            <div class="icon"></div>
-            <h4>Faq</h4>
-            <p>Anda dapat mengirim pertanyaan pada halaman berikut</p>
-            <div class="text-button">
-              <a data-bs-toggle="modal" data-bs-target="#modalFaq">Klik Disini <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- <div id="services" class="services section">
+  <div id="services" class="services section">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -208,45 +161,21 @@ https://templatemo.com/tm-570-chain-app-dev
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <footer id="newsletter">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
-            <h4>Sistem Indentifikasi Kepribadian</h4>
+      <div class="row" >
+        <div class="col-lg-8 offset-lg-2"  >
+          <div class="section-heading" style="margin-top:-200px;">
+            <h4 >Sistem Indentifikasi Kepribadian</h4>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>Contact Us</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>About Us</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>Useful Links</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>About Our Company</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
-        </div>
         <div class="col-lg-12">
-          <div class="copyright-text">
-            <p>Copyright © 2022 Kelompok 9 </p>
+          <div class="copyright-text" style="margin-top:-200px">
+            <p>Copyright © itdel </p>
           </div>
         </div>
       </div>
@@ -281,7 +210,7 @@ https://templatemo.com/tm-570-chain-app-dev
 
 <!-- Modal Faq -->
 <div class="modal fade" style="" id="modalKepribadian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="width:1000px;" >
+  <div class="modal-dialog"  style="width:1000px;" >
     <div class="modal-content" style="width:1000px; margin-left:-50%">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>

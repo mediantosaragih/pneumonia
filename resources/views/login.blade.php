@@ -64,19 +64,19 @@
 <style>
     img {
         width: 100%;
+        padding:10px
     }
     .login {
-        margin-top:7%;
         height: 100%;
         width: 100%;
         /* background: radial-gradient(#653d84, #332042); */
-        position: relative;
+
     }
     .login_box {
         width: 1050px;
         height: 600px;
-        position: absolute;
-        top: 40%;
+        position: fixed;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #fff;
@@ -128,6 +128,8 @@
     }
     .right {
         background: linear-gradient(-45deg, #dcd7e0, #fff);
+        background-color:black;
+        margin:20px 20px 20px 0px;
     }
     .submit {
         border: none;
@@ -158,6 +160,7 @@
     }
     .left {
         background: url(img/wal.jpg);
+        margin:20px 20px 20px 20px;
         color: #fff;
         text-align : right;
     }
@@ -172,18 +175,5 @@
         font-size: 19px;
         font-weight: 400;
     }
-    .left .left-inductor {
-        position: absolute;
-        width: 70px;
-        height: 7px;
-        background: #fff0;
-        left: 50%;
-        bottom: 70px;
-        transform: translate(-50%, 0%);
-    }
-    .top_link img {
-        width: 28px;
-        padding-right: 7px;
-        margin-top: -3px;
-    }
+
 </style>
