@@ -94,42 +94,54 @@
                 </button>
             </div>
             <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-dark">
-                            <th scope="col">Kode Sifat</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Kategori</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse($kepribadians as $kepribadian)
-                        <tr>
-                            <td>{{$kepribadian->kode}}</td>
-                            <td>{{$kepribadian->name}}</td>
-                            <td>{{$kepribadian->kategori}}</td>
-                            <td>
-                                <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
-                                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
-                                    <!-- @method('delete') -->
-                                    @csrf
-                                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Kode Sifat</th>
+            <th>Nama </th>
+            <th>Kategori</th>
+            <th>Aksi</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>K001</td>
+            <td>Baik</td>
+            <td>B</td>
+            <td>
+                <a href="#"><span class="fa fa-edit"></span></a>
+                <a href="#"><span class="fa fa-trash"></span></a>
+            </td>
+        </tr>
+        <tr>
+            <td>K002</td>
+            <td>Dominant</td>
+            <td>Keterangan</td>
+            <td>
+                <a href="#"><span class="fa fa-edit"></span></a>
+                <a href="#"><span class="fa fa-trash"></span></a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Kode Sifat</th>
+            <th>Nama </th>
+            <th>Kategori</th>
+            <th>Aksi</th>
+        </tr>
+    </tfoot>
+</table><br>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+        $('#example').DataTable();
+    });
+    </script>
     <!-- Recent Sales End -->
 
     @endsection

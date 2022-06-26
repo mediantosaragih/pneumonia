@@ -13,7 +13,7 @@ class IdentifikasiController extends Controller
     public function index(){
         $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
 
-        return view('identifikasi', compact('kepribadians'));
+        return view('pengunjung.identifikasi', compact('kepribadians'));
     }
 
     public function check(Request $request){
@@ -39,36 +39,36 @@ class IdentifikasiController extends Controller
         }
 
         $historys = History::where('pengunjung_id',$pengunjung->id)->get();
-        
+
         $totalKoleris = Kepribadian::where("kategori","Koleris")->count("kategori");
         $koleris = DB::table('kepribadians')
                 ->select('kepribadians.kategori')
                 ->join('histories','histories.kepribadian_id','=','kepribadians.id')
                 ->where(['kepribadians.kategori' => 'Koleris'])
                 ->count();
-        
+
         $totalSanguinis = Kepribadian::where("kategori","Sanguinis")->count("kategori");
         $sanguinis = DB::table('kepribadians')
                 ->select('kepribadians.kategori')
                 ->join('histories','histories.kepribadian_id','=','kepribadians.id')
                 ->where(['kepribadians.kategori' => 'Sanguinis'])
                 ->count();
-        
-                
+
+
         $totalMelankolis = Kepribadian::where("kategori","Melankolis")->count("kategori");
         $melankolis = DB::table('kepribadians')
                 ->select('kepribadians.kategori')
                 ->join('histories','histories.kepribadian_id','=','kepribadians.id')
                 ->where(['kepribadians.kategori' => 'Melankolis'])
                 ->count();
-                
+
         $totalPhlegmatis = Kepribadian::where("kategori","Phlegmatis")->count("kategori");
         $phlegmatis = DB::table('kepribadians')
                 ->select('kepribadians.kategori')
                 ->join('histories','histories.kepribadian_id','=','kepribadians.id')
                 ->where(['kepribadians.kategori' => 'Phlegmatis'])
                 ->count();
-        
+
         $persenKoleris = $koleris/$totalKoleris;
         $persenSanguinis = $sanguinis/$totalPhlegmatis;
         $persenMelankolis = $melankolis/$totalMelankolis;

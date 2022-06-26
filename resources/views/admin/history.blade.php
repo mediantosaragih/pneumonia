@@ -40,33 +40,47 @@
                 <div class="bg-light text-center rounded p-4">
                     <div class="table-responsive">
                     <h5>History Pengecekan </h5><br>
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Tanggal</th>
-                                    <th scope="col">Jawaban</th>
-                                    <th scope="col">Hasil</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($historys as $history)
-                                <tr>
-                                    <td>{{$history->pengunjung->nama}}</td>
-                                    <td>{{$history->history_date}}</td>
-                                    <td>{{$history->kepribadian->name}}</td>
-                                    <td>{{$history->kepribadian->name}}</td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                                </tr>
-                                @endforelse
-                            </tbody>
-                        </table><br>
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Jawaban</th>
+                                <th>Hasil</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Medianto</td>
+                                <td>1 Mei 2022</td>
+                                <td>Dominant</td>
+                                <td>Dominant</td>
+                            </tr>
+                            <tr>
+                                <td>P002</td>
+                                <td>Medianto Saragih</td>
+                                <td>Pertanyaan</td>
+                                <td>Jawaban</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Jawaban</th>
+                                <th>Hasil</th>
+                            </tr>
+                        </tfoot>
+                    </table><br>
                     </div>
                 </div>
             </div>
+            <script>
+        $(document).ready(function () {
+        $('#example').DataTable();
+    });
+    </script>
             <!-- Recent Sales End -->
 
             @endsection

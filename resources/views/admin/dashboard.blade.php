@@ -5,7 +5,7 @@
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <nav class="navbar sticky-top px-4 py-0"  style="background: linear-gradient(to bottom, #D2D2D2 0%, #ffffff);">
+            <nav class="navbar navbar-expand sticky-top px-4 py-0"   style="background: linear-gradient(to bottom, #D2D2D2 0%, #ffffff)";>
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
@@ -27,6 +27,9 @@
                                 @csrf
                                 <button class="submit btn btn-primary dropdown-item">
                                     <p style="color:red">Logout</p>
+                                </button>
+                                <button class="submit btn btn-primary dropdown-item">
+                                    <p style="color:red"><a href="{{url('profile_admin')}}">askfakgnan</a></p>
                                 </button>
                             </form>
                         </div>

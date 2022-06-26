@@ -66,7 +66,7 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
-              <!-- <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li> -->
+              <li class="scroll-to-section"><a href="{{url('isiDataPribadi')}}">Identifikasi</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
             </ul>
             <!-- ***** Menu End ***** -->

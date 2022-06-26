@@ -77,44 +77,89 @@ https://templatemo.com/tm-570-chain-app-dev
     <div class="container-fluid bg1">
         <div class="row" style="padding:50px;">
             <div class="col-md-12" style="padding-top:100px">
-                <div class="align-items-center" style="background:rgba(500,500,500,1);height:550px;border-radius: 50px;box-shadow:3px 2px #888888">
+                <div class="align-items-center">
                     <div class="container-fluid">
-                    <div class="gradient-button" style="padding:10px;text-align:right"><a id="modal_trigger" href="#"><i class="fa fa-print"></i> Print</a></div>
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-auto">
-                            Nama :
+                    <div class="row">
+                        <div class="col-sm-4" >
+                        <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <div style="text-align:center">
+                            <img src="assets/images/walp.png" alt="Chain App Dev" style="width:200px; ">
+                            </div>
+                        </div><br>
+                        <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <div class="row justify-content-start" style="padding:10px;">
+                                <div class="col-12" style="color:lightblue">
+                                    Test DISC
+                                </div>
+                                <div class="col-12">
+                                Berikut Adalah hasil untuk Test DISC anda
+                                </div>
+                                <div class="col-12" style="color:lightblue">
+                                    Minggu, 30 Juni 2022
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col  col-lg-2">
-                            <span class="input-group-text" >{{$pengunjung->nama}}</span>
+                        <div class="col-sm-4" >
+                        <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <div class="row justify-content-start" style="padding:10px;">
+                                <div class="col-12" style="color:lightblue;text-align:center">
+                                    Test DISC
+                                </div>
+                                <div class="col-12">
+                                Berikut Grafik Hasil Test Anda :
+                                </div>
+                                <div class="col-12" style="color:lightblue">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="chart-area">
+                                                <canvas id="myAreaChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12" style="color:lightblue">
+                                Jenis Kepribadian Anda adalah : Dominant
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col-md-auto">
-                            Alamat :
+                        <div class="col-sm-4" >
+                        <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <div class="row justify-content-start" style="padding:10px;">
+                                <div class="col-12" style="color:lightblue">
+                                    Detail mengenai kepribadian Anda :
+                                </div>
+                                <div>
+                                    <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">Suka Menolong</li>
+                                    <li class="list-group-item">Suka Membahas Masa lalu</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            </div><br>
+                            <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <div class="row justify-content-start" style="padding:10px;">
+                                <div class="col-12" style="color:lightblue">
+                                    Saran Profesi untuk Jenis Kepribadian Anda adalah
+                                </div>
+                                <div>
+                                    <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">Programer</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            </div><br>
+                            <div style="text-align:center">
+                            <li><div class="gradient-button"><a id="modal_trigger" ><i class="fa fa-print"></i> Simpan Ke PDF</a></div></li>
+                            </div>
                         </div>
-                        <div class="col  col-lg-2">
-                            <span class="input-group-text" >{{$pengunjung->alamat}}</span>
                         </div>
-                    </div>
-                    <div class="row " style="padding:40px">
-                        <div class="col">
-                            Sifat yang ada pada diri anda adalah
                         </div>
-                        @forelse($historys as $history)
-                        <p>{{ $loop->iteration }}. {{$history->kepribadian->name}}</p>
-                        @empty
-                        <p>Data tidak tersedia</p>
-                        @endforelse
-                    </div>
-                    <div class="row " style="padding:40px">
-                        <div class="col">
-                        Berdasarkan Identifikasi sistem yang anda isi dengan sifat tersebut adalah
-                        </div>
-                        <p>70 %</p>
-                    </div>
-                    <div class="row " style="padding:40px">
-                        <div class="col">
-                        Cara belajar yang tepat untuk anda adalah
-                        </div>
-                        <p>1</p>
+
                     </div>
 
                     </div>
@@ -186,6 +231,8 @@ https://templatemo.com/tm-570-chain-app-dev
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>

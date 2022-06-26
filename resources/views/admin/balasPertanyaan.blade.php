@@ -5,7 +5,7 @@
 <!-- Content Start -->
 <div class="content">
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+    <nav class="navbar navbar-expand sticky-top px-4 py-0"   style="background: linear-gradient(to bottom, #D2D2D2 0%, #ffffff)";>
         <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
             <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
         </a>
@@ -74,65 +74,34 @@
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
         @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success')}}
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
         @endif
-        <div class="bg-light text-center rounded p-4">
-            <h4 class="mb-0">Data Pembelajaran yang dapat diikuti</h4><br>
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <button type="button" class="btn btn-primary" >
-                    <a href="/kelolaPembelajaran/add">
-                        <i class="fa fa-plus-circle" style="color:white" aria-hidden="true">Tambah</i>
-                    </a>
-                </button>
+        <div class=" text-center rounded p-4" style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+            <div class="bg-light rounded p-4">
+                <h4>Pertanyaan Pengunjung</h4>
             </div>
-            <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-        <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
-            <th>Kategori</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>P001</td>
-            <td>Pembelajaran</td>
-            <td>Kategori</td>
-            <td>Jawaban</td>
-            <td>
-                <a href="#"><span class="fa fa-reply"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>P002</td>
-            <td>Medianto Saragih</td>
-            <td>Pertanyaan</td>
-            <td>Jawaban</td>
-            <td>
-                <a href="#"><span class="fa fa-reply"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
-            <th>Kategori</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
-        </tr>
-    </tfoot>
-</table><br>
-            </div>
+            <form role="form" action="/kelolaPembelajaran" method="post">
+                @csrf
+                <div class="text-left rounded p-4">
+                    <div>
+                        <label for="">Pertanyaan :</label>
+                        <p>
+                        <textarea name="" class="form-control" id="" cols="20" rows="5" placeholder="Pertanyaan Pengunjung"></textarea>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="">Jawaban :</label>
+                        <p>
+                        <textarea name="" class="form-control" id="" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <div class="text-right " style="margin-right:20px">
+                    <button class="btn btn-primary">Kirim</button>
+                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
+                </div>
         </div>
     </div>
 
@@ -141,7 +110,5 @@
         $('#example').DataTable();
     });
     </script>
-    <!-- Recent Sales End -->
 
-    <!-- Button trigger modal -->
     @endsection

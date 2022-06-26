@@ -5,7 +5,7 @@
 <!-- Content Start -->
 <div class="content">
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+    <nav class="navbar navbar-expand sticky-top px-4 py-0"   style="background: linear-gradient(to bottom, #D2D2D2 0%, #ffffff)";>
         <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
             <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
         </a>
@@ -80,11 +80,11 @@
             </div>
         @endif
         <div class="bg-light text-center rounded p-4">
-            <h4 class="mb-0">Data Pembelajaran yang dapat diikuti</h4><br>
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <h4 class="mb-0">Kelola Data Layanan Kepribadian</h4><br>
+            <div class="d-flex align-items-center mb-4" style="margin-left:1075px" >
                 <button type="button" class="btn btn-primary" >
-                    <a href="/kelolaPembelajaran/add">
-                        <i class="fa fa-plus-circle" style="color:white" aria-hidden="true">Tambah</i>
+                    <a href="{{url('createLayananKepribadian')}}">
+                        <i class="fa fa-plus-circle" style="color:white;" aria-hidden="true">Tambah</i>
                     </a>
                 </button>
             </div>
@@ -92,46 +92,43 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
-            <th>Kategori</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
+            <th>Kode Kepribadian</th>
+            <th>Jenis Kepribadian</th>
+            <th>Keterangan</th>
+            <th>Action</th>
 
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>P001</td>
-            <td>Pembelajaran</td>
-            <td>Kategori</td>
-            <td>Jawaban</td>
+            <td>K001</td>
+            <td>Dominant</td>
+            <td>Keterangan</td>
             <td>
-                <a href="#"><span class="fa fa-reply"></span></a>
+                <a href="#"><span class="fa fa-edit"></span></a>
                 <a href="#"><span class="fa fa-trash"></span></a>
             </td>
         </tr>
         <tr>
-            <td>P002</td>
-            <td>Medianto Saragih</td>
-            <td>Pertanyaan</td>
-            <td>Jawaban</td>
+            <td>K002</td>
+            <td>Dominant</td>
+            <td>Keterangan</td>
             <td>
-                <a href="#"><span class="fa fa-reply"></span></a>
+                <a href="#"><span class="fa fa-edit"></span></a>
                 <a href="#"><span class="fa fa-trash"></span></a>
             </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
-            <th>Kategori</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
+            <th>Kode Kepribadian</th>
+            <th>Jenis Kepribadian</th>
+            <th>Keterangan</th>
+            <th>Action</th>
         </tr>
     </tfoot>
 </table><br>
+
             </div>
         </div>
     </div>
@@ -141,7 +138,5 @@
         $('#example').DataTable();
     });
     </script>
-    <!-- Recent Sales End -->
 
-    <!-- Button trigger modal -->
     @endsection

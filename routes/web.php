@@ -76,6 +76,55 @@ Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 Route::get('/cetak-hasil', function () {
     return view('cetak-hasil');
 });
+Route::get('/profile_admin', function () {
+    return view('admin.profile_admin');
+});
 
+Route::get('/hasilIdentifikasi', function () {
+    return view('pengunjung.hasilIdentifikasi');
+});
+
+Route::get('/isiDataPribadi', function () {
+    return view('pengunjung.isiDataPribadi');
+});
+
+Route::get('/kepribadian', function () {
+    return view('pengunjung.kepribadian');
+});
 
 // Route::post('/register', [RegisterController::class, 'store'])->middleware('auth');
+
+Route::get('dashboard_pengunjung', function (){
+    return view('pengunjung.dashboard_pengunjung');
+});
+
+Route::get('datapribadi', function (){
+    return view('pengunjung.datapribadi ');
+});
+
+Route::get('identifikasi', function (){
+    return view('pengunjung.identifikasi ');
+});
+
+Route::get('faqimile', function (){
+    return view('pengunjung.faqimile ');
+});
+
+//Admin
+Route::get('layananKepribadian', function (){
+    return view('admin.layananKepribadian ');
+});
+Route::get('createLayananKepribadian', function (){
+    return view('admin.createLayananKepribadian ');
+});
+Route::get('updateLayananKepribadian', function (){
+    return view('admin.updateLayananKepribadian ');
+});
+
+Route::get('layananPertanyaan', function (){
+    return view('admin.layananPertanyaan ');
+});
+
+Route::get('balasPertanyaan', function (){
+    return view('admin.balasPertanyaan ');
+});
