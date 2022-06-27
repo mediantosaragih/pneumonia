@@ -31,7 +31,10 @@
                     <form role="form" action="/logout" method="post">
                         @csrf
                         <button class="submit btn btn-primary dropdown-item">
-                            <p style="color:red">Logout</p>
+                            <p style="color:blue"><a href="{{url('profile_admin')}}">Profil</a></p>
+                        </button>
+                        <button class="submit btn btn-primary dropdown-item">
+                            <p style="color:blue">Logout</p>
                         </button>
                     </form>
                 </div>
@@ -98,8 +101,7 @@
     <thead>
         <tr>
             <th>Kode Sifat</th>
-            <th>Nama </th>
-            <th>Kategori</th>
+            <th>Sifat</th>
             <th>Aksi</th>
 
         </tr>
@@ -108,7 +110,6 @@
         <tr>
             <td>K001</td>
             <td>Baik</td>
-            <td>B</td>
             <td>
                 <a href="#"><span class="fa fa-edit"></span></a>
                 <a href="#"><span class="fa fa-trash"></span></a>
@@ -117,7 +118,6 @@
         <tr>
             <td>K002</td>
             <td>Dominant</td>
-            <td>Keterangan</td>
             <td>
                 <a href="#"><span class="fa fa-edit"></span></a>
                 <a href="#"><span class="fa fa-trash"></span></a>
@@ -127,8 +127,7 @@
     <tfoot>
         <tr>
             <th>Kode Sifat</th>
-            <th>Nama </th>
-            <th>Kategori</th>
+            <th>Sifat</th>
             <th>Aksi</th>
         </tr>
     </tfoot>

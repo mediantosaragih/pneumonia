@@ -19,8 +19,8 @@
         <div class="login_box">
             <div class="left">
                 <div class="text">
-                    <h5>Sistem Identifikasi </h5>
-                    <h5>Kepribadian</h5>
+                    <h3>Sistem Identifikasi </h4>
+                    <h3>Kepribadian</h4>
                 </div>
             </div>
             <div class="right">
@@ -34,14 +34,14 @@
                         {{ session('loginError')}}
                     </div>
                 @endif
-                <div style="margin-top:-10px">
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
+                <div style="margin-top:-30px">
+                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;margin-top:20px;" aria-hidden="true"></i></a>
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
                     <img src="{{URL::asset('/img/avatar.png')}}" alt="profile Pic" height="200" width="200">
                         @csrf
-                        <h3>Login Admin</h3>
+                        <h3>Login</h3>
                         <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="EMAIL" autofocus value="{{old('email')}}" required>
                         @error('email')
                             <div class="invalid-feedback">
@@ -49,8 +49,8 @@
                             </div>
                         @enderror
                         <input type="password" id="password" name="password" placeholder="PASSWORD" required>
-                        <button class="submit">LOGIN</button>
-                        <!-- <a href="/register" class="submit2" style="margin-top:10px;width:70%;margin:left:100px;">REGISTER</a> -->
+                        <button class="submit" >LOGIN</button>
+                        <a href="/register" class="submit2" style="width:60%;margin:left:100px;margin-top:10px;text-align:center">REGISTER</a>
                     </form>
 
                 </div>
@@ -146,7 +146,7 @@
         box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
     }
     .submit2 {
-        padding: 10px 30px;
+        padding: 10px 0px;
         border-radius: 8px;
         display: block;
         margin: auto;
@@ -165,14 +165,14 @@
         text-align : right;
     }
     .left .text {
-        margin-right:5%;
+        margin-right:-320px;
         position: relative;
-        transform: translate(0%, 45%);
+        transform: translate(0%, 50%);
     }
-    .text h5 {
+    .text h3 {
         width: 100%;
         text-align: center;
-        font-size: 19px;
+        font-size: 22px;
         font-weight: 400;
     }
 

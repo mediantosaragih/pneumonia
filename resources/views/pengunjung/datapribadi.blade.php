@@ -67,12 +67,16 @@
     </tbody></table>
   </div>
       </div>
-      <div class="col-md-4">
-      <div class="foto">
-      <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:200px;">
+        <div class="col-md-4">
+            <div class="foto">
+            <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:180px; padding-bottom:10px">
+            <input type="file">
+            </div>
+        </div>
       </div>
-      </div>
-    </div>
+        <div style="text-align:center">
+            <button type="button" class="btn btn-secondary">Update</button>
+        </div>
   </div>
 </div>
 
@@ -82,7 +86,7 @@
         padding-bottom:10px
     }
     .foto{
-        margin-top:50px;
+        margin-top:30px;
     }
 </style>
 

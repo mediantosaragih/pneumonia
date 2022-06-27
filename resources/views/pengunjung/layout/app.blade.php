@@ -67,7 +67,18 @@
             <ul class="nav">
               <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="{{url('isiDataPribadi')}}">Identifikasi</a></li>
-              <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
+              <li>
+                <div class="dropdown" >
+                <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    Medianto Saragih
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{url('datapribadi')}}">Profile</a>
+                    <a class="dropdown-item" href="{{url('login')}}">Log Out</a>
+                </div>
+                </div>
+              </li>
             </ul>
             <!-- ***** Menu End ***** -->
           </nav>

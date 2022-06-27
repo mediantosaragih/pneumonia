@@ -133,3 +133,6 @@ Route::get('layananPertanyaan', function (){
 Route::get('balasPertanyaan', function (){
     return view('admin.balasPertanyaan ');
 });
+Route::get('kelolaIdentifikasi', function (){
+    return view('admin.kelolaIdentifikasi ');
+});

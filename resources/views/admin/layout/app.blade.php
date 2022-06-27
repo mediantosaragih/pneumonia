@@ -72,6 +72,8 @@
                 </div>
             </nav>
         </div>
+
+
         <!-- Sidebar End -->
 
         @yield('content')

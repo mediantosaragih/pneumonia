@@ -36,29 +36,16 @@
     </thead>
     <tbody>
         <tr>
-            <td>K001</td>
-            <td>Saling Membantu</td>
-            <td><input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/></td>
-        </tr>
-        <tr>
-            <td>K002</td>
-            <td>Saling Membantu</td>
-            <td><input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/></td>
-        </tr>
-        <tr>
-            <td>K003</td>
-            <td>Saling Membantu</td>
-            <td><input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/></td>
-        </tr>
-        <tr>
-            <td>K004</td>
-            <td>Saling Membantu</td>
-            <td><input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/></td>
-        </tr>
-        <tr>
             <td>K005</td>
             <td>Saling Membantu</td>
-            <td><input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/></td>
+            <td>
+                <input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/>1
+                <input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/>2
+                <input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/>3
+                <input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/>4
+                <input type="radio" name="nama_radio" value="isi_radio2" checked="checked"/>5
+            </td>
+
         </tr>
 
 
