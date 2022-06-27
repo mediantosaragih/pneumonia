@@ -9,6 +9,10 @@ use App\Http\Controllers\Admin\PembelajaranController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HistoryController;
 
+
+use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
+use App\Http\Controllers\Pengunjung\DataPribadiPengunjungController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,11 +68,17 @@ Route::post('/kelolaPembelajaran/update', [PembelajaranController::class, 'updat
 // Route::get('/kelolaPembelajaran', function () {
 //     return view('admin.kelolaPembelajaran');
 // });
-
-
-
 //History
 Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
+
+
+//Pengunjung
+Route::get('dashboard_pengunjung', [DashboardPengunjungController::class, 'index'])->middleware('auth');
+
+Route::get('/isiDataPribadi', function () {
+    return view('pengunjung.isiDataPribadi');
+});
+
 // Route::get('/history', function () {
 //     return view('admin.history');
 // });
@@ -94,13 +104,8 @@ Route::get('/kepribadian', function () {
 
 // Route::post('/register', [RegisterController::class, 'store'])->middleware('auth');
 
-Route::get('dashboard_pengunjung', function (){
-    return view('pengunjung.dashboard_pengunjung');
-});
 
-Route::get('datapribadi', function (){
-    return view('pengunjung.datapribadi ');
-});
+Route::get('datapribadi', [DataPribadiPengunjungController::class, 'index'])->middleware('auth');
 
 Route::get('identifikasi', function (){
     return view('pengunjung.identifikasi ');

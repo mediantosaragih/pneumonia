@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -18,11 +19,15 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        $user = User::where('email',$request->email)->first();
         // dd($request->all());
         if(Auth::attempt($credential)){
             $request->session()->regenerate();
-
-            return redirect()->intended('/dashboard');
+            if($user->role == 1){
+                return redirect()->intended('/dashboard_pengunjung');
+            }else if($user->role == 0){
+                return redirect()->intended('/dashboard');
+            }
         }
 
         return back()->with('loginError', 'Login Failed!');

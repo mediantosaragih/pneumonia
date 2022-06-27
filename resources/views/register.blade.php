@@ -10,6 +10,7 @@
 						  <input type="text" name="username" class="@error('username') is-invalid @enderror" id="username"placeholder="USERNAME" required>
 						  <input type="text" name="email" class="@error('email') is-invalid @enderror"id="email"placeholder="EMAIL" required>
               <input type="password" name="password" id="password" placeholder="PASSWORD" class="@error('password') is-invalid @enderror"required>
+              <input type="hidden" name="role" id="role" value="1">
 						<button class="submit">REGISTER</button>
 					</form>
 				</div>

@@ -73,8 +73,8 @@
 
     }
     .login_box {
-        width: 1050px;
-        height: 600px;
+        width: 65%;
+        height: 80%;
         position: fixed;
         top: 50%;
         left: 50%;
