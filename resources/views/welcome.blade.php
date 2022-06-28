@@ -50,7 +50,7 @@
         <div class="col-lg-4">
           <div class="service-item">
           <i class="fa fa-cogs fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">App Maintanance</h4>
+            <h4 style="padding:10px 20px 10px 70px">App Maintanance</h4>
           </div>
           </a>
         </div>
@@ -58,7 +58,7 @@
             <a href="{{url('kepribadian')}}">
           <div class="service-item third-service">
           <i class="fa fa-book fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">Kepribadian</h4>
+            <h4 style="padding:10px 20px 10px 80px">Kepribadian</h4>
           </div>
           </a>
         </div>
@@ -66,7 +66,7 @@
             <a href="{{url('faqimile')}}">
           <div class="service-item fourth-service">
           <i class="fa fa-cog fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">FAQ</h4>
+            <h4 style="padding:10px 20px 10px 120px">FAQ</h4>
           </div>
           </a>
         </div>

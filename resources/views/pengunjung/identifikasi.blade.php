@@ -18,14 +18,63 @@
         <div style=" text-align:center; margin-top:50px;" class="item-align:center">
             <div class="table-responsive " style="padding:100px; background:rgba(500,500,500,1); border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <div>
-                    <h2 style="padding:10px;margin-top:-80px">Jawablah Pertanyaan Berikut</h2>
+                    <h2 style="padding:10px;margin-top:-80px">Test Kepribadian</h2>
                 </div><br>
-                <div>
 
-                </div>
                 <form role="form" action="/check" method="post">
+                <div class="row">
+                    <div class="col-lg-4">
+                    <div class="peringatan-item third-service">
+                    <img src="https://static.neris-assets.com/images/test-header-1.svg" style="width:50px">
+                        <h4 style="padding:10px 20px 10px 10px">Kerjakan dengan sebaik mungkin</h4>
+                    </div>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="peringatan-item third-service">
+                    <img src="https://static.neris-assets.com/images/test-header-2.svg" style="width:50px">
+                        <h4 style="padding:10px -5px 10px -10px">Jawab dengan jujur,bahkan jika Anda tidak suka jawabannya.</h4>
+                    </div>
+                    </div>
+                    <div class="col-lg-4">
+                    <div class="peringatan-item fourth-service">
+                    <img src="https://static.neris-assets.com/images/test-header-3.svg" style="width:50px">
+                        <h4 style="padding:10px 0px 10px 0px">Cobalah untuk tidak memilih jawaban "netral".</h4>
+                    </div>
+                    </div>
+                </div><br>
+                <hr>
+                <div>
+                    <h4>Anda merasa kesulitan memperkenalkan diri ke orang lain.</h4>
+                    <div class="row " style="margin-left:150px;">
+                        <div class="col-md-3">
+                            <label for="">Saya Setuju</label>
+                        </div>
+                        <div class="col-md-6" style="margin-left:-80px">
+                            <span class="sortOptions">
+                                <span style="padding:10px">
+                                    <input type="radio" style="width: 2.5em; height: 2.5em; margin-left:30px" name="answerSortList" value="credate"/>
+                                </span>
+                                <span style="padding:10px">
+                                    <input type="radio" style="width: 2em; height: 2.5em;" name="answerSortList" value="lastact"/>
+                                </span>
+                                <span style="padding:10px">
+                                    <input type="radio" style="width: 1.5em; height: 2.5em;" name="answerSortList" value="upvotes"/>
+                                <span style="padding:10px">
+                                    <input type="radio" style="width: 2em; height: 2.5em;" name="answerSortList" value="lastact"/>
+                                </span>
+                                <span style="padding:10px">
+                                    <input type="radio" style="width: 2.5em; height: 2.5em;" name="answerSortList" value="credate"/>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="col-md-3" style="margin-left:-80px">
+                            <label for="">Saya tidak setuju</label>
+                        </div>
 
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    </div>
+                </div>
+                <hr>
+                <!-- <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
             <th>Kode Sifat</th>
@@ -57,7 +106,7 @@
             <th>Jawaban</th>
         </tr>
     </tfoot>
-</table><br>
+</table><br> -->
                     <div class="" style="text-align:right" >
                         <!-- <button type="button" class="submit btn btn-primary" data-bs-toggle="modal" style="margin-left:990px"
                             data-bs-target="#exampleModal"> -->

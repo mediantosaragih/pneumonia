@@ -79,7 +79,7 @@
         @yield('content')
 
 <footer id="newsletter">
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row"  >
         <div class="col-lg-8 offset-lg-2"  >
           <div class="section-heading" style="margin-top:-200px;">
