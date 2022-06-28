@@ -29,17 +29,17 @@
                         {{ session('success')}}
                     </div>
                 @endif
+                <div >
+                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;" aria-hidden="true"></i></a>
                 @if(session()->has('loginError'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ session('loginError')}}
                     </div>
                 @endif
-                <div style="margin-top:-30px">
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;margin-top:20px;" aria-hidden="true"></i></a>
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
-                    <img src="{{URL::asset('/img/avatar.png')}}" alt="profile Pic" height="200" width="200">
+                    <img src="{{URL::asset('/img/avatar.png')}}" alt="profile Pic" height="30%" width="30%">
                         @csrf
                         <h3>Login</h3>
                         <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="EMAIL" autofocus value="{{old('email')}}" required>
@@ -50,7 +50,8 @@
                         @enderror
                         <input type="password" id="password" name="password" placeholder="PASSWORD" required>
                         <button class="submit" >LOGIN</button>
-                        <a href="/register" class="submit2" style="width:60%;margin:left:100px;margin-top:10px;text-align:center">REGISTER</a>
+                        <p class="">Belum mempunyai akun? <a href="{{url('register')}}" class="fw-bold text-body"><u>Daftar disini</u></a></p>
+                        <!-- <a href="/register" class="submit2" style="width:60%;margin:left:100px;margin-top:10px;text-align:center">REGISTER</a> -->
                     </form>
 
                 </div>
@@ -74,7 +75,7 @@
     }
     .login_box {
         width: 65%;
-        height: 80%;
+        height: 90%;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -86,12 +87,12 @@
         overflow: hidden;
     }
     .login_box .right {
-        width: 41%;
+        width: 50%;
         height: 100%;
         padding: 25px 25px;
     }
     .login_box .left {
-        width: 59%;
+        width: 60%;
         height: 100%
     }
     .right .top_link a {
@@ -99,7 +100,7 @@
         font-weight: 400;
     }
     .right .top_link {
-        height: 20px
+        height: 20%
     }
     .right .contact {
         display: flex;
@@ -133,11 +134,11 @@
     }
     .submit {
         border: none;
-        padding: 10px 40px;
+        padding: 5% 10%;
         border-radius: 8px;
         display: block;
         margin: auto;
-        margin-top: 15%;
+        margin-top: 5%;
         background: #268EEE;
         color: #fff;
         font-weight: bold;
@@ -145,7 +146,7 @@
         -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
         box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
     }
-    .submit2 {
+    /* .submit2 {
         padding: 10px 0px;
         border-radius: 8px;
         display: block;
@@ -157,7 +158,7 @@
         -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
         -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
         box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
-    }
+    } */
     .left {
         background: url(img/wal.jpg);
         margin:20px 20px 20px 20px;

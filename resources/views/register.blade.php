@@ -40,7 +40,8 @@
                 <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;padding-bottom:10px" aria-hidden="true"></i></a>
                 </div>
                 <div class="contact">
-                    <form action="/login" method="post">
+                    <form role="form" action="/register" method="post">
+                        @csrf
                         <h3>Daftar Akun</h3>
                         <input type="username" id="username" class="form-control " name="username" placeholder="Nama" required>
                         <input type="date" id="tanggal_lahir" class="form-control " name="tanggal_lahir" placeholder="Tanggal Lahir" required>
@@ -49,9 +50,9 @@
                         <input type="text" id="no_telp" class="form-control " name="no_telp" placeholder="No Telepon" required>
                         <input type="password" id="password" class="form-control " name="password" placeholder="PASSWORD" required>
                         <input type="hidden" id="role" class="form-control " name="role" value="1">
-                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{url('login')}}" class="fw-bold text-body"><u>Login here</u></a></p>
+                        <button class="submit" >LOGIN</button>
+                        <p class="text-center text-muted mt-5 mb-0">Sudah mempunyai akun? <a href="{{url('login')}}" class="fw-bold text-body"><u>Login disini</u></a></p>
                     </form>
-
                 </div>
             </div>
         </div>
