@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\LayananKepribadianController;
 use App\Http\Controllers\Admin\KomentarController;
+use App\Http\Controllers\Pengunjung\FaqimileController;
 
 
 use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
@@ -111,9 +112,9 @@ Route::get('identifikasi', function (){
     return view('pengunjung.identifikasi ');
 });
 
-Route::get('faqimile', function (){
-    return view('pengunjung.faqimile ');
-});
+Route::get('/faqimile', [FaqimileController::class, 'index'])->middleware('auth');
+Route::post('/faqimile', [FaqimileController::class, 'create'])->middleware('auth');
+    
 
 //Layanan Kepribadian
 Route::get('/layananKepribadian',[LayananKepribadianController::class, 'index'])->middleware('auth');

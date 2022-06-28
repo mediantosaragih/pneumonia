@@ -16,7 +16,7 @@ class CreateBalasansTable extends Migration
         Schema::create('balasans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('komentar_id')->nullable();
-            $table->text('balasan');
+            $table->text('balasan')->nullable();
             $table->foreign('komentar_id')->references('id')->on('komentars')->onDelete('cascade');
             $table->timestamps();
         });
