@@ -65,8 +65,8 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="{{url('isiDataPribadi')}}">Identifikasi</a></li>
+              <li class="scroll-to-section"><a href="{{url('dashboard_pengunjung')}}" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li>
               <li>
                 <div class="dropdown" >
                 <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
@@ -74,8 +74,13 @@
                     Medianto Saragih
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{{url('datapribadi')}}">Profile</a>
-                    <a class="dropdown-item" href="{{url('login')}}">Log Out</a>
+                    <a class="dropdown-item" href="{{url('datapribadi')}}">&nbsp;Profile</a>
+                    <form role="form" action="/logout" method="post">
+                      @csrf
+                      <button class=" dropdown-item">
+                          Logout
+                      </button>
+                    </form>
                 </div>
                 </div>
               </li>

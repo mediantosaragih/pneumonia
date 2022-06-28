@@ -91,19 +91,19 @@
                     <div>
                         <label for="">Pertanyaan :</label>
                         <p>
-                        <textarea name="" class="form-control" id="" cols="20" rows="5" placeholder="Pertanyaan Pengunjung"></textarea>
+                        <textarea name="" class="form-control" id="" cols="20" rows="5" value="" disabled>{{$komentars->komentar}}</textarea>
                         </p>
                     </div>
                     <div>
                         <label for="">Jawaban :</label>
                         <p>
-                        <textarea name="" class="form-control" id="" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
+                        <textarea name="" class="form-control" id="balasan" name="balasan" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
                         </p>
                     </div>
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <button class="btn btn-primary">Kirim</button>
-                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
+                    <a href="/layananPertanyaan" class="btn btn-danger">Cancel</a>
                 </div>
         </div>
     </div>

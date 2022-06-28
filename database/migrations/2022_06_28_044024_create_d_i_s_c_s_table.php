@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKepribadiansTable extends Migration
+class CreateDISCSTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateKepribadiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kepribadians', function (Blueprint $table) {
+        Schema::create('d_i_s_c_s', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('kode');
-            $table->enum('kategori',['Dominance','Influence','Steadiness','Compliance']);
+            $table->enum('jenis_kepribadian',['Dominance','Influence','Steadiness','Compliance']);
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateKepribadiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kepribadians');
+        Schema::dropIfExists('d_i_s_c_s');
     }
 }

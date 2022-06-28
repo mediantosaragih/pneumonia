@@ -102,9 +102,10 @@
                             <label for="kategori">Pilih Kategori</label>
                             <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option value="Visual">Visual</option>
-                                <option value="Auditorial">Auditorial</option>
-                                <option value="Kinestetik">Kinestetik</option>
+                                <option value="Dominance">Dominance</option>
+                                <option value="Influence">Influence</option>
+                                <option value="Steadiness">Steadiness</option>
+                                <option value="Compliance">Compliance</option>
                             </select>
                         </p>
                     </div>

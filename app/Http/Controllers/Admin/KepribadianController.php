@@ -66,13 +66,15 @@ class KepribadianController extends Controller
             'name' => 'required',
             'kategori' => 'required'
         ]);
+
+        dd($request->all());
         $kepribadian->update($request->all());
 
         if ($kepribadian) {
             return redirect()
                 ->intended('/kelolaKepribadian')
                 ->with([
-                    'success' => 'Sifat kepribadian baru ditambahkan'
+                    'success' => 'Sifat kepribadian diupdate'
                 ]);
         } else {
             return redirect()

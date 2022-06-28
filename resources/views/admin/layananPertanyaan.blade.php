@@ -88,7 +88,6 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Kode Pertanyaan</th>
             <th>Nama</th>
             <th>Pertanyaan</th>
             <th>Jawaban</th>
@@ -97,36 +96,20 @@
         </tr>
     </thead>
     <tbody>
+        @forelse($komentars as $komentar)
         <tr>
-            <td>P001</td>
-            <td>Medianto Saragih</td>
-            <td>Pertanyaan</td>
-            <td>Jawaban</td>
+            <td>{{$komentar->user->username}}</td>
+            <td>{{$komentar->komentar}}</td>
             <td>
-                <a href="{{url('balasPertanyaan')}}"><span class="fa fa-reply"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
+                <a href="/balasPertanyaan/{{$komentar->id}}"><span class="fa fa-reply"></span></a>
+                <!-- <a href="#"><span class="fa fa-trash"></span></a> -->
             </td>
         </tr>
+        @empty
         <tr>
-            <td>P002</td>
-            <td>Medianto Saragih</td>
-            <td>Pertanyaan</td>
-            <td>Jawaban</td>
-            <td>
-                <a href="#"><span class="fa fa-reply"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
-            </td>
+            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
         </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>Kode Pertanyaan</th>
-            <th>Nama</th>
-            <th>Pertanyaan</th>
-            <th>Jawaban</th>
-            <th>Action</th>
-        </tr>
-    </tfoot>
+        @endforelse
 </table><br>
 
             </div>

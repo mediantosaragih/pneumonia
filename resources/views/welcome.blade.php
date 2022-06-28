@@ -55,7 +55,7 @@
           </a>
         </div>
         <div class="col-lg-4" type="button" data-bs-toggle="modal" data-bs-target="#modalFaq">
-            <a href="{{url('kepribadian')}}">
+            <a href="{{url('layananKepribadians')}}">
           <div class="service-item third-service">
           <i class="fa fa-book fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
             <h4 style="padding:10px 20px 10px 80px">Kepribadian</h4>
@@ -63,7 +63,7 @@
           </a>
         </div>
         <div class="col-lg-4">
-            <a href="{{url('faqimile')}}">
+            <a href="{{url('login')}}">
           <div class="service-item fourth-service">
           <i class="fa fa-cog fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
             <h4 style="padding:10px 20px 10px 120px">FAQ</h4>

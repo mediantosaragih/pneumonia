@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKepribadiansTable extends Migration
+class CreateKomentarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateKepribadiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kepribadians', function (Blueprint $table) {
+        Schema::create('komentars', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('kode');
-            $table->enum('kategori',['Dominance','Influence','Steadiness','Compliance']);
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->text('komentar');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateKepribadiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kepribadians');
+        Schema::dropIfExists('komentars');
     }
 }
