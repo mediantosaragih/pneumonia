@@ -107,40 +107,32 @@
         </tr>
     </thead>
     <tbody>
+        @forelse($kepribadians as $kepribadian)
         <tr>
-            <td>K001</td>
-            <td>Baik</td>
+            <td>{{$kepribadian->kode}}</td>
+            <td>{{$kepribadian->name}}</td>
             <td>
-                <a href="#"><span class="fa fa-edit"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
+                <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                </a>
+                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
+                    <!-- @method('delete') -->
+                    @csrf
+                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                </form>
             </td>
         </tr>
+        @empty
         <tr>
-            <td>K002</td>
-            <td>Dominant</td>
-            <td>
-                <a href="#"><span class="fa fa-edit"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
-            </td>
+            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
         </tr>
+        @endforelse
     </tbody>
-    <tfoot>
-        <tr>
-            <th>Kode Sifat</th>
-            <th>Sifat</th>
-            <th>Aksi</th>
-        </tr>
-    </tfoot>
 </table><br>
             </div>
         </div>
     </div>
 
-    <script>
-        $(document).ready(function () {
-        $('#example').DataTable();
-    });
-    </script>
     <!-- Recent Sales End -->
 
     @endsection

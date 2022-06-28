@@ -111,10 +111,10 @@
                         <label for="kategori">Pilih Kategori</label>
                         <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
                             <option value="">-- Pilih --</option>
-                            <option value="Koleris" {{($kepribadian->kategori === 'Koleris') ? 'Selected' : ''}}>Koleris</option>
-                            <option value="Sanguinis" {{($kepribadian->kategori === 'Sanguinis') ? 'Selected' : ''}}>Sanguinis</option>
-                            <option value="Melankolis" {{($kepribadian->kategori === 'Melankolis') ? 'Selected' : ''}}>Melankolis</option>
-                            <option value="Phlegmatis" {{($kepribadian->kategori === 'Phlegmatis') ? 'Selected' : ''}}>Phlegmatis</option>
+                            <option value="Dominance" {{($kepribadian->kategori === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
+                            <option value="Influence" {{($kepribadian->kategori === 'Influence') ? 'Selected' : ''}}>Influence</option>
+                            <option value="Steadiness" {{($kepribadian->kategori === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
+                            <option value="Compliance" {{($kepribadian->kategori === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
                         </select>
                     </p>
                 </div>

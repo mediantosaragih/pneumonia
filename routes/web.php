@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\KepribadianController;
 use App\Http\Controllers\Admin\PembelajaranController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\Admin\LayananKepribadianController;
+use App\Http\Controllers\Admin\KomentarController;
 
 
 use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
@@ -54,9 +56,7 @@ Route::get('/createKepribadian', [KepribadianController::class, 'indexCreate'])-
 Route::post('/kelolaKepribadian', [KepribadianController::class, 'create'])->middleware('auth');
 Route::get('/kelolaKepribadian/edit/{id}', [KepribadianController::class, 'edit'])->middleware('auth');
 Route::post('/kelolaKepribadian/update', [KepribadianController::class, 'update'])->middleware('auth');
-// Route::get('/updateIdentifikasi', function () {
-//     return view('admin.updateIdentifikasi');
-// });
+
 
 //Tipe Belajar
 Route::get('/kelolaPembelajaran', [PembelajaranController::class, 'index'])->name('kepribadian')->middleware('auth');
@@ -115,24 +115,22 @@ Route::get('faqimile', function (){
     return view('pengunjung.faqimile ');
 });
 
-//Admin
-Route::get('layananKepribadian', function (){
-    return view('admin.layananKepribadian ');
-});
-Route::get('createLayananKepribadian', function (){
-    return view('admin.createLayananKepribadian ');
-});
-Route::get('updateLayananKepribadian', function (){
-    return view('admin.updateLayananKepribadian ');
-});
+//Layanan Kepribadian
+Route::get('/layananKepribadian',[LayananKepribadianController::class, 'index'])->middleware('auth');
+Route::get('/createLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
+Route::get('/updateLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
+Route::get('/createLayananKepribadian/add', [LayananKepribadianController::class, 'create'])->middleware('auth');
+ 
 
-Route::get('layananPertanyaan', function (){
-    return view('admin.layananPertanyaan ');
-});
+//Komentar
+Route::get('/layananPertanyaan', [KomentarController::class, 'index'])->middleware('auth');
 
-Route::get('balasPertanyaan', function (){
-    return view('admin.balasPertanyaan ');
-});
+Route::get('/balasPertanyaan/{user_id}', [KomentarController::class, 'balas'])->middleware('auth');
+    
 Route::get('kelolaIdentifikasi', function (){
     return view('admin.kelolaIdentifikasi ');
+});
+
+Route::get('layananKepribadians', function (){
+    return view('layananKepribadians ');
 });

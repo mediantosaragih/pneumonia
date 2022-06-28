@@ -32,7 +32,6 @@
     </div>
   </div>
 
-<!--
   <div id="services" class="services section">
     <div class="container">
       <div class="row">
@@ -43,31 +42,35 @@
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- <div class="container">
+    </div>
+    <div class="container">
       <div class="row">
-        <a href="">
+        <a href="{{url('login')}}">
         <div class="col-lg-4">
           <div class="service-item">
           <i class="fa fa-cogs fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">App Maintanance</h4>
+            <h4 style="padding:10px 20px 10px 80px">App Maintanance</h4>
           </div>
           </a>
         </div>
         <div class="col-lg-4" type="button" data-bs-toggle="modal" data-bs-target="#modalFaq">
+            <a href="{{url('kepribadian')}}">
           <div class="service-item third-service">
           <i class="fa fa-book fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">Kepribadian</h4>
+            <h4 style="padding:10px 20px 10px 90px">Kepribadian</h4>
           </div>
+          </a>
         </div>
         <div class="col-lg-4">
+            <a href="{{url('faqimile')}}">
           <div class="service-item fourth-service">
           <i class="fa fa-cog fa-3x" aria-hidden="true" style="padding-left:40%" ></i>
-            <h4 style="padding:10px 20px 10px 100px">FAQ</h4>
+            <h4 style="padding:10px 20px 10px 120px">FAQ</h4>
           </div>
+          </a>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 
   @endsection

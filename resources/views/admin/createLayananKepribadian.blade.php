@@ -90,10 +90,6 @@
                 @csrf
                 <div class="text-left rounded p-4">
                     <p>
-                        <label for="">Kode Kepribadian</label>
-                        <input type="text" name="kode_kepribadian" id="kode_belajar" class="form-control" style="width:100%" required>
-                    </p>
-                    <p>
                         <label for="kategori">Jenis Kepribadian</label>
                         <input type="text" name="jenis_kepribadian" id="jenis_belajar" class="form-control" style="width:100%" required>
                     </p>
