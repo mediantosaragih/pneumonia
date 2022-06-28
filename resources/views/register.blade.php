@@ -43,11 +43,12 @@
                     <form action="/login" method="post">
                         <h3>Daftar Akun</h3>
                         <input type="username" id="username" class="form-control " name="username" placeholder="Nama" required>
-                        <input type="date" id="date" class="form-control " name="date" placeholder="Tanggal Lahir" required>
-                        <input type="text" id="text" class="form-control " name="password" placeholder="Pekerjaan" required>
-                        <input type="text" id="email" class="form-control " name="password" placeholder="Email" required>
-                        <input type="text" id="text" class="form-control " name="password" placeholder="No Telepon" required>
-                        <input type="text" id="password" class="form-control " name="password" placeholder="PASSWORD" required>
+                        <input type="date" id="tanggal_lahir" class="form-control " name="tanggal_lahir" placeholder="Tanggal Lahir" required>
+                        <input type="text" id="pekerjaan" class="form-control " name="pekerjaan" placeholder="Pekerjaan" required>
+                        <input type="text" id="email" class="form-control " name="email" placeholder="Email" required>
+                        <input type="text" id="no_telp" class="form-control " name="no_telp" placeholder="No Telepon" required>
+                        <input type="password" id="password" class="form-control " name="password" placeholder="PASSWORD" required>
+                        <input type="hidden" id="role" class="form-control " name="role" value="1">
                         <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{url('login')}}" class="fw-bold text-body"><u>Login here</u></a></p>
                     </form>
 

@@ -13,9 +13,13 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
+        dd($request->all());
         $validate = $request->validate([
             'username' => "required",
-            'email' => "required|email:dns|unique:users",
+            'tanggal_lahir' => "required",
+            'pekerjaan' => "required",
+            'email' => "required",
+            'no_telp' => "required",
             'password' => "required|min:6|max:255"
         ]);
 
@@ -25,7 +29,16 @@ class RegisterController extends Controller
                         ->withInput();
         }
         $validate['password'] = bcrypt($validate['password']);
-        User::create($validate);
+        $user =User::create($validate);
+
+        $pengunjung = Pengunjung::create([
+            'user_id' => $user->id,
+            'nama' => $request->username,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'pekerjaan' => $request->pekerjaan,
+            'email' => $request->email,
+            'no_telp' => $request->no_telp,
+        ]);
 
         $request->session()->flash('success', 'Registrasi Succsess! please login');
         return redirect('/login');

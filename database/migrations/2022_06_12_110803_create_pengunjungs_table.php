@@ -15,9 +15,13 @@ class CreatePengunjungsTable extends Migration
     {
         Schema::create('pengunjungs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('nama');
-            $table->string('alamat');
+            $table->date('tanggal_lahir');
+            $table->string('pekerjaan');
+            $table->string('email');
             $table->string('no_telp');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

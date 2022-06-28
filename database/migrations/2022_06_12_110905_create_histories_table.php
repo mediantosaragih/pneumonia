@@ -15,11 +15,11 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pengunjung_id')->nullable();
-            $table->unsignedBigInteger('kepribadian_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('kepribadian_id');
+            $table->string('poin');
             $table->dateTime('history_date');
-            $table->foreign('pengunjung_id')->references('id')->on('pengunjungs')->onDelete('cascade');
-            $table->foreign('kepribadian_id')->references('id')->on('kepribadians')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
