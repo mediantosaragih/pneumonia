@@ -90,7 +90,6 @@
         <tr>
             <th>Nama</th>
             <th>Pertanyaan</th>
-            <th>Jawaban</th>
             <th>Action</th>
 
         </tr>

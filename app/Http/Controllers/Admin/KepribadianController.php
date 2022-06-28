@@ -67,7 +67,6 @@ class KepribadianController extends Controller
             'kategori' => 'required'
         ]);
 
-        dd($request->all());
         $kepribadian->update($request->all());
 
         if ($kepribadian) {
