@@ -65,10 +65,11 @@
                 <div class="navbar-nav " style="width:300px;height:100%;margin-top:50px;">
                     <a href="{{url('dashboard')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i></i>Dashboard</a>
                     <a href="{{url('kelolaKepribadian')}}" class="nav-item nav-link"><i class="fa fa-search me-2"></i>Identifikasi</a>
-                    <a href="{{url('kelolaPembelajaran')}}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Hasil Identifikasi</a>
                     <a href="{{url('layananKepribadian')}}" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>Kepribadian</a>
+                    <a href="{{url('kelolaPembelajaran')}}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Karir</a>
+                    <a href="{{url('history')}}" class="nav-item nav-link"><i class="fa fa-history me-2"></i>Hasil Pengecekan</a>
                     <a href="{{url('layananPertanyaan')}}" class="nav-item nav-link"><i class="fa fa-question me-2"></i>Pertanyaan</a>
-                    <a href="{{url('history')}}" class="nav-item nav-link"><i class="fa fa-history me-2"></i>History </a>
+
                 </div>
             </nav>
         </div>

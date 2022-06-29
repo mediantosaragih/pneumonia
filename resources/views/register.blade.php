@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Sistem Diagnosa Pneumonia</title>
+    <title>Sistem Identifikasi Kepribadian</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
@@ -44,13 +44,14 @@
                         @csrf
                         <h3>Daftar Akun</h3>
                         <input type="username" id="username" class="form-control " name="username" placeholder="Nama" required>
-                        <input type="date" id="tanggal_lahir" class="form-control " name="tanggal_lahir" placeholder="Tanggal Lahir" required>
+                        <!-- <input type="date" id="tanggal_lahir" class="form-control " name="tanggal_lahir" placeholder="Tanggal Lahir" required> -->
                         <input type="text" id="pekerjaan" class="form-control " name="pekerjaan" placeholder="Pekerjaan" required>
                         <input type="text" id="email" class="form-control " name="email" placeholder="Email" required>
                         <input type="text" id="no_telp" class="form-control " name="no_telp" placeholder="No Telepon" required>
-                        <input type="password" id="password" class="form-control " name="password" placeholder="PASSWORD" required>
+                        <input type="password" id="password" class="form-control " name="password" placeholder="Password" required>
+                        <input type="password" id="KonfirmasiPassword" class="form-control " name="KonfirmasiPassword" placeholder="Konfirmasi Password" required>
                         <input type="hidden" id="role" class="form-control " name="role" value="1">
-                        <button class="submit" >LOGIN</button>
+                        <button class="submit" >Register</button>
                         <p class="text-center text-muted mt-5 mb-0">Sudah mempunyai akun? <a href="{{url('login')}}" class="fw-bold text-body"><u>Login disini</u></a></p>
                     </form>
                 </div>
@@ -68,13 +69,13 @@
     }
     .login {
         height: 100%;
-        width: 100%;
+        width: 90%;
         /* background: radial-gradient(#653d84, #332042); */
 
     }
     .login_box {
-        width: 65%;
-        height: 80%;
+        width: 75%;
+        height: 100%;
         position: fixed;
         top: 50%;
         left: 50%;

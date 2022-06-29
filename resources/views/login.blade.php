@@ -19,8 +19,8 @@
         <div class="login_box">
             <div class="left">
                 <div class="text">
-                    <h3>Sistem Identifikasi </h4>
-                    <h3>Kepribadian</h4>
+                    <h3>Sistem Identifikasi </h3>
+                    <h3>Kepribadian</h3>
                 </div>
             </div>
             <div class="right">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="contact">
                     <form action="/login" method="post">
-                    <img src="{{URL::asset('/img/avatar.png')}}" alt="profile Pic" height="30%" width="30%">
+                    <img class="w-100 position-relative " src="assets/images/logggo.png">
                         @csrf
                         <h3>Login</h3>
                         <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="EMAIL" autofocus value="{{old('email')}}" required>
@@ -50,7 +50,7 @@
                         @enderror
                         <input type="password" id="password" name="password" placeholder="PASSWORD" required>
                         <button class="submit" >LOGIN</button>
-                        <p class="">Belum mempunyai akun? <a href="{{url('register')}}" class="fw-bold text-body"><u>Daftar disini</u></a></p>
+                        <p class="" style="text-align:right;">Belum mempunyai akun? <a href="{{url('register')}}" class="fw-bold text-body"><u>Daftar disini</u></a></p>
                         <!-- <a href="/register" class="submit2" style="width:60%;margin:left:100px;margin-top:10px;text-align:center">REGISTER</a> -->
                     </form>
 
@@ -65,7 +65,7 @@
 <style>
     img {
         width: 100%;
-        padding:10px
+        padding:10px    
     }
     .login {
         height: 100%;
@@ -74,7 +74,7 @@
 
     }
     .login_box {
-        width: 65%;
+        width: 85%;
         height: 90%;
         position: fixed;
         top: 50%;

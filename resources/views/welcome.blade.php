@@ -33,18 +33,17 @@
   </div>
 
 
-  <div id="services" class="services section">
+  <!-- <div id="services" class="services section">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h3 style=" color:#424D56">Layanan</h3>
-            <img src="assets/images/heading-line-dec.png" alt="">
           </div>
         </div>
       </div>
-    </div>
-    <div class="container">
+    </div> -->
+    <!-- <div class="container">
       <div class="row">
         <a href="{{url('login')}}">
         <div class="col-lg-4">
@@ -72,7 +71,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   @endsection
 

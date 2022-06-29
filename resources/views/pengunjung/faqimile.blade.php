@@ -17,7 +17,7 @@
 	<hr>
 	<h4 class="mb-3">Komentar :</h4>
 	@forelse($komentars as $komentar)
-		<!-- <p>{{$komentar->balasan}}</p> -->
+		<p>{{$komentar->komentar}}</p>
 			@if($komentar->balasan != NULL)
 				<center><p>{{$komentar->komentar}}</p></center>
 				<p>{{$komentar->balasan}}</p>

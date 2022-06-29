@@ -1586,14 +1586,12 @@ footer {
   background-color:#145285;
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 100px;
-  padding-top: 300px;
+ 
+  margin-top: 10px;
+  padding-top: 100px;
 }
 
-footer .section-heading {
-  margin-bottom: 45px;
-}
+ 
 
 footer .section-heading h4 {
   line-height: 45px;

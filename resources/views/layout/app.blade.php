@@ -65,9 +65,9 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li>
+              <!-- <li class="scroll-to-section"><a href="{{url('welcome')}}" class="active">Home</a></li> -->
               <!-- <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li> -->
-              <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login Now</a></div></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="{{url('login')}}"><i class="fa fa-sign-in-alt"></i> Login  </a></div></li>
             </ul>
             <!-- ***** Menu End ***** -->
           </nav>
@@ -82,14 +82,14 @@
     <div class="container-fluid" >
       <div class="row"  >
         <div class="col-lg-8 offset-lg-2"  >
-          <div class="section-heading" style="margin-top:-200px;">
+          <div class="section-heading" >
             <h4 >Sistem Indentifikasi Kepribadian</h4>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <div class="copyright-text" style="margin-top:-200px">
+          <div class="copyright-text" >
             <p>Copyright © itdel </p>
           </div>
         </div>

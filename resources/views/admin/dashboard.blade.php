@@ -12,9 +12,6 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -81,13 +78,13 @@
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
                                     <h2 class="font-weight-bolder">Selamat Datang di </h2><br>
-                                    <h2 >Sistem Identifikasi Kepribadian dengan Metode Forward Chaining</h2>
+                                    <h2 >Sistem Identifikasi Kepribadian</h2>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                             <div class="border-radius-lg h-100">
                                 <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                                <img class="w-100 position-relative " src="assets/images/wal.jpg" style="height:300px;">
+                                <img class="w-100 position-relative " src="assets/images/wal.jpg" style="height:350px;">
                                 </div>
                             </div>
                             </div>
@@ -96,26 +93,4 @@
                 </div>
             </div>
 
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <img src="assets/images/service-icon-04.png" class="h-20 w-20 top-0 " alt="waves" style="height:50px;padding:5px;">
-                            <h5 class="" style="margin-top:10px; margin-left: auto;margin-right: auto;">Kelompok 9</h5>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <img src="assets/images/service-icon-03.png" class="h-20 w-20 top-0 " alt="waves" style="height:50px;padding:5px;">
-                            <h5 class="" style="margin-top:10px; margin-left: auto;margin-right: auto;">Kepribadian</h5>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <img src="../img/admin.png" class="h-20 w-20 top-0 " alt="waves" style="height:50px;padding:5px;">
-                            <h5 class="" style="margin-top:10px; margin-left: auto;margin-right: auto;">Faq</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
             @endsection
