@@ -30,7 +30,7 @@
                     </div>
                 @endif
                 <div >
-                <a id="modal_trigger"  href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;" aria-hidden="true"></i></a>
+                <a href="{{url('welcome')}}"><i class="fa fa-arrow-left fa-2x" style="color:268EEE;" ></i></a>
                 @if(session()->has('loginError'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ session('loginError')}}

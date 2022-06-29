@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\KepribadianController;
@@ -11,6 +10,7 @@ use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\LayananKepribadianController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Pengunjung\FaqimileController;
+use App\Http\Controllers\Pengunjung\IdentifikasiController;
 
 
 use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
@@ -45,8 +45,8 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 //diagnosa
-Route::get('/identifikasi', [IdentifikasiController::class, 'index']);
-Route::post('/check', [IdentifikasiController::class, 'check']);
+// Route::get('/identifikasi', [IdentifikasiController::class, 'index']);
+// Route::post('/check', [IdentifikasiController::class, 'check']);
 // Route::get('/hasilIdentifikasi', [IdentifikasiController::class, 'hasil']);
 
 
@@ -91,9 +91,10 @@ Route::get('/profile_admin', function () {
     return view('admin.profile_admin');
 });
 
-Route::get('/hasilIdentifikasi', function () {
-    return view('pengunjung.hasilIdentifikasi');
-});
+//identifikasi
+Route::get('/identifikasi', [IdentifikasiController::class, 'index'])->middleware('auth');
+Route::post('/identifikasi', [IdentifikasiController::class, 'check'])->middleware('auth');
+Route::get('/hasilIdentifikasi', [IdentifikasiController::class, 'hasil'])->name('hasilIdentifikasi')->middleware('auth');
 
 Route::get('/isiDataPribadi', function () {
     return view('pengunjung.isiDataPribadi');
@@ -108,9 +109,6 @@ Route::get('/kepribadian', function () {
 
 Route::get('datapribadi', [DataPribadiPengunjungController::class, 'index'])->middleware('auth');
 
-Route::get('identifikasi', function (){
-    return view('pengunjung.identifikasi ');
-});
 
 Route::get('/faqimile', [FaqimileController::class, 'index'])->middleware('auth');
 Route::post('/faqimile', [FaqimileController::class, 'create'])->middleware('auth');

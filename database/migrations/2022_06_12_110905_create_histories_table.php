@@ -16,9 +16,9 @@ class CreateHistoriesTable extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('kepribadian_id');
-            $table->string('poin');
-            $table->dateTime('history_date');
+            $table->text('kepribadian_id');
+            $table->text('poin');
+            $table->date('history_date');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

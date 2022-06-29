@@ -12,7 +12,7 @@ class IdentifikasiController extends Controller
 {
     public function index(){
         $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
-
+        dd($kepribadians);
         return view('pengunjung.identifikasi', compact('kepribadians'));
     }
 
