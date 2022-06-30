@@ -16,7 +16,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Admin</span>
+                            <span class="d-none d-lg-inline-flex">{{$user->username}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <!-- <a href="#" class="dropdown-item">Logout</a> -->
@@ -51,27 +51,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse($historys as $history)
                             <tr>
-                                <td>Medianto</td>
-                                <td>1 Mei 2022</td>
-                                <td>Dominant</td>
-                                <td>Dominant</td>
+                                <td>{{$history->user->username}}</td>
+                                <td>{{$history->history_date}}</td>
+                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td>
                             </tr>
-                            <tr>
-                                <td>P002</td>
-                                <td>Medianto Saragih</td>
-                                <td>Pertanyaan</td>
-                                <td>Jawaban</td>
-                            </tr>
+                            @empty
+                        <tr>
+                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                        </tr>
+                        @endforelse
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>Jawaban</th>
-                                <th>Hasil</th>
-                            </tr>
-                        </tfoot>
                     </table><br>
                     </div>
                 </div>

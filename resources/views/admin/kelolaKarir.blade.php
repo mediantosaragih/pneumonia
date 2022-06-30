@@ -16,7 +16,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Admin</span>
+                            <span class="d-none d-lg-inline-flex">{{$user->username}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <!-- <a href="/logout" class="dropdown-item">Logout</a> -->
@@ -42,7 +42,7 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">5</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >123</h6>
+                                <h6 class="mb-0 font-weight-bolder" >{{$all}}</h6>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">25</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             <h4 class="mb-0">Data Pembelajaran yang dapat diikuti</h4><br>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <button type="button" class="btn btn-primary" >
-                    <a href="/kelolaPembelajaran/add">
+                    <a href="/kelolaKarir/add">
                         <i class="fa fa-plus-circle" style="color:white" aria-hidden="true">Tambah</i>
                     </a>
                 </button>
@@ -90,45 +90,34 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
+            <th>Karir</th>
             <th>Kategori</th>
-            <th>Deskripsi</th>
             <th>Aksi</th>
 
         </tr>
     </thead>
     <tbody>
+        @forelse($karir as $data)
         <tr>
-            <td>P001</td>
-            <td>Pembelajaran</td>
-            <td>Kategori</td>
-            <td>Jawaban</td>
+            <td>{{$data->karir}}</td>
+            <td>{{$data->kategori}}</td>
             <td>
-                <a href="#"><span class="fa fa-edit"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
+                <a href="/kelolaKarir/edit/{{$data->id}}">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                </a>
+                <form action="/kelolaKarir/delete/{{$data->id}}" method="post" class="d-inline">
+                    <!-- @method('delete') -->
+                    @csrf
+                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                </form>
             </td>
         </tr>
+        @empty
         <tr>
-            <td>P002</td>
-            <td>Medianto Saragih</td>
-            <td>Pertanyaan</td>
-            <td>Jawaban</td>
-            <td>
-                <a href="#"><span class="fa fa-edit"></span></a>
-                <a href="#"><span class="fa fa-trash"></span></a>
-            </td>
+            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
         </tr>
+        @endforelse
     </tbody>
-    <tfoot>
-        <tr>
-            <th>Kode Pembelajaran</th>
-            <th>Pembelajaran</th>
-            <th>Kategori</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
-        </tr>
-    </tfoot>
 </table><br>
             </div>
         </div>

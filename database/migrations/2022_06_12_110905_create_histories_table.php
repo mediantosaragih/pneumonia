@@ -19,6 +19,7 @@ class CreateHistoriesTable extends Migration
             $table->text('kepribadian_id');
             $table->text('poin');
             $table->date('history_date');
+            $table->string('hasil');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

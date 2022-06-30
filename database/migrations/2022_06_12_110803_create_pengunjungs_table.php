@@ -17,7 +17,6 @@ class CreatePengunjungsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('nama');
-            $table->date('tanggal_lahir');
             $table->string('pekerjaan');
             $table->string('email');
             $table->string('no_telp');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pengunjung;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -15,28 +16,33 @@ class RegisterController extends Controller
 
     public function store(Request $request){
         // dd($request->all());
-        $validate = $request->validate([
+        $validate = Validator::make($request->all(), [
             'username' => "required",
-            'tanggal_lahir' => "required",
             'pekerjaan' => "required",
             'email' => "required",
             'no_telp' => "required",
             'password' => "required|min:6|max:255",
-            'role' => "required"
+            'role' => "required",
+            'konfirmasiPassword' => "required|same:password|min:6"
         ]);
-        // dd($validate);
-        // if ($validate->fails()) {
-        //     return redirect('/register')
-        //                 ->withErrors($validate)
-        //                 ->withInput();
-        // }
-        $validate['password'] = bcrypt($validate['password']);
-        $user =User::create($validate);
+        if ($validate->fails()) {
+            // return redirect('/register')
+            //             ->withErrors($validate)
+            //             ->withInput();
+            return back()->withInput()->withErrors($validate);
+        }
+        $password = bcrypt($request['password']);
+        
+        $user =User::create([
+            'username' => $request->username,
+            'role' => $request->role,
+            'email' => $request->email,
+            'password' => $password
+        ]);
 
         $pengunjung = Pengunjung::create([
             'user_id' => $user->id,
             'nama' => $request->username,
-            'tanggal_lahir' => $request->tanggal_lahir,
             'pekerjaan' => $request->pekerjaan,
             'email' => $request->email,
             'no_telp' => $request->no_telp,
