@@ -65,11 +65,13 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="{{url('dashboard_pengunjung')}}" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="{{url('dashboard_pengunjung')}}">Home</a></li>
               <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li>
+              <li class="scroll-to-section"><a href="{{url('kepribadian')}}">Kepribadian</a></li>
+              <li class="scroll-to-section"><a href="{{url('faqimile')}}">FAQ</a></li>
               <li>
                 <div class="dropdown" >
-                <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
                 <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                     Medianto Saragih
                 </a>
@@ -94,7 +96,7 @@
 
         @yield('content')
 
-<footer id="newsletter">
+<!-- <footer id="newsletter">
     <div class="container-fluid">
       <div class="row"  >
         <div class="col-lg-8 offset-lg-2"  >
@@ -111,6 +113,15 @@
         </div>
       </div>
     </div>
+</footer> -->
+<footer class="page-footer font-small blue" style="margin-bottom:-100px">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: <br>
+    <a href="/"> IT Del</a>
+  </div>
+  <!-- Copyright -->
+
 </footer>
 
           <!-- Scripts -->
@@ -125,6 +136,10 @@
   <script src="assets/js/custom.js"></script>
 
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+<style>
+
+</style>
 
 </body>
 

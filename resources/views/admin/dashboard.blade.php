@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
+            <!--
 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -91,6 +91,48 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="container-fluid pt-4 px-4">
+            <div style="width:80%; margin-left:12%">
+                    <canvas id="myChart"></canvas>
             </div>
+            </div>
+
+            <script>
+                var ctx = document.getElementById("myChart").getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ["Dominant", "Influence", "Steadiness", "Compliance"],
+				datasets: [{
+					label: 'Data Jumlah yang telah melakukan Identifikasi Kepribadian DISC',
+					data: [12, 19, 10, 23,],
+					backgroundColor: [
+					'rgba(240, 64, 64, 0.5)',
+					'rgba(248, 240, 55, 0.5)',
+					'rgba(55, 234, 116, 0.5)',
+					'rgba(34, 128, 239, 0.5)',
+					],
+					borderColor: [
+                    'rgba(240, 64, 64, 1)',
+					'rgba(248, 240, 55, 1)',
+					'rgba(55, 234, 116, 1)',
+					'rgba(34, 128, 239, 1)',
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
+            </script>
 
             @endsection

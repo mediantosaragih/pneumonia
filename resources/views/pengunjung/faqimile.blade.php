@@ -11,20 +11,48 @@
 		</div>
 		<div class="form-group">
 			<input type="hidden" name="komentar_id" id="komentar_id" value="0" />
-			<input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+			<input type="submit" name="submit" id="submit" class="btn btn-info" value="Komentar" />
 		</div>
 	</form>
 	<hr>
 	<h4 class="mb-3">Komentar :</h4>
 	@forelse($komentars as $komentar)
-		<p>{{$komentar->komentar}}</p>
-			@if($komentar->balasan != NULL)
-				<center><p>{{$komentar->komentar}}</p></center>
-				<p>{{$komentar->balasan}}</p>
-			@endif
+
+    <div class="card" style="margin:5px">
+    <div class="row" style="padding:10px">
+        <div class="col-md-2">
+            <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:50%;border-radius:50%">
+        </div>
+        <div class="col-md-10">
+            <h5><u>- Medianto Saragih -</u></h5>
+            <h6> {{$komentar->komentar}}</h6>
+        </div>
+
+
+    <div class="card" style="margin:5px">
+    <div class="row" style="padding:10px;text-align:right">
+        <div class="col-md-10">
+            <h5><u>- Admin -</u></h5>
+            <h6 >
+            @if($komentar->balasan != NULL)
+            {{$komentar->balasan}}
+            @endif
 		@empty
 	@endforelse
-	
+            </h6>
+        </div>
+        <div class="col-md-2">
+            <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:50%;border-radius:50%">
+        </div>
+        </div>
+    </div>
+        </div>
+    </div
+
+		</p></center>
+
+
+
 	<span id="message"></span>
 
    	<div id="display_comment"></div>

@@ -107,8 +107,8 @@
                         </p>
                     </div>
                     <div class="text-right " style="margin-right:20px">
+                        <a href="/kelolaKepribadian" class="btn btn-secondary">Cancel</a>
                         <button class="submit btn btn-primary">Submit</button>
-                        <a href="/kelolaKepribadian" class="btn btn-danger">Cancel</a>
                     </div>
                 </form>
             </div>

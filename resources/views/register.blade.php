@@ -63,19 +63,10 @@
 </html>
 
 <style>
-    img {
-        width: 100%;
-        padding:10px
-    }
-    .login {
-        height: 100%;
-        width: 90%;
-        /* background: radial-gradient(#653d84, #332042); */
 
-    }
     .login_box {
         width: 75%;
-        height: 100%;
+        height: 90%;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -88,12 +79,15 @@
     }
     .login_box .right {
         width: 41%;
-        height: 100%;
+        height: 92%;
         padding: 25px 25px;
+        background: #FFFFFF;
+        border: 1px solid rgba(146, 235, 248, 0.75);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .login_box .left {
-        width: 59%;
-        height: 100%
+        width: 50%;
+        height: 92%
     }
     .right .top_link a {
         color: #452A5A;
@@ -162,9 +156,12 @@
     }
     .left {
         background: url(img/wal.jpg);
+        background-repeat:no-repeat;
         margin:20px 20px 20px 20px;
         color: #fff;
         text-align : right;
+        border-radius: 75px;
+
     }
     .left .text {
         margin-right:-320px;

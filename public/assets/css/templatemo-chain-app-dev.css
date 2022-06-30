@@ -1586,12 +1586,10 @@ footer {
   background-color:#145285;
   background-position: center top;
   background-repeat: no-repeat;
- 
-  margin-top: 10px;
-  padding-top: 100px;
+  margin-top: 250px;
 }
 
- 
+
 
 footer .section-heading h4 {
   line-height: 45px;
@@ -1624,9 +1622,9 @@ footer #search button {
   height: 46px;
   border-radius: 23px;
   border: 1px solid #fff;
-  background-color: transparent;
   color: #fff;
-  width: 100%;
+  background-color: transparent;
+  width: 10%;
   transition: all .5s;
 }
 
@@ -1640,7 +1638,7 @@ footer #search button:hover {
   margin-bottom: 30px;
 }
 
-.footer-widget h4 {
+.footer-widget h5 {
   font-size: 20px;
   color: #fff;
   font-weight: 700;
@@ -1683,8 +1681,6 @@ footer #search button:hover {
 
 footer .copyright-text p {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 0px;
   color: #fff;
 }
 
@@ -2091,42 +2087,6 @@ responsive
 @media (max-width: 767px) {
   .the-clients .naccs .menu div {
     text-align: center;
-  }
-  footer .section-heading h4 {
-    color: #2a2a2a;
-  }
-  footer #search {
-    margin-bottom: 45px;
-  }
-  footer {
-    padding-top: 0px;
-    text-align: center;
-  }
-  .footer-widget ul {
-    display: block;
-    width: 100%;
-    float: none;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .footer-widget h4 {
-    margin-top: 45px;
-    margin-bottom: 20px;
-  }
-  footer #search input {
-    border: 1px solid #eee;
-    color: #afafaf;
-    background-color: #fff;
-    border-radius: 23px;
-    margin-bottom: 15px;
-    padding: 0px 30px;
-  }
-  footer #search button {
-    background-color: #fff;
-    color: #4b8ef1;
-  }
-  footer #search input::placeholder {
-    color: #2a2a2a;
   }
   .header-area .main-nav .logo h4 {
     font-size: 30px;

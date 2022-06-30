@@ -117,8 +117,8 @@
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <input name="id" type="hidden" value="{{$kepribadian->id}}">
+                    <a href="/kelolaKepribadian" class="btn btn-secondary">Cancel</a>
                     <button class="submit btn btn-primary">Update</button>
-                    <a href="/kelolaKepribadian" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>

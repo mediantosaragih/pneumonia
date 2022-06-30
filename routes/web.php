@@ -76,6 +76,8 @@ Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 //Pengunjung
 Route::get('dashboard_pengunjung', [DashboardPengunjungController::class, 'index'])->middleware('auth');
 
+
+
 Route::get('/isiDataPribadi', function () {
     return view('pengunjung.isiDataPribadi');
 });
@@ -112,20 +114,20 @@ Route::get('datapribadi', [DataPribadiPengunjungController::class, 'index'])->mi
 
 Route::get('/faqimile', [FaqimileController::class, 'index'])->middleware('auth');
 Route::post('/faqimile', [FaqimileController::class, 'create'])->middleware('auth');
-    
+
 
 //Layanan Kepribadian
 Route::get('/layananKepribadian',[LayananKepribadianController::class, 'index'])->middleware('auth');
 Route::get('/createLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
 Route::get('/updateLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
 Route::get('/createLayananKepribadian/add', [LayananKepribadianController::class, 'create'])->middleware('auth');
- 
+
 
 //Komentar
 Route::get('/layananPertanyaan', [KomentarController::class, 'index'])->middleware('auth');
 
 Route::get('/balasPertanyaan/{user_id}', [KomentarController::class, 'balas'])->middleware('auth');
-    
+
 Route::get('kelolaIdentifikasi', function (){
     return view('admin.kelolaIdentifikasi ');
 });

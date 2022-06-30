@@ -20,6 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/jquery.dataTables.css">
 
+
     <!-- Libraries Stylesheet -->
     <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="../../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
@@ -40,6 +41,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
 </head>
 
@@ -65,8 +67,8 @@
                 <div class="navbar-nav " style="width:300px;height:100%;margin-top:50px;">
                     <a href="{{url('dashboard')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i></i>Dashboard</a>
                     <a href="{{url('kelolaKepribadian')}}" class="nav-item nav-link"><i class="fa fa-search me-2"></i>Identifikasi</a>
-                    <a href="{{url('layananKepribadian')}}" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>Kepribadian</a>
-                    <a href="{{url('kelolaPembelajaran')}}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Karir</a>
+                    <a href="{{url('layananKepribadian')}}" class="nav-item nav-link"><i class="fa fa-user-secret me-2"></i>Kepribadian</a>
+                    <a href="{{url('kelolaPembelajaran')}}" class="nav-item nav-link"><i class="fa fa-briefcase me-2"></i>Karir</a>
                     <a href="{{url('history')}}" class="nav-item nav-link"><i class="fa fa-history me-2"></i>Hasil Pengecekan</a>
                     <a href="{{url('layananPertanyaan')}}" class="nav-item nav-link"><i class="fa fa-question me-2"></i>Pertanyaan</a>
 

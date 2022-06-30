@@ -42,14 +42,14 @@
                     <img class="w-100 position-relative " src="assets/images/logggo.png">
                         @csrf
                         <h3>Login</h3>
-                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="EMAIL" autofocus value="{{old('email')}}" required>
+                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" autofocus value="{{old('email')}}" required>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
                         @enderror
-                        <input type="password" id="password" name="password" placeholder="PASSWORD" required>
-                        <button class="submit" >LOGIN</button>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button class="submit" >Login</button>
                         <p class="" style="text-align:right;">Belum mempunyai akun? <a href="{{url('register')}}" class="fw-bold text-body"><u>Daftar disini</u></a></p>
                         <!-- <a href="/register" class="submit2" style="width:60%;margin:left:100px;margin-top:10px;text-align:center">REGISTER</a> -->
                     </form>
@@ -63,10 +63,6 @@
 </html>
 
 <style>
-    img {
-        width: 100%;
-        padding:10px    
-    }
     .login {
         height: 100%;
         width: 100%;
@@ -74,7 +70,7 @@
 
     }
     .login_box {
-        width: 85%;
+        width: 75%;
         height: 90%;
         position: fixed;
         top: 50%;
@@ -87,13 +83,17 @@
         overflow: hidden;
     }
     .login_box .right {
-        width: 50%;
-        height: 100%;
+        width: 40%;
+        height: 90%;
+        background: #FFFFFF;
+        border: 1px solid rgba(146, 235, 248, 0.75);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         padding: 25px 25px;
     }
     .login_box .left {
-        width: 60%;
-        height: 100%
+        width: 50%;
+        height: 92%;
+        background-repeat: no-repeat;
     }
     .right .top_link a {
         color: #452A5A;
@@ -161,7 +161,9 @@
     } */
     .left {
         background: url(img/wal.jpg);
+        background-repeat: no-repeat;
         margin:20px 20px 20px 20px;
+        border-radius: 75px;
         color: #fff;
         text-align : right;
     }

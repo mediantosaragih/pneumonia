@@ -106,8 +106,8 @@
                     </p>
                 </div>
                 <div class="text-right " style="margin-right:20px">
+                    <a href="/kelolaPembelajaran" class="btn btn-secondary">Cancel</a>
                     <button class="btn btn-primary">Submit</button>
-                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
                 </div>
         </div>
     </div>

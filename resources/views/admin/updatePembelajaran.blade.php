@@ -112,8 +112,8 @@
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <input name="id" type="hidden" value="{{$tipe_belajar->id}}">
+                    <a href="/kelolaPembelajaran" class="btn btn-secondary">Cancel</a>
                     <button class="btn btn-primary">Update</button>
-                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
                 </div>
             </form>
         </div>

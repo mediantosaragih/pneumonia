@@ -115,7 +115,9 @@
                 <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
-                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                    <a href="">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
                 </form>
             </td>
         </tr>
