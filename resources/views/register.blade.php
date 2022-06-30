@@ -43,13 +43,31 @@
                     <form role="form" action="/register" method="post">
                         @csrf
                         <h3>Daftar Akun</h3>
-                        <input type="username" id="username" class="form-control " name="username" placeholder="Nama" required>
+                        <input type="username" id="username" value="{{old('username')}}" class="form-control " name="username" placeholder="Nama" required>
+                        @error('username')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <!-- <input type="date" id="tanggal_lahir" class="form-control " name="tanggal_lahir" placeholder="Tanggal Lahir" required> -->
-                        <input type="text" id="pekerjaan" class="form-control " name="pekerjaan" placeholder="Pekerjaan" required>
-                        <input type="text" id="email" class="form-control " name="email" placeholder="Email" required>
-                        <input type="text" id="no_telp" class="form-control " name="no_telp" placeholder="No Telepon" required>
-                        <input type="password" id="password" class="form-control " name="password" placeholder="Password" required>
-                        <input type="password" id="KonfirmasiPassword" class="form-control " name="KonfirmasiPassword" placeholder="Konfirmasi Password" required>
+                        <input type="text" id="pekerjaan" value="{{old('pekerjaan')}}" class="form-control " name="pekerjaan" placeholder="Pekerjaan" required>
+                        @error('pekerjaan')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input type="text" id="email" value="{{old('email')}}" class="form-control " name="email" placeholder="Email" required>
+                        @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input type="text" id="no_telp" value="{{old('no_telp')}}" class="form-control " name="no_telp" placeholder="No Telepon" required>
+                        @error('no_telp')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input type="password" id="password" value="{{old('password')}}"class="form-control " name="password" placeholder="Password" required>
+                        @error('password')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input type="password" id="konfirmasiPassword" value="{{old('konfirmasiPassword')}}"class="form-control " name="konfirmasiPassword" placeholder="Konfirmasi Password" required>
+                        @error('konfirmasiPassword')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <input type="hidden" id="role" class="form-control " name="role" value="1">
                         <button class="submit" >Register</button>
                         <p class="text-center text-muted mt-5 mb-0">Sudah mempunyai akun? <a href="{{url('login')}}" class="fw-bold text-body"><u>Login disini</u></a></p>

@@ -16,12 +16,12 @@ class FaqimileController extends Controller
         // $komentars = Komentar::where('user_id', Auth::user()->id)->get();
         $komentars = DB::table('komentars')
                 ->select('komentars.komentar', 'balasans.balasan')
-                ->join('balasans','balasans.komentar_id','=','komentars.id')
+                ->rightjoin('balasans','balasans.komentar_id','=','komentars.id')
                 ->where(['komentars.user_id' => Auth::user()->id])
                 ->get();
-        // dd($komentars);
-        
-        return view('pengunjung.faqimile ',compact('komentars'));
+                
+        $user = User::find(Auth::user()->id);
+        return view('pengunjung.faqimile ',compact('komentars','user'));
     }
 
     public function create(Request $request){

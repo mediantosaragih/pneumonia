@@ -75,6 +75,8 @@ Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 
 //Pengunjung
 Route::get('dashboard_pengunjung', [DashboardPengunjungController::class, 'index'])->middleware('auth');
+Route::get('/profile_pengunjung/{id}', [DashboardPengunjungController::class, 'profile'])->middleware('auth');
+Route::post('/profile_pengunjung/update', [DashboardPengunjungController::class, 'update'])->middleware('auth');
 
 Route::get('/isiDataPribadi', function () {
     return view('pengunjung.isiDataPribadi');
@@ -117,14 +119,15 @@ Route::post('/faqimile', [FaqimileController::class, 'create'])->middleware('aut
 //Layanan Kepribadian
 Route::get('/layananKepribadian',[LayananKepribadianController::class, 'index'])->middleware('auth');
 Route::get('/createLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
-Route::get('/updateLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
-Route::get('/createLayananKepribadian/add', [LayananKepribadianController::class, 'create'])->middleware('auth');
- 
+Route::get('/layananKepribadian/update/{id}', [LayananKepribadianController::class, 'edit'])->middleware('auth');
+Route::post('/createLayananKepribadian/add', [LayananKepribadianController::class, 'create'])->middleware('auth');
+Route::post('/layananKepribadian/delete/{id}', [LayananKepribadianController::class, 'destroy'])->middleware('auth');
+Route::post('/layananKepribadian/update', [LayananKepribadianController::class, 'update'])->middleware('auth');
 
 //Komentar
 Route::get('/layananPertanyaan', [KomentarController::class, 'index'])->middleware('auth');
-
 Route::get('/balasPertanyaan/{user_id}', [KomentarController::class, 'balas'])->middleware('auth');
+Route::post('/balasPertanyaan', [KomentarController::class, 'kirim'])->middleware('auth');
     
 Route::get('kelolaIdentifikasi', function (){
     return view('admin.kelolaIdentifikasi ');

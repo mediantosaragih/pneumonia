@@ -34,14 +34,14 @@
                 </div>
             </nav>
 
-    <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-4">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">5</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >123</h6>
+                                <h6 class="mb-0 font-weight-bolder" >{{$all}}</h6>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">25</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
                             </div>
                         </div>
                     </div>
@@ -101,8 +101,8 @@
             <td>{{$disc->jenis_kepribadian}}</td>
             <td>{{$disc->keterangan}}</td>
             <td>
-                <a href="/updateLayananKepribadian"><span class="fa fa-edit"></span></a>
-                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
+                <a href="/layananKepribadian/update/{{$disc->id}}"><span class="fa fa-edit"></span></a>
+                <form action="/layananKepribadian/delete/{{$disc->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
                     <button class="fa fa-trash" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>

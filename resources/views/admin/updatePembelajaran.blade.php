@@ -50,7 +50,7 @@
                     <i class="fa fa-chart-line fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Pengecekan Harian</p>
-                        <h6 class="mb-0 font-weight-bolder">5</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <i class="fa fa-chart-area fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total Pengecekan</p>
-                        <h6 class="mb-0 font-weight-bolder">123</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$all}}</h6>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <i class="fa fa-chart-pie fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Pengecekan Bulan ini</p>
-                        <h6 class="mb-0 font-weight-bolder">25</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
                     </div>
                 </div>
             </div>

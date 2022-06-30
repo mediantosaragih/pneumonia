@@ -60,7 +60,7 @@
           <nav class="main-nav" style="margin-left:60px">
             <!-- ***** Logo Start ***** -->
             <a href="{{url('welcome')}}" class="logo">
-              <img src="assets/images/logggo.png" alt="Chain App Dev" style="width:200px;">
+              <img src="../../assets/images/logggo.png" alt="Chain App Dev" style="width:200px;">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -71,10 +71,10 @@
                 <div class="dropdown" >
                 <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
                 <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                    Medianto Saragih
+                    {{$user->username}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{{url('datapribadi')}}">&nbsp;Profile</a>
+                    <a class="dropdown-item" href="/profile_pengunjung/{{$user->id}}">&nbsp;Profile</a>
                     <form role="form" action="/logout" method="post">
                       @csrf
                       <button class=" dropdown-item">
@@ -115,14 +115,14 @@
 
           <!-- Scripts -->
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="assets/js/jquery.dataTables"></script>
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.dataTables"></script>
   <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="../../assets/js/owl-carousel.js"></script>
+  <script src="../../assets/js/animation.js"></script>
+  <script src="../../assets/js/imagesloaded.js"></script>
+  <script src="../../assets/js/popup.js"></script>
+  <script src="../../assets/js/custom.js"></script>
 
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 

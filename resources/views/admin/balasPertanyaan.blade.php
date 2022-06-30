@@ -44,7 +44,7 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">5</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >123</h6>
+                                <h6 class="mb-0 font-weight-bolder" >{{$all}}</h6>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">25</h6>
+                                <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
                             </div>
                         </div>
                     </div>
@@ -82,20 +82,21 @@
             <div class="bg-light rounded p-4">
                 <h4>Pertanyaan Pengunjung</h4>
             </div>
-            <form role="form" action="/kelolaPembelajaran" method="post">
+            <form role="form" action="/balasPertanyaan" method="post">
                 @csrf
                 <div class="text-left rounded p-4">
                     <div>
                         <label for="">Pertanyaan :</label>
                         <p>
-                        <textarea name="" class="form-control" id="" cols="20" rows="5" value="" disabled>{{$komentars->komentar}}</textarea>
+                        <textarea class="form-control" id="" cols="20" rows="5" value="" disabled>{{$komentars->komentar}}</textarea>
                         </p>
                     </div>
                     <div>
                         <label for="">Jawaban :</label>
                         <p>
-                        <textarea name="" class="form-control" id="balasan" name="balasan" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
+                        <textarea class="form-control" id="balasan" name="balasan" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
                         </p>
+                        <input type="hidden" name="komentar_id" id="komentar_id" value="{{$komentars->id}}">
                     </div>
                 </div>
                 <div class="text-right " style="margin-right:20px">

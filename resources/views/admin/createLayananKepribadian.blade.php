@@ -44,7 +44,7 @@
                     <i class="fa fa-chart-line fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Pengecekan Harian</p>
-                        <h6 class="mb-0 font-weight-bolder">5</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <i class="fa fa-chart-area fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total Pengecekan</p>
-                        <h6 class="mb-0 font-weight-bolder">123</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$all}}</h6>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     <i class="fa fa-chart-pie fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Pengecekan Bulan ini</p>
-                        <h6 class="mb-0 font-weight-bolder">25</h6>
+                        <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
                     </div>
                 </div>
             </div>
@@ -83,12 +83,18 @@
             <div class="bg-light rounded p-4">
                 <h4>Tambah Data Layanan Kepribadian</h4>
             </div>
-            <form role="form" action="/kelolaPembelajaran" method="post">
+            <form role="form" action="/createLayananKepribadian/add" method="post">
                 @csrf
                 <div class="text-left rounded p-4">
                     <p>
                         <label for="kategori">Jenis Kepribadian</label>
-                        <input type="text" name="jenis_kepribadian" id="jenis_belajar" class="form-control" style="width:100%" required>
+                            <select name="jenis_kepribadian" required="" id="jenis_kepribadian" name="jenis_kepribadian" class="form-control">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Dominance">Dominance</option>
+                                    <option value="Influence">Influence</option>
+                                    <option value="Steadiness">Steadiness</option>
+                                    <option value="Compliance">Compliance</option>
+                            </select>
                     </p>
                     <p>
                         <label for="">Keterangan</label>
@@ -98,7 +104,7 @@
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <button class="btn btn-primary">Submit</button>
-                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
+                    <a href="/layananKepribadian" class="btn btn-danger">Cancel</a>
                 </div>
         </div>
     </div>

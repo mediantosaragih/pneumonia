@@ -5,33 +5,45 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TipeBelajar;
+use Carbon\Carbon;
+use App\Models\History;
 
 class PembelajaranController extends Controller
 {
     public function index(){
 
         $tipe_belajars = TipeBelajar::orderBy('kategori', 'ASC')->get();
+        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = History::all()->count();
 
-        return view('admin.kelolaPembelajaran', compact('tipe_belajars'));
+        return view('admin.kelolaPembelajaran', compact('tipe_belajars'))
+                                            ->with('harian', $harian)
+                                            ->with('bulanan', $bulanan)
+                                            ->with('all', $all);
     }
 
     public function indexCreate(){
         $tipe_belajar = TipeBelajar::orderBy('kategori', 'ASC')->get();
+        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = History::all()->count();
 
-        return view('admin.createPembelajaran', compact('tipe_belajar'));
+        return view('admin.createPembelajaran', compact('tipe_belajar'))
+                                            ->with('harian', $harian)
+                                            ->with('bulanan', $bulanan)
+                                            ->with('all', $all);
     }
 
     public function create(Request $request){
         $this->validate($request, [
-            'kode_belajar' => 'required|string|max:155',
-            'kategori' => 'required',
+            'jenis_kepribadian' => 'required|string|max:155',
             'keterangan' => 'required'
         ]);
         
 
         $tipe_belajar = TipeBelajar::create([
-            'kode_belajar' => $request->kode_belajar,
-            'kategori' => $request->kategori,
+            'jenis_kepribadian' => $request->jenis_kepribadian,
             'keterangan' => $request->keterangan,
         ]);
 

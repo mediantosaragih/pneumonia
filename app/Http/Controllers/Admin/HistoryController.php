@@ -10,8 +10,10 @@ class HistoryController extends Controller
 {
     public function index(){
 
-        $historys = History::get();
+        $historys = History::orderby('created_at','DESC')->get();
 
+        // $historys->kepribadian_id = json_decode($historys->kepribadian_id);
+        // dd($historys->kepribadian_id);
         return view('admin.history', compact('historys'));
     }
 }

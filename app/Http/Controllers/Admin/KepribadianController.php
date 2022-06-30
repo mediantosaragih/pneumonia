@@ -5,20 +5,35 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kepribadian;
+use Carbon\Carbon;
+use App\Models\History;
 
 class KepribadianController extends Controller
 {
     public function index(){
 
         $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
+        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = History::all()->count();
 
-        return view('admin.kelolaIdentifikasi', compact('kepribadians'));
+        return view('admin.kelolaIdentifikasi', compact('kepribadians'))
+                                    ->with('harian', $harian)
+                                    ->with('bulanan', $bulanan)
+                                    ->with('all', $all);
+                                                
     }
 
     public function indexCreate(){
         $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
+        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = History::all()->count();
 
-        return view('admin.createIdentifikasi', compact('kepribadians'));
+        return view('admin.createIdentifikasi', compact('kepribadians'))
+                                    ->with('harian', $harian)
+                                    ->with('bulanan', $bulanan)
+                                    ->with('all', $all);
     }
 
     public function create(Request $request){
@@ -54,8 +69,14 @@ class KepribadianController extends Controller
 
     public function edit($id){
         $kepribadian = Kepribadian::find($id);
+        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = History::all()->count();
         // dd($kepribadian);
-        return view('admin.updateIdentifikasi')->with('kepribadian', $kepribadian);
+        return view('admin.updateIdentifikasi')->with('kepribadian', $kepribadian)
+                                    ->with('harian', $harian)
+                                    ->with('bulanan', $bulanan)
+                                    ->with('all', $all);
     }
 
     public function update(Request $request){

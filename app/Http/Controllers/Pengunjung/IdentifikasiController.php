@@ -9,13 +9,15 @@ use App\Models\History;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Models\User;
 
 class IdentifikasiController extends Controller
 {
     public function index(){
         $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
+        $user = User::find(Auth::user()->id);
         // dd($kepribadians);
-        return view('pengunjung.identifikasi', compact('kepribadians'));
+        return view('pengunjung.identifikasi', compact('kepribadians','user'));
     }
 
     public function check(Request $request){
