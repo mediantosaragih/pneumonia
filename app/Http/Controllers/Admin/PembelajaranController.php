@@ -7,29 +7,34 @@ use Illuminate\Http\Request;
 use App\Models\TipeBelajar;
 use Carbon\Carbon;
 use App\Models\History;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PembelajaranController extends Controller
 {
     public function index(){
 
+        $user = User::find(Auth::user()->id);
         $tipe_belajars = TipeBelajar::orderBy('kategori', 'ASC')->get();
         $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = History::all()->count();
 
-        return view('admin.kelolaPembelajaran', compact('tipe_belajars'))
+        return view('admin.kelolaPembelajaran', compact('tipe_belajars','user'))
                                             ->with('harian', $harian)
                                             ->with('bulanan', $bulanan)
                                             ->with('all', $all);
     }
 
     public function indexCreate(){
+        
+        $user = User::find(Auth::user()->id);
         $tipe_belajar = TipeBelajar::orderBy('kategori', 'ASC')->get();
         $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = History::all()->count();
 
-        return view('admin.createPembelajaran', compact('tipe_belajar'))
+        return view('admin.createPembelajaran', compact('tipe_belajar'.'user'))
                                             ->with('harian', $harian)
                                             ->with('bulanan', $bulanan)
                                             ->with('all', $all);
@@ -64,9 +69,11 @@ class PembelajaranController extends Controller
     }
 
     public function edit($id){
+        
+        $user = User::find(Auth::user()->id);
         $tipe_belajar = TipeBelajar::find($id);
         // dd($kepribadian);
-        return view('admin.updatePembelajaran')->with('tipe_belajar', $tipe_belajar);
+        return view('admin.updatePembelajaran', compact('user'))->with('tipe_belajar', $tipe_belajar);
     }
 
     public function update(Request $request){

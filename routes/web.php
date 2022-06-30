@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\KepribadianController;
-use App\Http\Controllers\Admin\PembelajaranController;
+use App\Http\Controllers\Admin\KarirController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\LayananKepribadianController;
@@ -59,13 +59,13 @@ Route::get('/kelolaKepribadian/edit/{id}', [KepribadianController::class, 'edit'
 Route::post('/kelolaKepribadian/update', [KepribadianController::class, 'update'])->middleware('auth');
 
 
-//Tipe Belajar
-Route::get('/kelolaPembelajaran', [PembelajaranController::class, 'index'])->name('kepribadian')->middleware('auth');
-Route::post('/kelolaPembelajaran/delete/{id}', [PembelajaranController::class, 'destroy'])->middleware('auth');
-Route::get('/kelolaPembelajaran/add', [PembelajaranController::class, 'indexCreate'])->middleware('auth');
-Route::post('/kelolaPembelajaran', [PembelajaranController::class, 'create'])->middleware('auth');
-Route::get('/kelolaPembelajaran/edit/{id}', [PembelajaranController::class, 'edit'])->middleware('auth');
-Route::post('/kelolaPembelajaran/update', [PembelajaranController::class, 'update'])->middleware('auth');
+//Karir
+Route::get('/kelolaKarir', [KarirController::class, 'index'])->middleware('auth');
+Route::post('/kelolaKarir/delete/{id}', [KarirController::class, 'destroy'])->middleware('auth');
+Route::get('/kelolaKarir/add', [KarirController::class, 'indexCreate'])->middleware('auth');
+Route::post('/kelolaKarir', [KarirController::class, 'create'])->middleware('auth');
+Route::get('/kelolaKarir/edit/{id}', [KarirController::class, 'edit'])->middleware('auth');
+Route::post('/kelolaKarir/update', [KarirController::class, 'update'])->middleware('auth');
 // Route::get('/kelolaPembelajaran', function () {
 //     return view('admin.kelolaPembelajaran');
 // });

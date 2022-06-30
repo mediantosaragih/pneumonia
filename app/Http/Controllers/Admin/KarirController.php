@@ -4,37 +4,37 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\DISC;
+use App\Models\Karir;
 use Carbon\Carbon;
 use App\Models\History;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class LayananKepribadianController extends Controller
+class KarirController extends Controller
 {
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $discs = DISC::orderBy('jenis_kepribadian', 'ASC')->get();
+        $karir = Karir::orderBy('kategori', 'ASC')->get();
         $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = History::all()->count();
 
-        return view('admin.layananKepribadian', compact('discs','user'))
+        return view('admin.kelolaKarir', compact('karir','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
+                                                
     }
 
     public function indexCreate(){
-        
         $user = User::find(Auth::user()->id);
-        $discs = DISC::orderBy('jenis_kepribadian', 'ASC')->get();
+        $karir = Karir::orderBy('kategori', 'ASC')->get();
         $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = History::all()->count();
 
-        return view('admin.createLayananKepribadian', compact('discs','user'))
+        return view('admin.createKarir', compact('karir','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -43,21 +43,21 @@ class LayananKepribadianController extends Controller
     public function create(Request $request){
 
         $this->validate($request, [
-            'jenis_kepribadian' => 'required|string|max:155',
-            'keterangan' => 'required'
+            'karir' => 'required|string|max:155',
+            'kategori' => 'required'
         ]);
         
 
-        $disc = DISC::create([
-            'jenis_kepribadian' => $request->jenis_kepribadian,
-            'keterangan' => $request->keterangan,
+        $karir = Karir::create([
+            'karir' => $request->karir,
+            'kategori' => $request->kategori,
         ]);
 
-        if ($disc) {
+        if ($karir) {
             return redirect()
-                ->intended('/layananKepribadian')
+                ->intended('/kelolaKarir')
                 ->with([
-                    'success' => 'Data kepribadian baru ditambahkan'
+                    'success' => 'data baru ditambahkan'
                 ]);
         } else {
             return redirect()
@@ -70,35 +70,32 @@ class LayananKepribadianController extends Controller
     }
 
     public function edit($id){
-        $disc = DISC::find($id);
-        
         $user = User::find(Auth::user()->id);
+        $karir = Karir::find($id);
         $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = History::all()->count();
-        // dd($kepribadian);
-        return view('admin.updateLayananKepribadian', compact('user'))
-                                ->with('disc', $disc)
-                                ->with('harian', $harian)
-                                ->with('bulanan', $bulanan)
-                                ->with('all', $all);
+        return view('admin.updateKarir',compact('user'))->with('karir', $karir)
+                                    ->with('harian', $harian)
+                                    ->with('bulanan', $bulanan)
+                                    ->with('all', $all);
     }
 
     public function update(Request $request){
-        $disc = DISC::find($request->id);
-        // dd($disc);
+        $karir = Karir::find($request->id);
+        
         $this->validate($request, [
-            'jenis_kepribadian' => 'required|string|max:155',
-            'keterangan' => 'required'
+            'karir' => 'required',
+            'kategori' => 'required'
         ]);
 
-        $disc->update($request->all());
+        $karir->update($request->all());
 
-        if ($disc) {
+        if ($karir) {
             return redirect()
-                ->intended('/layananKepribadian')
+                ->intended('/kelolaKarir')
                 ->with([
-                    'success' => 'Data kepribadian diupdate'
+                    'success' => 'data diupdate'
                 ]);
         } else {
             return redirect()
@@ -111,11 +108,11 @@ class LayananKepribadianController extends Controller
     }
 
     public function destroy($id){
-        $disc = DISC::find($id);
-        $disc->delete();
-        if ($disc) {
+        $karir = Karir::find($id);
+        $karir->delete();
+        if ($karir) {
             return redirect()
-            ->intended('/layananKepribadian')
+            ->intended('/kelolaKarir')
                 ->with([
                     'success' => 'Data has been deleted successfully'
                 ]);
@@ -126,6 +123,6 @@ class LayananKepribadianController extends Controller
                     'error' => 'Some problem has occurred, please try again'
                 ]);
         }
-        return redirect('/layananKepribadian')->with('success', 'Data has been deleted!');
+        return redirect('/kelolaKarir')->with('success', 'Data has been deleted!');
     }
 }

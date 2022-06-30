@@ -16,7 +16,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Admin</span>
+                            <span class="d-none d-lg-inline-flex">{{$user->username}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <!-- <a href="/logout" class="dropdown-item">Logout</a> -->
@@ -82,32 +82,28 @@
             <div class="bg-light rounded p-4">
                 <h4>Tambah Data Pembelajaran</h4>
             </div>
-            <form role="form" action="/kelolaPembelajaran" method="post">
+            <form role="form" action="/kelolaKarir" method="post">
                 @csrf
                 <div class="text-left rounded p-4">
                     <p>
-                        <label for="">Kode Pembelajaran</label>
-                        <input type="text" name="kode_belajar" id="kode_belajar" class="form-control" style="width:100%"
+                        <label for="">Karir</label>
+                        <input type="text" name="karir" id="karir" class="form-control" style="width:100%"
                             required>
                     </p>
                     <p>
                         <label for="kategori">Pilih Kategori</label>
-                        <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
-                            <option value="">-- Pilih --</option>
-                            <option value="Visual">Visual</option>
-                            <option value="Auditorial">Auditorial</option>
-                            <option value="Kinestetik">Kinestetik</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="">Keterangan</label>
-                        <input type="text" id="keterangan" name="keterangan" class="form-control" style="width:100%"
-                            required>
+                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Dominance">Dominance</option>
+                                <option value="Influence">Influence</option>
+                                <option value="Steadiness">Steadiness</option>
+                                <option value="Compliance">Compliance</option>
+                            </select>
                     </p>
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <button class="btn btn-primary">Submit</button>
-                    <a href="/kelolaPembelajaran" class="btn btn-danger">Cancel</a>
+                    <a href="/kelolaKarir" class="btn btn-danger">Cancel</a>
                 </div>
         </div>
     </div>
