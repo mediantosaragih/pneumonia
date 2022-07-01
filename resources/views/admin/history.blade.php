@@ -53,9 +53,9 @@
                         <tbody>
                             @forelse($historys as $history)
                             <tr>
-                                <td>{{$history->user->username}}</td>
+                                <td>{{$history->username}}</td>
                                 <td>{{$history->history_date}}</td>
-                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->kepribadian_id}}</td>
                                 <td>{{$history->hasil}}</td>
                             </tr>
                             @empty

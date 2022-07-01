@@ -56,7 +56,7 @@
                         @forelse($kepribadians as $kepribadian)
                         <div>
                             <h4>{{$kepribadian->name}}</h4>
-                            <input type="hidden" name="id[]" value="{{ $kepribadian->id }}" hidden>
+                            <input type="hidden" name="kepribadian[]" value="{{ $kepribadian->name }}" hidden>
                             <div class="row" style="margin-left:150px;">
                                 <div class="col-md-3">
                                     <label for="">Saya Setuju</label>

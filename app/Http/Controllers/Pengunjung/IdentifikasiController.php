@@ -32,7 +32,7 @@ class IdentifikasiController extends Controller
         }
         $history = History::create([
             'user_id' => Auth::user()->id,
-            'kepribadian_id' => $request->id,
+            'kepribadian_id' => $request->kepribadian,
             'poin' => $kode_nama_get_req,
             'history_date' => Carbon::now()->format('Y-m-d')
         ]);
