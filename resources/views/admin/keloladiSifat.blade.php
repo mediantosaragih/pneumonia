@@ -132,10 +132,9 @@
                 <input type="text" class="form-control" style="width:100%">
                 </p>
             </div>
-            <div class="text-right " style="margin-right:20px">
+            <div class="text-right " style="margin-right:20px"></div>
                 <button type="button" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-danger">Cancel</button>
->>>>>>>> 803f6b799b7474cce685035f9eb0b1e50b400eb3:resources/views/admin/createIdentifikasi.blade.php
             </div>
         </div>
     </div>

@@ -85,7 +85,7 @@
             </div>
         @endif
         <div class="bg-light text-center rounded p-4">
-            <h4 >Data Sifat yang dialami</h4>
+            <h4 >Kelola data Kepribadian</h4>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <a href="{{url('createKepribadian')}}" style="color:white">
@@ -97,16 +97,19 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Kode Sifat</th>
-            <th>Sifat</th>
+            <th>ID Data</th>
+            <th>Kepribadian</th>
+            <th>Kelemahan</th>
+            <th>Kelebihan</th>
             <th>Aksi</th>
-
         </tr>
     </thead>
     <tbody>
         @forelse($kepribadians as $kepribadian)
         <tr>
             <td>{{$kepribadian->kode}}</td>
+            <td>{{$kepribadian->name}}</td>
+            <td>{{$kepribadian->name}}</td>
             <td>{{$kepribadian->name}}</td>
             <td>
                 <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
@@ -115,7 +118,9 @@
                 <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
-                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                    <a href="">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
                 </form>
             </td>
         </tr>

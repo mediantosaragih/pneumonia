@@ -1,22 +1,20 @@
 @extends('layout.app')
 
 @section('content')
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" >
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
           <div class="row">
             <div class="col-lg-6" style="text-align:center" >
-              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s" >
                 <div class="row" style="margin-bottom: 200px;" >
                   <div class="col-lg-12" style="margin-left:-60px;margin-top:60px; ">
                     <p class="display-6" style="color:white;"><b> Pastikan Cara Belajarmu Sesuai dengan Kepribadianmu</b></p>
-                    <p class="display-7" style="color:white">Silahkan cek Kepribadian Kamu disini</p>
+                    <p class="display-7" style="color:white"><b> Silahkan cek Kepribadian Kamu disini</b></p>
                   </div>
-                  <div class="col-lg-12" style="padding: 1x; margin-left:-50px; ">
-                    <div class="white-button first-button scroll-to-section">
-                      <a href=" {{url('identifikasi')}}">Cek Sekarang <i class="fa fa-search"></i></a>
-                    </div>
+                  <div class="col-lg-12" style="padding: 1x; margin-left:-50px;">
+                  <a class="btn btn-primary" href="{{url('login')}}" role="button">Cek Sekarang</a>
                   </div>
                 </div>
               </div>

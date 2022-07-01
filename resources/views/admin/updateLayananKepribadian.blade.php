@@ -110,6 +110,7 @@
                     <input type="hidden" id="id" name="id" value="{{$disc->id}}">
                 </div>
                 <div class="text-right " style="margin-right:20px">
+                    <a href="/kelolaPembelajaran" class="btn btn-secondary">Cancel</a>
                     <button class="btn btn-primary">Update</button>
                     <a href="/layananKepribadian" class="btn btn-danger">Cancel</a>
                 </div>

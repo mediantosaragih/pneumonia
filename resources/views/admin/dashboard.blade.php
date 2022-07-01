@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
+            <!--
 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -91,6 +91,81 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+            <div style="width: 80%;margin-left:10%;margin-top:2%"  >
+                <canvas id="myChart"></canvas>
             </div>
+                <script>
+
+                var barChartData = {
+                labels: [
+                    "Januari",
+                    "Februari",
+                    "Maret",
+                    "April",
+                    "Mei",
+                    "Juni",
+                    "Juli",
+                    "Agustus"
+                ],
+
+                datasets: [
+                    {
+                    label: "Dominant",
+                    backgroundColor: "pink",
+                    borderColor: "red",
+                    borderWidth: 1,
+                    data: [3, 5, 6, 7,3, 5, 6, 7]
+                    },
+                    {
+                    label: "Influence",
+                    backgroundColor: "lightblue",
+                    borderColor: "blue",
+                    borderWidth: 1,
+                    data: [4, 7, 3, 6, 10,7,4,6]
+                    },
+                    {
+                    label: "Steadiness",
+                    backgroundColor: "lightgreen",
+                    borderColor: "green",
+                    borderWidth: 1,
+                    data: [10,7,4,6,9,7,3,10]
+                    },
+                    {
+                    label: "Compliance",
+                    backgroundColor: "yellow",
+                    borderColor: "orange",
+                    borderWidth: 1,
+                    data: [6,9,7,3,10,7,4,6]
+                    }
+                ]
+                };
+
+                var chartOptions = {
+                responsive: true,
+                legend: {
+                    position: "top"
+                },
+                title: {
+                    display: true,
+                    text: "Data Kepribadian DISC perbulan"
+                },
+                scales: {
+                    yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                    }]
+                }
+                }
+
+                var ctx = document.getElementById("myChart").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: "bar",
+                    data: barChartData,
+                    options: chartOptions
+                });
+
+</script>
 
             @endsection

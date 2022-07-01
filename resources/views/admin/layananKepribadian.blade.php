@@ -89,9 +89,9 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Jenis Kepribadian</th>
+            <th>ID Layanan</th>
             <th>Keterangan</th>
-            <th>Action</th>
+            <th>Aksi</th>
 
         </tr>
     </thead>

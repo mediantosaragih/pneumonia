@@ -39,14 +39,18 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="table-responsive">
-                    <h5>History Pengecekan </h5><br>
+                    <h5>Hasil Pengecekan </h5><br>
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
+                                <th>ID Hasil</th>
                                 <th>Nama</th>
-                                <th>Tanggal</th>
+                                <th>Alamat</th>
                                 <th>Jawaban</th>
                                 <th>Hasil</th>
+                                <th>Kepribadian</th>
+                                <th>Kelemahan</th>
+                                <th>Kelebihan</th>
 
                             </tr>
                         </thead>
@@ -57,10 +61,14 @@
                                 <td>{{$history->history_date}}</td>
                                 <td>{{$history->kepribadian_id}}</td>
                                 <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td>
                             </tr>
                             @empty
                         <tr>
-                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                            <td class="text-center text-mute" colspan="8">Data tidak tersedia</td>
                         </tr>
                         @endforelse
                         </tbody>
