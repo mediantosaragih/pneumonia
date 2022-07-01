@@ -78,7 +78,7 @@
             </div>
         @endif
         <div class="bg-light text-center rounded p-4">
-            <h4 class="mb-0">Data Pembelajaran yang dapat diikuti</h4><br>
+            <h4 class="mb-0">Kelola data Karir </h4><br>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <button type="button" class="btn btn-primary" >
                     <a href="/kelolaKarir/add">
@@ -90,6 +90,7 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
+            <th>ID Karir</th>
             <th>Karir</th>
             <th>Kategori</th>
             <th>Aksi</th>

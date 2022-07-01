@@ -85,16 +85,21 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Nama</th>
+            <th>ID Faq</th>
+            <th>Tanggal</th>
+            <th>Email</th>
             <th>Pertanyaan</th>
-            <th>Action</th>
-
+            <th>Jawaban</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
         @forelse($komentars as $komentar)
         <tr>
             <td>{{$komentar->user->username}}</td>
+            <td>{{$komentar->komentar}}</td>
+            <td>{{$komentar->komentar}}</td>
+            <td>{{$komentar->komentar}}</td>
             <td>{{$komentar->komentar}}</td>
             <td>
                 <a href="/balasPertanyaan/{{$komentar->id}}"><span class="fa fa-reply"></span></a>
@@ -103,7 +108,7 @@
         </tr>
         @empty
         <tr>
-            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+            <td class="text-center text-mute" colspan="6">Data tidak tersedia</td>
         </tr>
         @endforelse
 </table><br>

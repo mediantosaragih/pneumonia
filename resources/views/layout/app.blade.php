@@ -78,7 +78,7 @@
 
         @yield('content')
 
-<footer id="newsletter">
+<!-- <footer id="newsletter">
     <div class="container-fluid" >
       <div class="row"  >
         <div class="col-lg-8 offset-lg-2"  >
@@ -95,8 +95,20 @@
         </div>
       </div>
     </div>
-</footer>
+</footer> -->
 
+<footer class="page-footer font-small blue" style="margin-bottom:-100px">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="color:white">
+  <h6>Sistem Identifikasi Kepribadian</h6>
+  2020 Copyright:
+
+    <a href="/" style="color:white"> IT Del</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
           <!-- Scripts -->
 
   <script src="vendor/jquery/jquery.min.js"></script>

@@ -92,47 +92,80 @@
                     </div>
                 </div>
             </div> -->
-
-            <div class="container-fluid pt-4 px-4">
-            <div style="width:80%; margin-left:12%">
-                    <canvas id="myChart"></canvas>
+            <div style="width: 80%;margin-left:10%;margin-top:2%"  >
+                <canvas id="myChart"></canvas>
             </div>
-            </div>
+                <script>
 
-            <script>
-                var ctx = document.getElementById("myChart").getContext('2d');
-		var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: ["Dominant", "Influence", "Steadiness", "Compliance"],
-				datasets: [{
-					label: 'Data Jumlah yang telah melakukan Identifikasi Kepribadian DISC',
-					data: [12, 19, 10, 23,],
-					backgroundColor: [
-					'rgba(240, 64, 64, 0.5)',
-					'rgba(248, 240, 55, 0.5)',
-					'rgba(55, 234, 116, 0.5)',
-					'rgba(34, 128, 239, 0.5)',
-					],
-					borderColor: [
-                    'rgba(240, 64, 64, 1)',
-					'rgba(248, 240, 55, 1)',
-					'rgba(55, 234, 116, 1)',
-					'rgba(34, 128, 239, 1)',
-					],
-					borderWidth: 1
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero:true
-						}
-					}]
-				}
-			}
-		});
-            </script>
+                var barChartData = {
+                labels: [
+                    "Januari",
+                    "Februari",
+                    "Maret",
+                    "April",
+                    "Mei",
+                    "Juni",
+                    "Juli",
+                    "Agustus"
+                ],
+
+                datasets: [
+                    {
+                    label: "Dominant",
+                    backgroundColor: "pink",
+                    borderColor: "red",
+                    borderWidth: 1,
+                    data: [3, 5, 6, 7,3, 5, 6, 7]
+                    },
+                    {
+                    label: "Influence",
+                    backgroundColor: "lightblue",
+                    borderColor: "blue",
+                    borderWidth: 1,
+                    data: [4, 7, 3, 6, 10,7,4,6]
+                    },
+                    {
+                    label: "Steadiness",
+                    backgroundColor: "lightgreen",
+                    borderColor: "green",
+                    borderWidth: 1,
+                    data: [10,7,4,6,9,7,3,10]
+                    },
+                    {
+                    label: "Compliance",
+                    backgroundColor: "yellow",
+                    borderColor: "orange",
+                    borderWidth: 1,
+                    data: [6,9,7,3,10,7,4,6]
+                    }
+                ]
+                };
+
+                var chartOptions = {
+                responsive: true,
+                legend: {
+                    position: "top"
+                },
+                title: {
+                    display: true,
+                    text: "Data Kepribadian DISC perbulan"
+                },
+                scales: {
+                    yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                    }]
+                }
+                }
+
+                var ctx = document.getElementById("myChart").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: "bar",
+                    data: barChartData,
+                    options: chartOptions
+                });
+
+</script>
 
             @endsection

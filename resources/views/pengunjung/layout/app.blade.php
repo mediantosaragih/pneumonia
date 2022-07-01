@@ -117,8 +117,8 @@
 <footer class="page-footer font-small blue" style="margin-bottom:-100px">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright: <br>
-    <a href="/"> IT Del</a>
+  <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright: <br>
+    <a href="/" style="color:white"> IT Del</a>
   </div>
   <!-- Copyright -->
 
