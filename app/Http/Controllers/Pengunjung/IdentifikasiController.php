@@ -43,8 +43,8 @@ class IdentifikasiController extends Controller
     }
 
     public function hasil(Request $request){
-        
-        return view('pengunjung.hasilIdentifikasi',[
+        $user = User::find(Auth::user()->id);
+        return view('pengunjung.hasilIdentifikasi', compact('user'),[
             'history' => $request->history
         ]);
     }

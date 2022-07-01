@@ -106,7 +106,11 @@
                     "Mei",
                     "Juni",
                     "Juli",
-                    "Agustus"
+                    "Agustus",
+                    "September",
+                    "Oktober",
+                    "November",
+                    "Desember"
                 ],
 
                 datasets: [
@@ -115,28 +119,28 @@
                     backgroundColor: "pink",
                     borderColor: "red",
                     borderWidth: 1,
-                    data: [3, 5, 6, 7,3, 5, 6, 7]
+                    data: [{{$dominance[0]}},{{$dominance[1]}},{{$dominance[2]}},{{$dominance[3]}},{{$dominance[4]}},{{$dominance[5]}},{{$dominance[6]}},{{$dominance[7]}},{{$dominance[8]}},{{$dominance[9]}},{{$dominance[10]}},{{$dominance[11]}}]
                     },
                     {
                     label: "Influence",
                     backgroundColor: "lightblue",
                     borderColor: "blue",
                     borderWidth: 1,
-                    data: [4, 7, 3, 6, 10,7,4,6]
+                    data: [{{$influence[0]}},{{$influence[1]}},{{$influence[2]}},{{$influence[3]}},{{$influence[4]}},{{$influence[5]}},{{$influence[6]}},{{$influence[7]}},{{$influence[8]}},{{$influence[9]}},{{$influence[10]}},{{$influence[11]}}]
                     },
                     {
                     label: "Steadiness",
                     backgroundColor: "lightgreen",
                     borderColor: "green",
                     borderWidth: 1,
-                    data: [10,7,4,6,9,7,3,10]
+                    data: [{{$steadiness[0]}},{{$steadiness[1]}},{{$steadiness[2]}},{{$steadiness[3]}},{{$steadiness[4]}},{{$steadiness[5]}},{{$steadiness[6]}},{{$steadiness[7]}},{{$steadiness[8]}},{{$steadiness[9]}},{{$steadiness[10]}},{{$steadiness[11]}}]
                     },
                     {
                     label: "Compliance",
                     backgroundColor: "yellow",
                     borderColor: "orange",
                     borderWidth: 1,
-                    data: [6,9,7,3,10,7,4,6]
+                    data: [{{$compliance[0]}},{{$compliance[1]}},{{$compliance[2]}},{{$compliance[3]}},{{$compliance[4]}},{{$compliance[5]}},{{$compliance[6]}},{{$compliance[7]}},{{$compliance[8]}},{{$compliance[9]}},{{$compliance[10]}},{{$compliance[11]}}]
                     }
                 ]
                 };

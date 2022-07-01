@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\LayananKepribadianController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Pengunjung\FaqimileController;
 use App\Http\Controllers\Pengunjung\IdentifikasiController;
+use App\Http\Controllers\Pengunjung\InfoKepribadianController;
 
 
 use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
@@ -104,9 +105,8 @@ Route::get('/isiDataPribadi', function () {
     return view('pengunjung.isiDataPribadi');
 });
 
-Route::get('/kepribadian', function () {
-    return view('pengunjung.kepribadian');
-});
+Route::get('/kepribadian', [InfoKepribadianController::class, 'index'])->middleware('auth');
+
 
 // Route::post('/register', [RegisterController::class, 'store'])->middleware('auth');
 

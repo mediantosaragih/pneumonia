@@ -19,32 +19,33 @@
 
 
     <div class="card"  style="margin:20px">
-    @forelse($komentars as $komentar)
-    @if($komentar->balasan == NULL)
-    <div class="row">
-        <div class="col-md-1">
-            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
+        @forelse($komentars as $komentar)
+        <div class="row">
+            @if($komentar->balasan == NULL)
+            <div class="col-md-1">
+                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
+            </div>
+            <div class="col-md-11">
+                <h5>{{$user->username}}</h5>
+                <h6>{{$komentar->komentar}}</h6>
+            </div>    
+            @endif
         </div>
-        <div class="col-md-11">
-            <h5>Admin</h5>
-            <h6>{{$komentar->komentar}}</h6>
+        
+        @if($komentar->balasan != NULL)
+        <div class="row">
+            <div class="col-md-11" style="text-align:right">
+                <h5>admin</h5>
+                <h6>{{$komentar->balasan}}</h6>
+            </div>
+            <div class="col-md-1">
+                <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:100%;border-radius:50%">
+            </div>
         </div>
-    </div>
-    @endif
-    @if($komentar->balasan != NULL)
-    <div class="row">
-        <div class="col-md-11" style="text-align:right">
-            <h5>Medianto Saragih</h5>
-            <h6>{{$komentar->balasan}}</h6>
-        </div>
-        <div class="col-md-1">
-            <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:100%;border-radius:50%">
-        </div>
-    </div>
-    </div>
     @endif
 		@empty
 	@endforelse
+    </div>
 
 
 		<!-- <p>{{$komentar->komentar}}</p> -->
