@@ -34,7 +34,6 @@ class RegisterController extends Controller
         $password = bcrypt($request['password']);
         
         $user =User::create([
-            'username' => $request->username,
             'role' => $request->role,
             'email' => $request->email,
             'password' => $password
@@ -44,7 +43,6 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'nama' => $request->username,
             'pekerjaan' => $request->pekerjaan,
-            'email' => $request->email,
             'no_telp' => $request->no_telp,
         ]);
 

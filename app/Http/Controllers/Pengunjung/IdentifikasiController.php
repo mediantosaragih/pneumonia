@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Pengunjung;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Kepribadian;
+use App\Models\Identifikasi;
 use App\Models\History;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -14,17 +14,17 @@ use App\Models\User;
 class IdentifikasiController extends Controller
 {
     public function index(){
-        $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
+        $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
         $user = User::find(Auth::user()->id);
-        // dd($kepribadians);
-        return view('pengunjung.identifikasi', compact('kepribadians','user'));
+       
+        return view('pengunjung.identifikasi', compact('identifikasis','user'));
     }
 
     public function check(Request $request){
         // dd($request->all());
         $kode_nama_get_req = [];
-        $kepribadians = DB::table('kepribadians')->select('*')->get();
-        foreach($kepribadians as $item){
+        $identifikasis = DB::table('identifikasis')->select('*')->get();
+        foreach($identifikasis as $item){
             $kode_fix = $item->kode;
             $kode_kepribadian = new \stdClass;
             $kode_kepribadian = $request->$kode_fix;

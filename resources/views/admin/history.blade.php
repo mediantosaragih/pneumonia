@@ -43,27 +43,18 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>ID Hasil</th>
                                 <th>Nama</th>
-                                <th>Alamat</th>
                                 <th>Jawaban</th>
+                                <th>Tanggal</th>
                                 <th>Hasil</th>
-                                <th>Kepribadian</th>
-                                <th>Kelemahan</th>
-                                <th>Kelebihan</th>
-
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($historys as $history)
                             <tr>
-                                <td>{{$history->username}}</td>
-                                <td>{{$history->history_date}}</td>
-                                <td>{{$history->kepribadian_id}}</td>
-                                <td>{{$history->hasil}}</td>
-                                <td>{{$history->hasil}}</td>
-                                <td>{{$history->hasil}}</td>
-                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->nama}}</td>
+                                <td>{{$history->identifikasi_id}}</td>
+                                <td>{{$history->tanggal}}</td>
                                 <td>{{$history->hasil}}</td>
                             </tr>
                             @empty

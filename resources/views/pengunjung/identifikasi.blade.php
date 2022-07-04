@@ -53,10 +53,13 @@
                         </div><br>
                         <hr>
 
-                        @forelse($kepribadians as $kepribadian)
+                        @forelse($identifikasis as $item)
                         <div>
-                            <h4>{{$kepribadian->name}}</h4>
-                            <input type="hidden" name="kepribadian[]" value="{{ $kepribadian->name }}" hidden>
+                            <h4>{{$item->dominance}}</h4>
+                            <h4>{{$item->influence}}</h4>
+                            <h4>{{$item->steadiness}}</h4>
+                            <h4>{{$item->compliance}}</h4>
+                            <input type="hidden" name="item[]" value="{{ $item->name }}" hidden>
                             <div class="row" style="margin-left:150px;">
                                 <div class="col-md-3">
                                     <label for="">Saya Setuju</label>
@@ -65,22 +68,18 @@
                                     <span class="sortOptions" name="answerSortList[]">
                                         <span style="padding:10px">
                                             <input type="radio" style="width: 2.5em; height: 2.5em; margin-left:30px"
-                                                name="{{$kepribadian->kode}}" value="5" required/>
+                                                name="{{$item->dominance}}" value="5" required/>
                                         </span>
                                         <span style="padding:10px">
                                             <input type="radio" style="width: 2em; height: 2.5em;"
-                                                name="{{$kepribadian->kode}}" value="4" required/>
+                                                name="{{$item->influence}}" value="4" required/>
                                         </span>
                                         <span style="padding:10px">
                                             <input type="radio" style="width: 1.5em; height: 2.5em;"
-                                                name="{{$kepribadian->kode}}" value="3" required/>
+                                                name="{{$item->steadiness}}" value="3" required/>
                                             <span style="padding:10px">
                                                 <input type="radio" style="width: 2em; height: 2.5em;"
-                                                    name="{{$kepribadian->kode}}" value="2" required/>
-                                            </span>
-                                            <span style="padding:10px">
-                                                <input type="radio" style="width: 2.5em; height: 2.5em;"
-                                                    name="{{$kepribadian->kode}}" value="1" required/>
+                                                    name="{{$item->compliance}}" value="2" required/>
                                             </span>
                                         </span>
                                 </div>

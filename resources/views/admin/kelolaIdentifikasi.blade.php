@@ -97,36 +97,34 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>ID Data</th>
-            <th>Kepribadian</th>
-            <th>Kelemahan</th>
-            <th>Kelebihan</th>
+            <th>Dominance</th>
+            <th>Influence</th>
+            <th>Steadiness</th>
+            <th>Compliance</th>
             <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
-        @forelse($kepribadians as $kepribadian)
+        @forelse($identifikasis as $identifikasi)
         <tr>
-            <td>{{$kepribadian->kode}}</td>
-            <td>{{$kepribadian->name}}</td>
-            <td>{{$kepribadian->name}}</td>
-            <td>{{$kepribadian->name}}</td>
+            <td>{{$identifikasi->dominance}}</td>
+            <td>{{$identifikasi->influence}}</td>
+            <td>{{$identifikasi->steadiness}}</td>
+            <td>{{$identifikasi->compliance}}</td>
             <td>
-                <a href="/kelolaKepribadian/edit/{{$kepribadian->id}}">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
+                <a href="/kelolaKepribadian/edit/{{$identifikasi->id}}">
+                <button class="badge bg-primary" ><i class="fa fa-edit" aria-hidden="true"></i></button>
                 </a>
-                <form action="/kelolaKepribadian/delete/{{$kepribadian->id}}" method="post" class="d-inline">
+                <form action="/kelolaKepribadian/delete/{{$identifikasi->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
-                    <a href="">
-                        <i class="fa fa-trash" aria-hidden="true"></i>
-                    </a>
+                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </form>
             </td>
         </tr>
         @empty
         <tr>
-            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+            <td class="text-center text-mute" colspan="5">Data tidak tersedia</td>
         </tr>
         @endforelse
     </tbody>

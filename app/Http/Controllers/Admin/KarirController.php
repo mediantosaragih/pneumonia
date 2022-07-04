@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Karir;
 use Carbon\Carbon;
-use App\Models\History;
+use App\Models\HasilIdentifikasi;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,9 +16,9 @@ class KarirController extends Controller
 
         $user = User::find(Auth::user()->id);
         $karir = Karir::orderBy('kategori', 'ASC')->get();
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
 
         return view('admin.kelolaKarir', compact('karir','user'))
                                     ->with('harian', $harian)
@@ -30,9 +30,9 @@ class KarirController extends Controller
     public function indexCreate(){
         $user = User::find(Auth::user()->id);
         $karir = Karir::orderBy('kategori', 'ASC')->get();
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
 
         return view('admin.createKarir', compact('karir','user'))
                                     ->with('harian', $harian)
@@ -72,9 +72,9 @@ class KarirController extends Controller
     public function edit($id){
         $user = User::find(Auth::user()->id);
         $karir = Karir::find($id);
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
         return view('admin.updateKarir',compact('user'))->with('karir', $karir)
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)

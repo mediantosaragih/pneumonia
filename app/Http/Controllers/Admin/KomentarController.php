@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Komentar;
 use Carbon\Carbon;
-use App\Models\History;
+use App\Models\HasilIdentifikasi;
 use App\Models\Balasan;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
@@ -19,9 +19,9 @@ class KomentarController extends Controller
 
         $user = User::find(Auth::user()->id);
         $komentars = Komentar::orderby('created_at', 'DESC')->get();
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
         // dd($komentars);
         return view('admin.layananPertanyaan', compact('komentars','user'))
                                     ->with('harian', $harian)
@@ -33,9 +33,9 @@ class KomentarController extends Controller
         $komentars = Komentar::find($id);
         
         $user = User::find(Auth::user()->id);
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
         return view('admin.balasPertanyaan', compact('komentars','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipeBelajarsTable extends Migration
+class CreateLayananKepribadiansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTipeBelajarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipe_belajars', function (Blueprint $table) {
+        Schema::create('layanan_kepribadians', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_belajar');
-            $table->enum('kategori',['Koleris','Sanguinis','Melankolis','Phlegmatis']);
+            $table->enum('jenis_kepribadian',['Dominance','Influence','Steadiness','Compliance']);
             $table->text('keterangan');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ class CreateTipeBelajarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipe_belajars');
+        Schema::dropIfExists('layanan_kepribadians');
     }
 }

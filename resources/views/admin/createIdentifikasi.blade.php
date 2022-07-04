@@ -88,12 +88,32 @@
                     @csrf
                     <div class="text-left rounded p-4">
                         <p>
-                            <label for="">Kode Sifat</label>
-                            <input type="text" name="kode" id="kode" class="form-control" style="width:100%" required>
+                            <label for="">Tipe Dominance</label>
+                            <input name="dominance" type="text" class="form-control" style="width:100%" required>
                         </p>
                         <p>
+                            <label for="">Tipe Influence</label>
+                            <input name="influence" type="text" class="form-control"  style="width:100%" required>
+                        </p>
+                        <p>
+                            <label for="">Tipe Steadiness</label>
+                            <input name="steadiness" type="text" class="form-control"  style="width:100%" required>
+                        </p>
+                        <p>
+                            <label for="">Tipe Compliance</label>
+                            <input name="compliance" type="text" class="form-control" style="width:100%" required>
+                        </p>
+                        <!-- <p>
                             <label for="">Sifat</label>
-                            <input type="text" name="name" id="name" class="form-control" style="width:100%" required>
+                            <input type="text" name="ciri_ciri" id="ciri_ciri" class="form-control" style="width:100%" required>
+                        </p>
+                        <p>
+                            <label for="">Kelemahan</label>
+                            <input type="text" name="kelebihan" id="kelebihan" class="form-control" style="width:100%">
+                        </p>
+                        <p>
+                            <label for="">Kelebihan</label>
+                            <input type="text" name="kelemahan" id="kelemahan" class="form-control" style="width:100%">
                         </p>
                         <p>
                             <label for="kategori">Pilih Kategori</label>
@@ -104,7 +124,7 @@
                                 <option value="Steadiness">Steadiness</option>
                                 <option value="Compliance">Compliance</option>
                             </select>
-                        </p>
+                        </p> -->
                     </div>
                     <div class="text-right " style="margin-right:20px">
                         <a href="/kelolaKepribadian" class="btn btn-secondary">Cancel</a>

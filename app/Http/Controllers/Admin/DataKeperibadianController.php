@@ -4,23 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\LayananKepribadian;
+use App\Models\DataKepribadian;
 use Carbon\Carbon;
 use App\Models\HasilIdentifikasi;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class LayananKepribadianController extends Controller
+class DataKeperibadianController extends Controller
 {
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $layanan = LayananKepribadian::orderBy('jenis_kepribadian', 'ASC')->get();
+        $datakepribadians = DataKepribadian::orderBy('kategori', 'ASC')->get();
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.layananKepribadian', compact('layanan','user'))
+        return view('admin.layananKepribadian', compact('datakepribadians','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -29,12 +29,12 @@ class LayananKepribadianController extends Controller
     public function indexCreate(){
         
         $user = User::find(Auth::user()->id);
-        $layanan = LayananKepribadian::orderBy('jenis_kepribadian', 'ASC')->get();
+        $datakepribadians = DataKepribadian::orderBy('kategori', 'ASC')->get();
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.createLayananKepribadian', compact('layanan','user'))
+        return view('admin.createLayananKepribadian', compact('datakepribadians','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -43,17 +43,19 @@ class LayananKepribadianController extends Controller
     public function create(Request $request){
 
         $this->validate($request, [
-            'jenis_kepribadian' => 'required|string|max:155',
-            'keterangan' => 'required'
+            'kategori' => 'required',
+            'kelebihan' => 'required',
+            'kelemahan' => 'required'
         ]);
         
 
-        $layanan = LayananKepribadian::create([
-            'jenis_kepribadian' => $request->jenis_kepribadian,
-            'keterangan' => $request->keterangan,
+        $datakepribadians = DataKepribadian::create([
+            'kategori' => $request->kategori,
+            'kelebihan' => $request->kelebihan,
+            'kelemahan' => $request->kelemahan,
         ]);
 
-        if ($layanan) {
+        if ($datakepribadians) {
             return redirect()
                 ->intended('/layananKepribadian')
                 ->with([
@@ -70,7 +72,7 @@ class LayananKepribadianController extends Controller
     }
 
     public function edit($id){
-        $layanan = LayananKepribadian::find($id);
+        $datakepribadians = DataKepribadian::find($id);
         
         $user = User::find(Auth::user()->id);
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
@@ -78,22 +80,23 @@ class LayananKepribadianController extends Controller
         $all = HasilIdentifikasi::all()->count();
         // dd($kepribadian);
         return view('admin.updateLayananKepribadian', compact('user'))
-                                ->with('layanan', $layanan)
+                                ->with('datakepribadians', $datakepribadians)
                                 ->with('harian', $harian)
                                 ->with('bulanan', $bulanan)
                                 ->with('all', $all);
     }
 
     public function update(Request $request){
-        $layanan = LayananKepribadian::find($request->id);
+        $datakepribadians = DataKepribadian::find($request->id);
         $this->validate($request, [
-            'jenis_kepribadian' => 'required|string|max:155',
-            'keterangan' => 'required'
+            'kategori' => 'required',
+            'kelebihan' => 'required',
+            'kelemahan' => 'required'
         ]);
 
-        $layanan->update($request->all());
+        $datakepribadians->update($request->all());
 
-        if ($layanan) {
+        if ($datakepribadians) {
             return redirect()
                 ->intended('/layananKepribadian')
                 ->with([
@@ -110,9 +113,9 @@ class LayananKepribadianController extends Controller
     }
 
     public function destroy($id){
-        $layanan = LayananKepribadian::find($id);
-        $layanan->delete();
-        if ($layanan) {
+        $datakepribadians = DataKepribadian::find($id);
+        $datakepribadians->delete();
+        if ($datakepribadians) {
             return redirect()
             ->intended('/layananKepribadian')
                 ->with([

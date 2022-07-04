@@ -17,9 +17,11 @@ class CreatePengunjungsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('nama');
+            $table->date('tanggal_lahir')->nullable();
             $table->string('pekerjaan');
-            $table->string('email');
             $table->string('no_telp');
+            $table->string('foto')->nullable();
+            $table->string('alamat')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Kepribadian;
+use App\Models\Identifikasi;
 use Carbon\Carbon;
-use App\Models\History;
+use App\Models\HasilIdentifikasi;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,12 +15,12 @@ class KepribadianController extends Controller
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.kelolaIdentifikasi', compact('kepribadians','user'))
+        return view('admin.kelolaIdentifikasi', compact('identifikasis','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -29,12 +29,12 @@ class KepribadianController extends Controller
 
     public function indexCreate(){
         $user = User::find(Auth::user()->id);
-        $kepribadians = Kepribadian::orderBy('kategori', 'ASC')->get();
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
+        $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.createIdentifikasi', compact('kepribadians','user'))
+        return view('admin.createIdentifikasi', compact('identifikasis','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -43,19 +43,19 @@ class KepribadianController extends Controller
     public function create(Request $request){
 
         $this->validate($request, [
-            'kode' => 'required|string|max:155',
-            'name' => 'required',
-            'kategori' => 'required'
-        ]);
-        
-
-        $kepribadian = Kepribadian::create([
-            'kode' => $request->kode,
-            'name' => $request->name,
-            'kategori' => $request->kategori,
+            'dominance' => 'required',
+            'influence' => 'required',
+            'steadiness' => 'required',
+            'compliance' => 'required'
         ]);
 
-        if ($kepribadian) {
+        $identifikasis = Identifikasi::create([
+            'dominance' => $request->dominance,
+            'influence' => $request->influence,
+            'steadiness' => $request->steadiness,
+            'compliance' => $request->compliance,
+        ]);
+        if ($identifikasis) {
             return redirect()
                 ->intended('/kelolaKepribadian')
                 ->with([
@@ -73,29 +73,29 @@ class KepribadianController extends Controller
 
     public function edit($id){
         $user = User::find(Auth::user()->id);
-        $kepribadian = Kepribadian::find($id);
-        $harian = History::where('history_date', Carbon::now()->format('Y-m-d'))->count();
-        $bulanan = History::whereDate('created_at','>', Carbon::now()->subMonth())->count();
-        $all = History::all()->count();
-        // dd($kepribadian);
-        return view('admin.updateIdentifikasi',compact('user'))->with('kepribadian', $kepribadian)
+        $identifikasis = Identifikasi::find($id);
+        $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
+        $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
+        $all = HasilIdentifikasi::all()->count();
+      
+        return view('admin.updateIdentifikasi',compact('user'))->with('identifikasis', $identifikasis)
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
     }
 
     public function update(Request $request){
-        $kepribadian = Kepribadian::find($request->id);
-        // dd($kepribadian);
+        $identifikasis = Identifikasi::find($request->id);
+ 
         $this->validate($request, [
-            'kode' => 'required|string|max:155',
-            'name' => 'required',
-            'kategori' => 'required'
+            'dominance' => 'required',
+            'influence' => 'required',
+            'steadiness' => 'required',
+            'compliance' => 'required'
         ]);
+        $identifikasis->update($request->all());
 
-        $kepribadian->update($request->all());
-
-        if ($kepribadian) {
+        if ($identifikasis) {
             return redirect()
                 ->intended('/kelolaKepribadian')
                 ->with([
@@ -112,9 +112,9 @@ class KepribadianController extends Controller
     }
 
     public function destroy($id){
-        $kepribadian = Kepribadian::find($id);
-        $kepribadian->delete();
-        if ($kepribadian) {
+        $identifikasis = Identifikasi::find($id);
+        $identifikasis->delete();
+        if ($identifikasis) {
             return redirect()
             ->intended('/kelolaKepribadian')
                 ->with([

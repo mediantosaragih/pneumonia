@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoriesTable extends Migration
+class CreateHasilIdentifikasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('histories', function (Blueprint $table) {
+        Schema::create('hasil_identifikasis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pengunjung_id');
-            $table->text('kepribadian_id');
-            $table->text('poin');
+            $table->text('identifikasi_id');
             $table->text('karir');
             $table->date('tanggal');
             $table->string('hasil');
-            $table->string('kelemahan');
-            $table->string('kelebihan');
             $table->foreign('pengunjung_id')->references('id')->on('pengunjungs')->onDelete('cascade');
             $table->timestamps();
         });
@@ -35,6 +32,6 @@ class CreateHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('hasil_identifikasis');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDISCSTable extends Migration
+class CreateIdentifikasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateDISCSTable extends Migration
      */
     public function up()
     {
-        Schema::create('d_i_s_c_s', function (Blueprint $table) {
+        Schema::create('identifikasis', function (Blueprint $table) {
             $table->id();
-            $table->enum('jenis_kepribadian',['Dominance','Influence','Steadiness','Compliance']);
-            $table->text('keterangan');
+            $table->string('dominance');
+            $table->string('influence');
+            $table->string('steadiness');
+            $table->string('compliance');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateDISCSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('d_i_s_c_s');
+        Schema::dropIfExists('identifikasis');
     }
 }

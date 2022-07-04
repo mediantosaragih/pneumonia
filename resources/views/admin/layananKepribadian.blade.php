@@ -89,20 +89,22 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>ID Layanan</th>
-            <th>Keterangan</th>
+            <th>Kepribadian</th>
+            <th>Kelebihan</th>
+            <th>Kelemahan</th>
             <th>Aksi</th>
 
         </tr>
     </thead>
     <tbody>
-        @forelse($discs as $disc)
+        @forelse($datakepribadians as $item)
         <tr>
-            <td>{{$disc->jenis_kepribadian}}</td>
-            <td>{{$disc->keterangan}}</td>
+            <td>{{$item->kategori}}</td>
+            <td>{{$item->kelebihan}}</td>
+            <td>{{$item->kelemahan}}</td>
             <td>
-                <a href="/layananKepribadian/update/{{$disc->id}}"><span class="fa fa-edit"></span></a>
-                <form action="/layananKepribadian/delete/{{$disc->id}}" method="post" class="d-inline">
+                <a href="/layananKepribadian/update/{{$item->id}}"><span class="fa fa-edit"></span></a>
+                <form action="/layananKepribadian/delete/{{$item->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
                     <button class="fa fa-trash" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>

@@ -90,7 +90,6 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>ID Karir</th>
             <th>Karir</th>
             <th>Kategori</th>
             <th>Aksi</th>

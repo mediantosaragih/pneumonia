@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\KarirController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\LayananKepribadianController;
+use App\Http\Controllers\Admin\DataKeperibadianController;
 use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Pengunjung\FaqimileController;
 use App\Http\Controllers\Pengunjung\IdentifikasiController;
@@ -118,13 +119,13 @@ Route::get('/faqimile', [FaqimileController::class, 'index'])->middleware('auth'
 Route::post('/faqimile', [FaqimileController::class, 'create'])->middleware('auth');
 
 
-//Layanan Kepribadian
-Route::get('/layananKepribadian',[LayananKepribadianController::class, 'index'])->middleware('auth');
-Route::get('/createLayananKepribadian', [LayananKepribadianController::class, 'indexCreate'])->middleware('auth');
-Route::get('/layananKepribadian/update/{id}', [LayananKepribadianController::class, 'edit'])->middleware('auth');
-Route::post('/createLayananKepribadian/add', [LayananKepribadianController::class, 'create'])->middleware('auth');
-Route::post('/layananKepribadian/delete/{id}', [LayananKepribadianController::class, 'destroy'])->middleware('auth');
-Route::post('/layananKepribadian/update', [LayananKepribadianController::class, 'update'])->middleware('auth');
+//Data Kepribadian
+Route::get('/layananKepribadian',[DataKeperibadianController::class, 'index'])->middleware('auth');
+Route::get('/createLayananKepribadian', [DataKeperibadianController::class, 'indexCreate'])->middleware('auth');
+Route::get('/layananKepribadian/update/{id}', [DataKeperibadianController::class, 'edit'])->middleware('auth');
+Route::post('/createLayananKepribadian/add', [DataKeperibadianController::class, 'create'])->middleware('auth');
+Route::post('/layananKepribadian/delete/{id}', [DataKeperibadianController::class, 'destroy'])->middleware('auth');
+Route::post('/layananKepribadian/update', [DataKeperibadianController::class, 'update'])->middleware('auth');
 
 //Komentar
 Route::get('/layananPertanyaan', [KomentarController::class, 'index'])->middleware('auth');

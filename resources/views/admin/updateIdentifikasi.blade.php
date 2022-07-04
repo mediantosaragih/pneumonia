@@ -97,26 +97,25 @@
                 <div class="text-left rounded p-4">
 
                     <p>
-                        <label for="">Kode Sifat</label>
-                        <input type="text" name="kode" id="kode" class="form-control" value="{{$kepribadian->kode}}" style="width:100%">
+                        <label for="">Tipe Dominance</label>
+                        <input type="text" name="dominance" id="dominance" class="form-control" value="{{$identifikasis->dominance}}" style="width:100%">
                     </p>
                     <p>
-                        <label for="">Sifat</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{$kepribadian->name}}" style="width:100%">
+                        <label for="">Tipe Influence</label>
+                        <input type="text" name="influence" id="influence" class="form-control" value="{{$identifikasis->influence}}" style="width:100%">
                     </p>
                     <p>
-                        <label for="kategori">Pilih Kategori</label>
-                        <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
-                            <option value="">-- Pilih --</option>
-                            <option value="Dominance" {{($kepribadian->kategori === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
-                            <option value="Influence" {{($kepribadian->kategori === 'Influence') ? 'Selected' : ''}}>Influence</option>
-                            <option value="Steadiness" {{($kepribadian->kategori === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
-                            <option value="Compliance" {{($kepribadian->kategori === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
-                        </select>
+                        <label for="">Tipe Steadiness</label>
+                        <input type="text" name="steadiness" id="steadiness" class="form-control" value="{{$identifikasis->steadiness}}" style="width:100%">
                     </p>
+                    <p>
+                        <label for="">Tipe Compliance</label>
+                        <input type="text" name="compliance" id="compliance" class="form-control" value="{{$identifikasis->compliance}}" style="width:100%">
+                    </p>
+                    
                 </div>
                 <div class="text-right " style="margin-right:20px">
-                    <input name="id" type="hidden" value="{{$kepribadian->id}}">
+                    <input name="id" type="hidden" value="{{$identifikasis->id}}">
                     <a href="/kelolaKepribadian" class="btn btn-secondary">Cancel</a>
                     <button class="submit btn btn-primary">Update</button>
                 </div>
