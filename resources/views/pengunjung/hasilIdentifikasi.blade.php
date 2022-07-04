@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="chart-area">
-                                                <canvas id="myAreaChart"></canvas>
+                                            <canvas id="oilChart" width="600" height="400"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -110,6 +110,38 @@
           color:black;
       }
   </style>
+
+  <script>
+    var oilCanvas = document.getElementById("oilChart");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+    var oilData = {
+        labels: [
+            "Dominant",
+            "Influence",
+            "Steadiness",
+            "Compliance"
+        ],
+        datasets: [
+            {
+                data: [133.3, 86.2, 52.2, 51.2],
+                backgroundColor: [
+                    "#FF6384",
+                    "#63FF84",
+                    "#84FF63",
+                    "#8463FF"
+                ]
+            }]
+    };
+
+    var pieChart = new Chart(oilCanvas, {
+    type: 'pie',
+    data: oilData
+    });
+
+  </script>
 
 
 @endsection
