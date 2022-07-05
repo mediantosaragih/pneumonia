@@ -54,7 +54,22 @@
                         <hr>
 
                         @forelse($kepribadians as $kepribadian)
-                        <div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="cek"><input type="checkbox" name="cb1" class="chb" /> Pemalas</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="checkbox" name="cb2" class="chb" /> Pemurung</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="checkbox" name="cb3" class="chb" /> Pemabuk</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="checkbox" name="cb4" class="chb" /> Pengarang</label>
+                            </div>
+                        </div>
+                        <!-- <div>
                             <h4>{{$kepribadian->name}}</h4>
                             <input type="hidden" name="kepribadian[]" value="{{ $kepribadian->name }}" hidden>
                             <div class="row" style="margin-left:150px;">
@@ -88,7 +103,7 @@
                                     <label for="">Saya tidak setuju</label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <hr>
                         @empty
                         <tr>
@@ -115,6 +130,9 @@
 
         background-size: 710px 760px;
     }
+    .cek{
+        display:block;
+    }
 </style>
 </body>
 
@@ -124,6 +142,22 @@
     $(document).ready(function () {
         $('#example').DataTable();
     });
+
+    $(".chb").change(function(e) {
+
+    //Getting status before unchecking all
+    var status = $(this).prop("checked");
+
+    $(".chb").prop('checked', false);
+    $(this).prop('checked', true);
+
+    //false means checkbox was checked and became unchecked on change event, so let it stay unchecked
+    if (status === false) {
+    $(this).prop('checked', false);
+    }
+
+    });
+
 </script>
 
 @endsection
