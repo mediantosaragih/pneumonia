@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pengunjung;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class DashboardPengunjungController extends Controller
 {
@@ -16,31 +17,40 @@ class DashboardPengunjungController extends Controller
     }
 
     public function profile($id){
-        $user = User::find(Auth::user()->id);
+        $user = User::where('id',Auth::user()->id)->first();
         $pengunjung = Pengunjung::where('user_id',$id)->first();
-        // dd($pengunjung->passsword);
-        // $user->password = decrypt($user->password);
-        // dd($user->password);
+        
         return view('pengunjung.datapribadi', compact('pengunjung','user'));
     }
 
     public function update(Request $request){
-        dd($request->all());
-        $kepribadian = Kepribadian::find($request->id);
-        // dd($kepribadian);
+        // dd($request->all());
+        $user = User::find($request->id);
+        $pengunjung = Pengunjung::where('user_id',$request->id)->first();
+        // dd($pengunjung);
         $this->validate($request, [
-            'kode' => 'required|string|max:155',
-            'name' => 'required',
-            'kategori' => 'required'
+            'username' => 'required|string|max:155',
+            'pekerjaan' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required'
         ]);
 
-        $kepribadian->update($request->all());
+        $pengunjung->update([
+            'nama' => $request->username,
+            'pekerjaan' => $request->pekerjaan,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'no_telp' => $request->no_telp,
+            'nama' => $request->username,
+            'alamat' => $request->alamat,
+        ]);
+        $user->update([
+            'email' => $request->email,
+        ]);
 
-        if ($kepribadian) {
-            return redirect()
-                ->intended('/kelolaKepribadian')
+        if ($pengunjung) {
+            return back()
                 ->with([
-                    'success' => 'Sifat kepribadian diupdate'
+                    'success' => 'Data diupdate'
                 ]);
         } else {
             return redirect()

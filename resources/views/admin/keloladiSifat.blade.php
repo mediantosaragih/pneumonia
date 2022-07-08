@@ -117,7 +117,7 @@
                         @endforelse
                     </tbody>
                 </table>
-========
+
             <div class="text-left rounded p-4">
                 <p>
                 <label for="">Kode Sifat</label>

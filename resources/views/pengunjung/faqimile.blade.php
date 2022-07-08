@@ -20,10 +20,22 @@
     <h4 class="mb-3">Komentar :</h4>
 
 
-    <div class="card" style="margin:20px">
+    <div class="card">
         @forelse($komentars as $komentar)
         <div class="row">
             @if($komentar->balasan == NULL)
+            <div class="col-md-11">
+                <h5>{{$user->username}}</h5>
+                <div class="col-md-1">
+                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
+            </div>
+                <h6>{{$komentar->komentar}}</h6>
+            </div>
+            @endif
+        </div>
+
+        @if($komentar->balasan != NULL)
+        <div class="row" style="padding:1%">
             <div class="col-md-1">
                 <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
             </div>
@@ -31,25 +43,25 @@
                 <h5>{{$user->username}}</h5>
                 <h6>{{$komentar->komentar}}</h6>
             </div>
-            @endif
         </div>
-
-        @if($komentar->balasan != NULL)
-        <div class="row">
+        <div class="row" style="padding:1%">
             <div class="col-md-11" style="text-align:right">
-                <h5>admin</h5>
+                <h5>Admin</h5>
                 <h6>{{$komentar->balasan}}</h6>
             </div>
             <div class="col-md-1">
                 <img src="assets/images/im.jpg" alt="Chain App Dev" style="width:100%;border-radius:50%">
             </div>
         </div>
-        @endif
-        @empty
-        @endforelse
+
+    @endif
+		@empty
+	@endforelse
     </div>
-
-
+        </div>
+        </div>
+    </div>
+        </div>
 </div>
 
 <span id="message"></span>

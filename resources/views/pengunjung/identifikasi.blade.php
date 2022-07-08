@@ -54,40 +54,22 @@
                         <hr>
 
                         @forelse($identifikasis as $item)
-                        <div>
-                            <h4>{{$item->dominance}}</h4>
-                            <h4>{{$item->influence}}</h4>
-                            <h4>{{$item->steadiness}}</h4>
-                            <h4>{{$item->compliance}}</h4>
-                            <input type="hidden" name="item[]" value="{{ $item->name }}" hidden>
-                            <div class="row" style="margin-left:150px;">
-                                <div class="col-md-3">
-                                    <label for="">Saya Setuju</label>
-                                </div>
-                                <div class="col-md-6" style="margin-left:-80px">
-                                    <span class="sortOptions" name="answerSortList[]">
-                                        <span style="padding:10px">
-                                            <input type="radio" style="width: 2.5em; height: 2.5em; margin-left:30px"
-                                                name="{{$item->dominance}}" value="5" required/>
-                                        </span>
-                                        <span style="padding:10px">
-                                            <input type="radio" style="width: 2em; height: 2.5em;"
-                                                name="{{$item->influence}}" value="4" required/>
-                                        </span>
-                                        <span style="padding:10px">
-                                            <input type="radio" style="width: 1.5em; height: 2.5em;"
-                                                name="{{$item->steadiness}}" value="3" required/>
-                                            <span style="padding:10px">
-                                                <input type="radio" style="width: 2em; height: 2.5em;"
-                                                    name="{{$item->compliance}}" value="2" required/>
-                                            </span>
-                                        </span>
-                                </div>
-                                <div class="col-md-3" style="margin-left:-80px">
-                                    <label for="">Saya tidak setuju</label>
-                                </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->dominance}}" required/> {{$item->dominance}}</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="radio" name="{{$item->id}}"value="{{$item->influence}}" required/> {{$item->influence}}</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->steadiness}}" required/>{{$item->steadiness}}</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->compliance}}" required/> {{$item->compliance}}</label>
                             </div>
                         </div>
+                    
                         <hr>
                         @empty
                         <tr>
@@ -114,6 +96,9 @@
 
         background-size: 710px 760px;
     }
+    .cek{
+        display:block;
+    }
 </style>
 </body>
 
@@ -123,6 +108,22 @@
     $(document).ready(function () {
         $('#example').DataTable();
     });
+
+    $(".chb").change(function(e) {
+
+    //Getting status before unchecking all
+    var status = $(this).prop("checked");
+
+    $(".chb").prop('checked', false);
+    $(this).prop('checked', true);
+
+    //false means checkbox was checked and became unchecked on change event, so let it stay unchecked
+    if (status === false) {
+    $(this).prop('checked', false);
+    }
+
+    });
+
 </script>
 
 @endsection

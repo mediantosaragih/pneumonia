@@ -108,7 +108,6 @@
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <button class="btn btn-primary">Submit</button>
-                    <a href="/layananKepribadian" class="btn btn-danger">Cancel</a>
                 </div>
         </div>
     </div>

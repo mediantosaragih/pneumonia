@@ -10,8 +10,8 @@ class HasilIdentifikasi extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'kepribadian_id' => 'array',
-        'poin' => 'array'
+        'identifikasi_id' => 'array',
+        'karir' => 'array'
     ];
     
     public function user(){
