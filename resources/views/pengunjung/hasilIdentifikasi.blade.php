@@ -104,13 +104,11 @@
                                     </div>
                                     <div>
                                         <ol class="list-group list-group-numbered">
-                                        @if (is_array($karir) || is_object($karir)){
                                             @forelse($karir as $data)
-                                                <li class="list-group-item">{{$data}}</li>
+                                                <li class="list-group-item">{{$data->karir}}</li>
                                                 @empty
                                                 <li class="list-group-item">Data tidak tersedia</li>
                                             @endforelse
-                                        @endif
                                         </ol>
                                     </div>
                                 </div>

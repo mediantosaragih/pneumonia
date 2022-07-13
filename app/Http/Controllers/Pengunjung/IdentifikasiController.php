@@ -90,7 +90,6 @@ class IdentifikasiController extends Controller
             $hasil = "Compliance";
             $karir = Karir::where('kategori','Compliance')->get();
         }
-        $karir = $karir->toArray();
 
         $history = HasilIdentifikasi::create([
             'pengunjung_id' => $pengunjung->id,
@@ -113,9 +112,11 @@ class IdentifikasiController extends Controller
     }
 
     public function hasil(Request $request){
+        // dd($request->all());
         $user = User::find(Auth::user()->id);
         $history = HasilIdentifikasi::find($request->history);
-        // dd($request->karir);
+        $karir = Karir::where('Kategori',$history->hasil)->get();
+        // dd($karir);
         return view('pengunjung.hasilIdentifikasi', compact('user'),[
             'history' => $history,
             'identifikasi_get_req' => $request->identifikasi_get_req,
@@ -124,7 +125,7 @@ class IdentifikasiController extends Controller
             'sumSteadiness'=>$request->sumSteadiness,
             'sumCompliance' =>$request->sumCompliance,
             'count' =>$request->count,
-            'karir' =>$request->karir
+            'karir' =>$karir
         ]);
     }
 }
