@@ -91,21 +91,19 @@
     <thead>
         <tr>
             <th>Kepribadian</th>
-            <th>Kelebihan</th>
-            <th>Kelemahan</th>
+            <th>keterangan</th>
             <th>Aksi</th>
 
         </tr>
     </thead>
     <tbody>
-        @forelse($datakepribadians as $item)
+        @forelse($layanans as $layanan)
         <tr>
-            <td>{{$item->kategori}}</td>
-            <td>{{$item->kelebihan}}</td>
-            <td>{{$item->kelemahan}}</td>
+            <td>{{$layanan->jenis_kepribadian}}</td>
+            <td>{{$layanan->keterangan}}</td>
             <td>
-                <a href="/layananKepribadian/update/{{$item->id}}"><span class="fa fa-edit"></span></a>
-                <form action="/layananKepribadian/delete/{{$item->id}}" method="post" class="d-inline">
+                <a href="/layananKepribadian/update/{{$layanan->id}}"><span class="fa fa-edit"></span></a>
+                <form action="/layananKepribadian/delete/{{$layanan->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
                     <button class="" style="color:blue;border:none" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>

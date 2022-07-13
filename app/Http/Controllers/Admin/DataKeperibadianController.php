@@ -20,7 +20,7 @@ class DataKeperibadianController extends Controller
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.layananKepribadian', compact('datakepribadians','user'))
+        return view('admin.dataKepribadian', compact('datakepribadians','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -34,7 +34,7 @@ class DataKeperibadianController extends Controller
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();
 
-        return view('admin.createLayananKepribadian', compact('datakepribadians','user'))
+        return view('admin.createDataKepribadian', compact('datakepribadians','user'))
                                     ->with('harian', $harian)
                                     ->with('bulanan', $bulanan)
                                     ->with('all', $all);
@@ -57,7 +57,7 @@ class DataKeperibadianController extends Controller
 
         if ($datakepribadians) {
             return redirect()
-                ->intended('/layananKepribadian')
+                ->intended('/dataKepribadian')
                 ->with([
                     'success' => 'Data kepribadian baru ditambahkan'
                 ]);
@@ -79,7 +79,7 @@ class DataKeperibadianController extends Controller
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();
         // dd($kepribadian);
-        return view('admin.updateLayananKepribadian', compact('user'))
+        return view('admin.updateDataKepribadian', compact('user'))
                                 ->with('datakepribadians', $datakepribadians)
                                 ->with('harian', $harian)
                                 ->with('bulanan', $bulanan)
@@ -87,6 +87,7 @@ class DataKeperibadianController extends Controller
     }
 
     public function update(Request $request){
+        // dd($request->all());
         $datakepribadians = DataKepribadian::find($request->id);
         $this->validate($request, [
             'kategori' => 'required',
@@ -98,7 +99,7 @@ class DataKeperibadianController extends Controller
 
         if ($datakepribadians) {
             return redirect()
-                ->intended('/layananKepribadian')
+                ->intended('/dataKepribadian')
                 ->with([
                     'success' => 'Data kepribadian diupdate'
                 ]);
@@ -117,7 +118,7 @@ class DataKeperibadianController extends Controller
         $datakepribadians->delete();
         if ($datakepribadians) {
             return redirect()
-            ->intended('/layananKepribadian')
+            ->intended('/dataKepribadian')
                 ->with([
                     'success' => 'Data has been deleted successfully'
                 ]);
@@ -128,6 +129,6 @@ class DataKeperibadianController extends Controller
                     'error' => 'Some problem has occurred, please try again'
                 ]);
         }
-        return redirect('/layananKepribadian')->with('success', 'Data has been deleted!');
+        return redirect('/dataKepribadian')->with('success', 'Data has been deleted!');
     }
 }

@@ -85,25 +85,19 @@
                 <div class="text-left rounded p-4">
                     <p>
                         <label for="kategori">Jenis Kepribadian</label>
-                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
+                            <select name="jenis_kepribadian" required id="jenis_kepribadian" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option value="Dominance" {{($datakepribadians->kategori === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
-                                <option value="Influence" {{($datakepribadians->kategori === 'Influence') ? 'Selected' : ''}}>Influence</option>
-                                <option value="Steadiness" {{($datakepribadians->kategori === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
-                                <option value="Compliance" {{($datakepribadians->kategori === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
+                                <option value="Dominance" {{($layanan->jenis_kepribadian === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
+                                <option value="Influence" {{($layanan->jenis_kepribadian === 'Influence') ? 'Selected' : ''}}>Influence</option>
+                                <option value="Steadiness" {{($layanan->jenis_kepribadian === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
+                                <option value="Compliance" {{($layanan->jenis_kepribadian === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
                             </select>
                     </p>
                     <p>
-                        <label for="">Kelebihan</label>
-                        <input type="text" id="kelebihan" name="kelebihan" value ="{{$datakepribadians->kelebihan}}" class="form-control" style="width:100%"
-                            required>
+                        <label for="">Keterangan</label>
+                        <textarea name="keterangan" id="keterangan" class="form-control" style="width:100%" required>{{$layanan->keterangan}}</textarea>
                     </p>
-                    <p>
-                        <label for="">Kelemahan</label>
-                        <input type="text" id="kelemahan" name="kelemahan" value ="{{$datakepribadians->kelemahan}}" class="form-control" style="width:100%"
-                            required>
-                    </p>
-                    <input type="hidden" id="id" name="id" value="{{$datakepribadians->id}}">
+                    <input type="hidden" id="id" name="id" value="{{$layanan->id}}">
                 </div>
                 <div class="text-right " style="margin-right:20px">
                     <a href="/layananKepribadian" class="btn btn-secondary">Cancel</a>

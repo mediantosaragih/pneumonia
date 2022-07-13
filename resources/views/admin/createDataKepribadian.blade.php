@@ -84,29 +84,29 @@
                 <h4>Tambah Data Kepribadian</h4>
             </div>
             <div class="table-responsive">
-                <form role="form" action="/kelolaKepribadian" method="post">
+                <form role="form" action="/createLayananKepribadian/add" method="post">
                     @csrf
                     <div class="text-left rounded p-4">
                         <p>
                             <label for="">Kelemahan</label>
-                            <input name="dominance" type="text" class="form-control" style="width:100%" required>
+                            <input name="kelemahan" type="text" class="form-control" style="width:100%" required>
                         </p>
                         <p>
                             <label for="">Kelebihan</label>
-                            <input name="influence" type="text" class="form-control"  style="width:100%" required>
+                            <input name="kelebihan" type="text" class="form-control"  style="width:100%" required>
                         </p>
-                        <p>
+                        <!-- <p>
                             <label for="">Ciri - Ciri</label>
                             <input name="steadiness" type="text" class="form-control"  style="width:100%" required>
-                        </p>
+                        </p> -->
                         <p>
-                            <label for="">Kategori</label>
-                            <select class="form-select" aria-label="">
-                            <option selected>Pilih Kategori</option>
-                            <option value="dominant">Dominant</option>
-                            <option value="influence">Influence</option>
-                            <option value="steadiness">Steadiness</option>
-                            <option value="compliance">Compliance</option>
+                        <label for="kategori">Pilih Kategori</label>
+                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Dominance">Dominance</option>
+                                <option value="Influence">Influence</option>
+                                <option value="Steadiness">Steadiness</option>
+                                <option value="Compliance">Compliance</option>
                             </select>
                         </p>
                         <!-- <p>

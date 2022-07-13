@@ -88,7 +88,7 @@
             <h4 >Kelola Data Kepribadian</h4>
             <div class="mb-4" style="text-align:right" >
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                <a href="{{url('createKepribadian')}}" style="color:white">
+                <a href="{{url('createDataKepribadian')}}" style="color:white">
                         <i class="fa fa-plus-circle " aria-hidden="true">Tambah</i>
                 </a>
                 </button>
@@ -97,7 +97,6 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Kode</th>
             <th>Kelemahan</th>
             <th>Kelebihan</th>
             <th>Kategori</th>
@@ -105,17 +104,16 @@
         </tr>
     </thead>
     <tbody>
-        @forelse($identifikasis as $identifikasi)
+        @forelse($datakepribadians as $datakepribadian)
         <tr>
-            <td>{{$identifikasi->dominance}}</td>
-            <td>{{$identifikasi->influence}}</td>
-            <td>{{$identifikasi->steadiness}}</td>
-            <td>{{$identifikasi->compliance}}</td>
+            <td>{{$datakepribadian->kelemahan}}</td>
+            <td>{{$datakepribadian->kelebihan}}</td>
+            <td>{{$datakepribadian->kategori}}</td>
             <td>
-                <a href="/kelolaKepribadian/edit/{{$identifikasi->id}}">
+                <a href="/updateDataKepribadian/update/{{$datakepribadian->id}}">
                 <button class="" style="border:none; color:blue; background:none" ><i class="fa fa-edit" aria-hidden="true"></i></button>
                 </a>
-                <form action="/kelolaKepribadian/delete/{{$identifikasi->id}}" method="post" class="d-inline">
+                <form action="/dataKepribadian/delete/{{$datakepribadian->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
                     <button class="" style="color:blue;border:none;background:none" onclick="return confrim('Are you sure?')"><i class="fa fa-trash" aria-hidden="true"></i></button>

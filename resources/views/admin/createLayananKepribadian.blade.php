@@ -88,7 +88,7 @@
                 <div class="text-left rounded p-4">
                     <p>
                         <label for="kategori">Jenis Kepribadian</label>
-                            <select name="kategori" required="" id="kategori" class="form-control">
+                            <select name="jenis_kepribadian" required id="jenis_kepribadian" class="form-control">
                                     <option value="">-- Pilih --</option>
                                     <option value="Dominance">Dominance</option>
                                     <option value="Influence">Influence</option>
@@ -97,13 +97,8 @@
                             </select>
                     </p>
                     <p>
-                        <label for="">Kelemahan</label>
-                        <input type="text" id="kelemahan" name="kelemahan" class="form-control" style="width:100%"
-                            required>
-                    </p><p>
-                        <label for="">Kelebihan</label>
-                        <input type="text" id="kelebihan" name="kelebihan" class="form-control" style="width:100%"
-                            required>
+                        <label for="">Keterangan</label>
+                        <textarea name="keterangan" id="keterangan" class="form-control" style="width:100%" required></textarea>
                     </p>
                 </div>
                 <div class="text-right " style="margin-right:20px">

@@ -86,7 +86,6 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>ID Faq</th>
             <th>Tanggal</th>
             <th>Email</th>
             <th>Pertanyaan</th>
@@ -97,13 +96,12 @@
     <tbody>
         @forelse($komentars as $komentar)
         <tr>
-            <td>{{$komentar->user->username}}</td>
+            <td>{{$komentar->created_at}}</td>
+            <td>{{$komentar->email}}</td>
             <td>{{$komentar->komentar}}</td>
-            <td>{{$komentar->komentar}}</td>
-            <td>{{$komentar->komentar}}</td>
-            <td>{{$komentar->komentar}}</td>
+            <td>{{$komentar->balasan}}</td>
             <td>
-                <a href="/balasPertanyaan/{{$komentar->id}}"><span class="fa fa-reply"></span></a>
+                <a href="/balasPertanyaan/{{$komentar->balasan_id}}"><span class="fa fa-reply"></span></a>
                 <!-- <a href="#"><span class="fa fa-trash"></span></a> -->
             </td>
         </tr>

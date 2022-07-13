@@ -81,37 +81,37 @@
             <div class="bg-light rounded p-4">
                 <h4>Ubah Data Kepribadian</h4>
             </div>
-            <form role="form" action="/kelolaKepribadian/update" method="post">
+            <form role="form" action="/dataKepribadian/update" method="post">
                 @csrf
                 <div class="text-left rounded p-4">
 
                     <p>
                         <label for="">Kelemahan</label>
-                        <input type="text" name="dominance" id="dominance" class="form-control" value="" style="width:100%">
+                        <input type="text" name="kelemahan" id="kelemahan" class="form-control" value="{{$datakepribadians->kelemahan}}" style="width:100%">
                     </p>
                     <p>
                         <label for="">Kelebihan</label>
-                        <input type="text" name="influence" id="influence" class="form-control" value="" style="width:100%">
+                        <input type="text" name="kelebihan" id="kelebihan" class="form-control" value="{{$datakepribadians->kelebihan}}" style="width:100%">
                     </p>
-                    <p>
+                    <!-- <p>
                         <label for="">Ciri - Ciri</label>
                         <input type="text" name="steadiness" id="steadiness" class="form-control" value="" style="width:100%">
-                    </p>
+                    </p> -->
                     <p>
-                        <label for="">Kategori</label>
-                        <select class="form-select" aria-label="">
-                            <option selected>Pilih Kategori</option>
-                            <option value="dominant">Dominant</option>
-                            <option value="influence">Influence</option>
-                            <option value="steadiness">Steadiness</option>
-                            <option value="compliance">Compliance</option>
-                            </select>
+                    <label for="kategori">Pilih Kategori</label>
+                        <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
+                            <option value="">-- Pilih --</option>
+                            <option value="Dominance" {{($datakepribadians->kategori === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
+                            <option value="Influence" {{($datakepribadians->kategori === 'Influence') ? 'Selected' : ''}}>Influence</option>
+                            <option value="Steadiness" {{($datakepribadians->kategori === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
+                            <option value="Compliance" {{($datakepribadians->kategori === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
+                        </select>
                     </p>
 
                 </div>
                 <div class="text-right " style="margin-right:20px">
-
-                    <a href="/kelolaKepribadian" class="btn btn-secondary">Batal</a>
+                    <input type="hidden" name="id" value="{{$datakepribadians->id}}">
+                    <a href="/dataKepribadian" class="btn btn-secondary">Batal</a>
                     <button class="submit btn btn-primary">Ubah</button>
                 </div>
             </form>

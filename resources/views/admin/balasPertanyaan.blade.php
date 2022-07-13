@@ -89,7 +89,7 @@
                     <div>
                         <label for="">Pertanyaan :</label>
                         <p>
-                        <textarea class="form-control" id="" cols="20" rows="5" value="" disabled>{{$komentars->komentar}}</textarea>
+                        <textarea class="form-control" id="" cols="20" rows="5" value="" disabled>{{$komentars[0]->komentar}}</textarea>
                         </p>
                     </div>
                     <div>
@@ -97,10 +97,11 @@
                         <p>
                         <textarea class="form-control" id="balasan" name="balasan" cols="30" rows="5" placeholder="Jawaban Anda"></textarea>
                         </p>
-                        <input type="hidden" name="komentar_id" id="komentar_id" value="{{$komentars->id}}">
+                        <input type="hidden" name="komentar_id" id="komentar_id" value="{{$komentars[0]->id}}">
                     </div>
                 </div>
                 <div class="text-right " style="margin-right:20px">
+                    <input type="hidden" id="balasan_id" name="balasan_id" value="{{$komentars[0]->balasan_id}}">
                     <a href="/layananPertanyaan" class="btn btn-secondary">Batal</a>
                     <button class="btn btn-primary">Kirim</button>
                 </div>
