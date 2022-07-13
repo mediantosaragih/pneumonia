@@ -46,39 +46,39 @@
                                 <div class="peringatan-item fourth-service">
                                     <img src="https://static.neris-assets.com/images/test-header-3.svg"
                                         style="width:50px">
-                                    <h4 style="padding:10px 0px 10px 0px">Cobalah untuk tidak memilih jawaban "netral".
+                                    <h4 style="padding:10px 0px 10px 0px">Cobalah untuk tidak mengikuti jawaban orang lain.
                                     </h4>
                                 </div>
                             </div>
                         </div><br>
                         <hr>
 
-                        @forelse($identifikasis as $item)
+                        <div class="container">
+                            <div class="row" id="load_data">
 
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->dominance}}" required/> {{$item->dominance}}</label>
+                            @forelse($identifikasis as $item)
+                                <div class="col-sm-6 mb-3">
+                                <div class="card" style="text-align:left;border-radius:20px">
+                                    <div class="card-body">
+                                    <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->dominance}}" required/> {{$item->dominance}}</label>
+                                    <label class="cek"><input type="radio" name="{{$item->id}}"value="{{$item->influence}}" required/> {{$item->influence}}</label>
+                                    <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->steadiness}}" required/> {{$item->steadiness}}</label>
+                                    <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->compliance}}" required/> {{$item->compliance}}</label>
+                                    </div>
+                                </div>
+                                </div>
+                                @empty
+                                <tr>
+                                    <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
+                                </tr>
                             </div>
-                            <div class="col-md-3">
-                                <label class="cek"><input type="radio" name="{{$item->id}}"value="{{$item->influence}}" required/> {{$item->influence}}</label>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->steadiness}}" required/>{{$item->steadiness}}</label>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="cek"><input type="radio" name="{{$item->id}}" value="{{$item->compliance}}" required/> {{$item->compliance}}</label>
-                            </div>
+                            @endforelse
+
                         </div>
-                    
-                        <hr>
-                        @empty
-                        <tr>
-                            <td class="text-center text-mute" colspan="4">Data tidak tersedia</td>
-                        </tr>
-                        @endforelse
 
-                        <div class="" style="text-align:right">
-                            <button class="submit btn btn-primary">
+
+                        <div class="" style="text-align:center">
+                            <button class="submit btn btn-primary" style="width:10%">
                                 <i class="fa fa-search" aria-hidden="true">&nbsp&nbsp Cek</i>
                             </button>
                         </div>

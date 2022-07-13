@@ -40,29 +40,29 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                        <div class="bg-light  d-flex p-4 ">
+                            <i class="fa fa-chart-line fa-3x text-primary"  style="margin-left:20%"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
+                                <p class="mb-2" style="text-align:center;">Pengecekan Harian</p>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center;">{{$harian}}</h6>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                        <div class="bg-light rounded d-flex p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary" style="margin-left:20%"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >{{$all}}</h6>
+                                <p class="mb-2" style="text-align:center">Total Pengecekan</p>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$all}}</h6>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                        <div class="bg-light rounded d-flex p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary" style="margin-left:10%"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$bulanan}}</h6>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div> -->
-            <div style="width: 80%;margin-left:10%;margin-top:2%"  >
+            <div class="card" style="width: 80%;margin-left:10%;margin-top:2%;padding:1%"  >
                 <canvas id="myChart"></canvas>
             </div>
                 <script>

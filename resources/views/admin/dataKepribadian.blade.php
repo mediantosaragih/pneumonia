@@ -43,36 +43,36 @@
 
     <!-- Sale & Revenue Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
-            <div class="col-sm-6 col-xl-4">
-                <div class="bg-light  d-flex p-4 ">
-                    <i class="fa fa-chart-line fa-3x text-primary"  style="margin-left:20%"></i>
-                    <div class="ms-3">
-                        <p class="mb-2" style="text-align:center;">Pengecekan Harian</p>
-                        <h6 class="mb-0 font-weight-bolder" style="text-align:center;">{{$harian}}</h6>
+    <div class="row g-4">
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light  d-flex p-4 ">
+                            <i class="fa fa-chart-line fa-3x text-primary"  style="margin-left:20%"></i>
+                            <div class="ms-3">
+                                <p class="mb-2" style="text-align:center;">Pengecekan Harian</p>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center;">{{$harian}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light rounded d-flex p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary" style="margin-left:20%"></i>
+                            <div class="ms-3">
+                                <p class="mb-2" style="text-align:center">Total Pengecekan</p>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$all}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="bg-light rounded d-flex p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary" style="margin-left:10%"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Pengecekan Bulan ini</p>
+                                <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$bulanan}}</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-4">
-                <div class="bg-light rounded d-flex p-4">
-                    <i class="fa fa-chart-area fa-3x text-primary" style="margin-left:20%"></i>
-                    <div class="ms-3">
-                        <p class="mb-2" style="text-align:center">Total Pengecekan</p>
-                        <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$all}}</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-4">
-                <div class="bg-light rounded d-flex p-4">
-                    <i class="fa fa-chart-pie fa-3x text-primary" style="margin-left:10%"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Pengecekan Bulan ini</p>
-                        <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$bulanan}}</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Sale & Revenue End -->
 
 
@@ -85,7 +85,7 @@
             </div>
         @endif
         <div class="bg-light text-center rounded p-4">
-            <h4 >Kelola Data Identifikasi Kepribadian</h4>
+            <h4 >Kelola Data Kepribadian</h4>
             <div class="mb-4" style="text-align:right" >
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                 <a href="{{url('createKepribadian')}}" style="color:white">
@@ -97,10 +97,10 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
-            <th>Dominance</th>
-            <th>Influence</th>
-            <th>Steadiness</th>
-            <th>Compliance</th>
+            <th>Kode</th>
+            <th>Kelemahan</th>
+            <th>Kelebihan</th>
+            <th>Kategori</th>
             <th>Aksi</th>
         </tr>
     </thead>

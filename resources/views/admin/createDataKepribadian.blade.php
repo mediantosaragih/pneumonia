@@ -81,27 +81,33 @@
         @endif
         <div class=" text-center rounded p-4" style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
             <div class="bg-light rounded p-4">
-                <h4>Tambah Data Identifikasi Kepribadian</h4>
+                <h4>Tambah Data Kepribadian</h4>
             </div>
             <div class="table-responsive">
                 <form role="form" action="/kelolaKepribadian" method="post">
                     @csrf
                     <div class="text-left rounded p-4">
                         <p>
-                            <label for="">Tipe Dominance</label>
+                            <label for="">Kelemahan</label>
                             <input name="dominance" type="text" class="form-control" style="width:100%" required>
                         </p>
                         <p>
-                            <label for="">Tipe Influence</label>
+                            <label for="">Kelebihan</label>
                             <input name="influence" type="text" class="form-control"  style="width:100%" required>
                         </p>
                         <p>
-                            <label for="">Tipe Steadiness</label>
+                            <label for="">Ciri - Ciri</label>
                             <input name="steadiness" type="text" class="form-control"  style="width:100%" required>
                         </p>
                         <p>
-                            <label for="">Tipe Compliance</label>
-                            <input name="compliance" type="text" class="form-control" style="width:100%" required>
+                            <label for="">Kategori</label>
+                            <select class="form-select" aria-label="">
+                            <option selected>Pilih Kategori</option>
+                            <option value="dominant">Dominant</option>
+                            <option value="influence">Influence</option>
+                            <option value="steadiness">Steadiness</option>
+                            <option value="compliance">Compliance</option>
+                            </select>
                         </p>
                         <!-- <p>
                             <label for="">Sifat</label>

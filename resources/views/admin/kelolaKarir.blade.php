@@ -36,36 +36,37 @@
 
     <!-- Sale & Revenue Start -->
     <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Pengecekan Harian</p>
-                                <h6 class="mb-0 font-weight-bolder">{{$harian}}</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Pengecekan</p>
-                                <h6 class="mb-0 font-weight-bolder" >{{$all}}</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Pengecekan Bulan ini</p>
-                                <h6 class="mb-0 font-weight-bolder">{{$bulanan}}</h6>
-                            </div>
-                        </div>
+        <div class="row g-4">
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light  d-flex p-4 ">
+                    <i class="fa fa-chart-line fa-3x text-primary"  style="margin-left:20%"></i>
+                    <div class="ms-3">
+                        <p class="mb-2" style="text-align:center;">Pengecekan Harian</p>
+                        <h6 class="mb-0 font-weight-bolder" style="text-align:center;">{{$harian}}</h6>
                     </div>
                 </div>
-            </div>    <!-- Sale & Revenue End -->
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light rounded d-flex p-4">
+                    <i class="fa fa-chart-area fa-3x text-primary" style="margin-left:20%"></i>
+                    <div class="ms-3">
+                        <p class="mb-2" style="text-align:center">Total Pengecekan</p>
+                        <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$all}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="bg-light rounded d-flex p-4">
+                    <i class="fa fa-chart-pie fa-3x text-primary" style="margin-left:10%"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Pengecekan Bulan ini</p>
+                        <h6 class="mb-0 font-weight-bolder" style="text-align:center">{{$bulanan}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sale & Revenue End -->
 
 
 
@@ -79,7 +80,7 @@
         @endif
         <div class="bg-light text-center rounded p-4">
             <h4 class="mb-0">Kelola data Karir </h4><br>
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="align-items-center justify-content-between mb-4" style="text-align:right">
                 <button type="button" class="btn btn-primary" >
                     <a href="/kelolaKarir/add">
                         <i class="fa fa-plus-circle" style="color:white" aria-hidden="true">Tambah</i>
@@ -108,7 +109,7 @@
                 <form action="/kelolaKarir/delete/{{$data->id}}" method="post" class="d-inline">
                     <!-- @method('delete') -->
                     @csrf
-                    <button class="badge bg-danger" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
+                    <button class="" style="color:blue;border:none" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
                 </form>
             </td>
         </tr>

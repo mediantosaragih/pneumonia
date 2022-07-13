@@ -64,7 +64,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    <!-- Sale & Revenue End -->
+
     <!-- Sale & Revenue End -->
 
 
@@ -78,33 +79,39 @@
         @endif
         <div class=" text-center rounded p-4" style="background: #FFFFFF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
             <div class="bg-light rounded p-4">
-                <h4>Ubah Data Identifikasi Kepribadian</h4>
+                <h4>Ubah Data Kepribadian</h4>
             </div>
             <form role="form" action="/kelolaKepribadian/update" method="post">
                 @csrf
                 <div class="text-left rounded p-4">
 
                     <p>
-                        <label for="">Tipe Dominance</label>
-                        <input type="text" name="dominance" id="dominance" class="form-control" value="{{$identifikasis->dominance}}" style="width:100%">
+                        <label for="">Kelemahan</label>
+                        <input type="text" name="dominance" id="dominance" class="form-control" value="" style="width:100%">
                     </p>
                     <p>
-                        <label for="">Tipe Influence</label>
-                        <input type="text" name="influence" id="influence" class="form-control" value="{{$identifikasis->influence}}" style="width:100%">
+                        <label for="">Kelebihan</label>
+                        <input type="text" name="influence" id="influence" class="form-control" value="" style="width:100%">
                     </p>
                     <p>
-                        <label for="">Tipe Steadiness</label>
-                        <input type="text" name="steadiness" id="steadiness" class="form-control" value="{{$identifikasis->steadiness}}" style="width:100%">
+                        <label for="">Ciri - Ciri</label>
+                        <input type="text" name="steadiness" id="steadiness" class="form-control" value="" style="width:100%">
                     </p>
                     <p>
-                        <label for="">Tipe Compliance</label>
-                        <input type="text" name="compliance" id="compliance" class="form-control" value="{{$identifikasis->compliance}}" style="width:100%">
+                        <label for="">Kategori</label>
+                        <select class="form-select" aria-label="">
+                            <option selected>Pilih Kategori</option>
+                            <option value="dominant">Dominant</option>
+                            <option value="influence">Influence</option>
+                            <option value="steadiness">Steadiness</option>
+                            <option value="compliance">Compliance</option>
+                            </select>
                     </p>
 
                 </div>
                 <div class="text-right " style="margin-right:20px">
-                    <input name="id" type="hidden" value="{{$identifikasis->id}}">
-                    <a href="/kelolaKepribadian" class="btn btn-secondary">Cancel</a>
+
+                    <a href="/kelolaKepribadian" class="btn btn-secondary">Batal</a>
                     <button class="submit btn btn-primary">Ubah</button>
                 </div>
             </form>

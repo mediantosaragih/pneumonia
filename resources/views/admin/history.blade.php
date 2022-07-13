@@ -39,23 +39,28 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="table-responsive">
-                    <h5>Hasil Pengecekan </h5><br>
+                    <h5>History Hasil Pengecekan </h5><br>
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Jawaban</th>
-                                <th>Tanggal</th>
-                                <th>Hasil</th>
-                            </tr>
-                        </thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Tanggal Lahir</th>
+                                    <th>Pekerjaan</th>
+                                    <th>No Telepon</th>
+                                    <th>Alamat</th>
+                                    <th>Jawaban</th>
+                                    <th>Karir</th>
+                                    <th>Tanggal</th>
+                                    <th>Hasil Identifikasi</th>
+                                </tr>
+                            </thead>
                         <tbody>
                             @forelse($historys as $history)
                             <tr>
-                                <td>{{$history->nama}}</td>
+                                <!-- <td>{{$history->nama}}</td>
                                 <td>{{$history->identifikasi_id}}</td>
                                 <td>{{$history->tanggal}}</td>
-                                <td>{{$history->hasil}}</td>
+                                <td>{{$history->hasil}}</td> -->
                             </tr>
                             @empty
                         <tr>

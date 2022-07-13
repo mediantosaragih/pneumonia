@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN</title>
+    <title>Identifikasi Sistem</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -64,13 +64,14 @@
                     <img src="../../assets/images/logggo.png" alt="Chain App Dev" style="width:150px;">
                     </a>
                 </div>
-                <div class="navbar-nav " style="width:300px;height:100%;margin-top:50px;">
+                <div class="navbar-nav " style="width:300px;height:100%;margin-top:50px;font-size:14px;">
                     <a href="{{url('dashboard')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i></i>Dashboard</a>
                     <a href="{{url('kelolaKepribadian')}}" class="nav-item nav-link"><i class="fa fa-search me-2"></i>Identifikasi</a>
-                    <a href="{{url('layananKepribadian')}}" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>Kepribadian</a>
-                    <a href="{{url('kelolaKarir')}}" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Karir</a>
-                    <a href="{{url('history')}}" class="nav-item nav-link"><i class="fa fa-history me-2"></i>Hasil Pengecekan</a>
-                    <a href="{{url('layananPertanyaan')}}" class="nav-item nav-link"><i class="fa fa-question me-2"></i>Pertanyaan</a>
+                    <a href="{{url('dataKepribadian')}}" class="nav-item nav-link"><i class="fa fa-search me-2"></i>Data Kepribadian</a>
+                    <a href="{{url('layananKepribadian')}}" class="nav-item nav-link  "><i class="fa fa-eye me-2"></i>Layanan Kepribadian </a>
+                    <a href="{{url('kelolaKarir')}}" class="nav-item nav-link "><i class="fa fa-book me-2"></i>Karir</a>
+                    <a href="{{url('history')}}" class="nav-item nav-link "><i class="fa fa-history me-2"></i>Hasil Identifikasi</a>
+                    <a href="{{url('layananPertanyaan')}}" class="nav-item nav-link"><i class="fa fa-question me-2"></i>Layanan FAQ</a>
 
                 </div>
             </nav>

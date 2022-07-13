@@ -18,7 +18,7 @@ class IdentifikasiController extends Controller
     public function index(){
         $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
         $user = User::find(Auth::user()->id);
-       
+
         return view('pengunjung.identifikasi', compact('identifikasis','user'));
     }
 
@@ -46,7 +46,7 @@ class IdentifikasiController extends Controller
             $kode_kepribadian = $request->$kode_fix;
             array_push($identifikasi_get_req, $kode_kepribadian);
         }
-        
+
         $sumDominance = 0;
         $sumInfluence = 0;
         $sumSteadiness = 0;
@@ -91,6 +91,7 @@ class IdentifikasiController extends Controller
             $karir = Karir::where('kategori','Compliance')->get();
         }
 
+        $karir = $karir->toArray();
         $history = HasilIdentifikasi::create([
             'pengunjung_id' => $pengunjung->id,
             'identifikasi_id' => $identifikasi_get_req,
@@ -98,7 +99,7 @@ class IdentifikasiController extends Controller
             'tanggal' => Carbon::now()->format('Y-m-d'),
             'hasil' => $hasil
         ]);
-        
+
         return redirect()->route('hasilIdentifikasi',[
             'history' => $history,
             'identifikasi_get_req' => $identifikasi_get_req,

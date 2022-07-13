@@ -69,7 +69,8 @@
             <ul class="nav">
               <li class="scroll-to-section"><a href="{{url('dashboard_pengunjung')}}">Home</a></li>
               <li class="scroll-to-section"><a href="{{url('identifikasi')}}">Identifikasi</a></li>
-              <li class="scroll-to-section"><a href="{{url('kepribadian')}}">Kepribadian</a></li>
+              <li class="scroll-to-section"><a href="{{url('kepribadian')}}">Layanan Kepribadian</a></li>
+              <li class="scroll-to-section"><a href="{{url('historypengunjung')}}">Hasil Identifikasi</a></li>
               <li class="scroll-to-section"><a href="{{url('faqimile')}}">FAQ</a></li>
               <li>
                 <div class="dropdown" >
@@ -119,7 +120,9 @@
 <footer class="page-footer font-small blue" style="margin-bottom:-100px">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright: <br>
+  <div class="footer-copyright text-center py-3" style="color:white">
+  <h6>Sistem Identifikasi Kepribadian</h6>
+    2020 Copyright:
     <a href="/" style="color:white"> IT Del</a>
   </div>
   <!-- Copyright -->

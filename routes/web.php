@@ -35,6 +35,23 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+//Data Kepribadian Identifikasi
+Route::get('/dataKepribadian', function (){
+    return view('admin.dataKepribadian ');
+});
+Route::get('/createDataKepribadian', function (){
+    return view('admin.createDataKepribadian ');
+});
+Route::get('/updateDataKepribadian', function (){
+    return view('admin.updateDataKepribadian ');
+});
+
+Route::get('/historypengunjung', function (){
+    return view('pengunjung.historypengunjung ');
+});
+
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 //Login
@@ -134,3 +151,5 @@ Route::get('/balasPertanyaan/{user_id}', [KomentarController::class, 'balas'])->
 Route::get('layananKepribadians', function (){
     return view('layananKepribadians ');
 });
+
+
