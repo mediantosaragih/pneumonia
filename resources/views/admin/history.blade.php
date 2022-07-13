@@ -50,17 +50,22 @@
                                     <th>Alamat</th>
                                     <th>Jawaban</th>
                                     <th>Karir</th>
-                                    <th>Tanggal</th>
+                                    <th>Tanggal Identifikasi</th>
                                     <th>Hasil Identifikasi</th>
                                 </tr>
                             </thead>
                         <tbody>
                             @forelse($historys as $history)
                             <tr>
-                                <!-- <td>{{$history->nama}}</td>
+                                <td>{{$history->nama}}</td>
+                                <td>{{$history->tanggal_lahir}}</td>
+                                <td>{{$history->pekerjaan}}</td>
+                                <td>{{$history->no_telp}}</td>
+                                <td>{{$history->alamat}}</td>
                                 <td>{{$history->identifikasi_id}}</td>
+                                <td>{{$history->karir}}</td>
                                 <td>{{$history->tanggal}}</td>
-                                <td>{{$history->hasil}}</td> -->
+                                <td>{{$history->hasil}}</td>
                             </tr>
                             @empty
                         <tr>
