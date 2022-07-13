@@ -79,23 +79,34 @@ class IdentifikasiController extends Controller
         $karir;
         if($sumDominance >= $sumInfluence && $sumDominance >= $sumSteadiness && $sumDominance >= $sumCompliance){
             $hasil = "Dominance";
-            $karir = Karir::where('kategori','Dominance')->get();
+            $karir =DB::table('karirs')
+                ->select('karir')
+                ->where('kategori','=','Dominance')->get();
         }elseif($sumInfluence >= $sumDominance && $sumInfluence >= $sumSteadiness && $sumInfluence >= $sumCompliance){
             $hasil = "Influence";
-            $karir = Karir::where('kategori','Influence')->get();
+            $karir =DB::table('karirs')
+                ->select('karir')
+                ->where('kategori','=','Influence')->get();
         }elseif($sumSteadiness >= $sumDominance && $sumSteadiness >= $sumInfluence && $sumSteadiness >= $sumCompliance){
             $hasil = "Steadiness";
-            $karir = Karir::where('kategori','Steadiness')->get();
+            $karir =DB::table('karirs')
+                ->select('karir')
+                ->where('kategori','=','Steadiness')->get();
         }elseif($sumCompliance >= $sumDominance && $sumCompliance >= $sumInfluence && $sumCompliance >= $sumSteadiness){
             $hasil = "Compliance";
-            $karir = Karir::where('kategori','Compliance')->get();
+            $karir =DB::table('karirs')
+                ->select('karir')
+                ->where('kategori','=','Compliance')->get();
+            //  Karir::where('kategori','Compliance')->get();
         }
-
-        $karir = $karir->toArray();
+        $karir_all = [];
+        foreach($karir as $item){
+            array_push($karir_all, $item->karir);
+        }
         $history = HasilIdentifikasi::create([
             'pengunjung_id' => $pengunjung->id,
             'identifikasi_id' => $identifikasi_get_req,
-            'karir' => $karir,
+            'karir' => $karir_all,
             'tanggal' => Carbon::now()->format('Y-m-d'),
             'hasil' => $hasil
         ]);
