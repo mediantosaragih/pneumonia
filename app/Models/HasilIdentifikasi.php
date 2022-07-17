@@ -11,7 +11,8 @@ class HasilIdentifikasi extends Model
 
     protected $casts = [
         'identifikasi_id' => 'array',
-        'karir' => 'array'
+        'karir' => 'array',
+        'kepribadian' => 'array'
     ];
     
     public function user(){

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\KomentarController;
 use App\Http\Controllers\Pengunjung\FaqimileController;
 use App\Http\Controllers\Pengunjung\IdentifikasiController;
 use App\Http\Controllers\Pengunjung\InfoKepribadianController;
+use App\Http\Controllers\Pengunjung\HistoryPengunjungController;
 
 
 use App\Http\Controllers\Pengunjung\DashboardPengunjungController;
@@ -45,9 +46,7 @@ Route::post('/dataKepribadian/delete/{id}', [DataKeperibadianController::class, 
 Route::post('/dataKepribadian/update', [DataKeperibadianController::class, 'update'])->middleware('auth');
 
 
-Route::get('/historypengunjung', function (){
-    return view('pengunjung.historypengunjung ');
-});
+Route::get('/historypengunjung', [HistoryPengunjungController::class, 'index'])->middleware('auth');
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');

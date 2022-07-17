@@ -95,9 +95,17 @@
                             <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
                                 <option value="">-- Pilih --</option>
                                 <option value="Dominance">Dominance</option>
+                                <option value="Dominance and Compliance">Dominance and Compliance</option>
+                                <option value="Dominance and Influence">Dominance and Influence</option>
                                 <option value="Influence">Influence</option>
+                                <option value="Influence and Dominance">Influence and Dominance</option>
+                                <option value="Influence and Steadiness">Influence and Steadiness</option>
                                 <option value="Steadiness">Steadiness</option>
+                                <option value="Steadiness and Influence">Steadiness and Influence</option>
+                                <option value="Steadiness and Compliance">Steadiness and Compliance</option>
                                 <option value="Compliance">Compliance</option>
+                                <option value="Compliance and Dominance">Compliance and Dominance</option>
+                                <option value="Compliance and Steadiness">Compliance and Steadiness</option>
                             </select>
                     </p>
                 </div>

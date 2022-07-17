@@ -92,9 +92,17 @@
                         <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
                             <option value="">-- Pilih --</option>
                             <option value="Dominance" {{($karir->kategori === 'Dominance') ? 'Selected' : ''}}>Dominance</option>
+                            <option value="Dominance and Compliance" {{($karir->kategori === 'Dominance and Compliance') ? 'Selected' : ''}}>Dominance and Compliance</option>
+                            <option value="Dominance and Influence" {{($karir->kategori === 'Dominance and Influence') ? 'Selected' : ''}}>Dominance and Influence</option>
                             <option value="Influence" {{($karir->kategori === 'Influence') ? 'Selected' : ''}}>Influence</option>
+                            <option value="Influence and Dominance" {{($karir->kategori === 'Influence and Dominance') ? 'Selected' : ''}}>Influence and Dominance</option>
+                            <option value="Influence and Steadiness" {{($karir->kategori === 'Influence and Steadiness') ? 'Selected' : ''}}>Influence and Steadiness</option>
                             <option value="Steadiness" {{($karir->kategori === 'Steadiness') ? 'Selected' : ''}}>Steadiness</option>
+                            <option value="Steadiness and Influence" {{($karir->kategori === 'Steadiness and Influence') ? 'Selected' : ''}}>Steadiness and Influence</option>
+                            <option value="Steadiness and Compliance" {{($karir->kategori === 'Steadiness and Compliance') ? 'Selected' : ''}}>Steadiness and Compliance</option>
                             <option value="Compliance" {{($karir->kategori === 'Compliance') ? 'Selected' : ''}}>Compliance</option>
+                            <option value="Compliance and Dominance" {{($karir->kategori === 'Compliance and Dominance') ? 'Selected' : ''}}>Compliance and Dominance</option>
+                            <option value="Compliance and Steadiness" {{($karir->kategori === 'Compliance and Steadiness') ? 'Selected' : ''}}>Compliance and Steadiness</option>
                         </select>
                     </p>
                 </div>

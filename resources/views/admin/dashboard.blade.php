@@ -115,32 +115,88 @@
 
                 datasets: [
                     {
-                    label: "Dominant",
-                    backgroundColor: "pink",
-                    borderColor: "red",
+                    label: "Dominance",
+                    backgroundColor: "Black",
+                    borderColor: "Black",
                     borderWidth: 1,
                     data: [{{$dominance[0]}},{{$dominance[1]}},{{$dominance[2]}},{{$dominance[3]}},{{$dominance[4]}},{{$dominance[5]}},{{$dominance[6]}},{{$dominance[7]}},{{$dominance[8]}},{{$dominance[9]}},{{$dominance[10]}},{{$dominance[11]}}]
                     },
                     {
+                    label: "Dominance and Compliance",
+                    backgroundColor: "Yellow",
+                    borderColor: "Yellow",
+                    borderWidth: 1,
+                    data: [{{$dominanceCompliance[0]}},{{$dominanceCompliance[1]}},{{$dominanceCompliance[2]}},{{$dominanceCompliance[3]}},{{$dominanceCompliance[4]}},{{$dominanceCompliance[5]}},{{$dominanceCompliance[6]}},{{$dominanceCompliance[7]}},{{$dominanceCompliance[8]}},{{$dominanceCompliance[9]}},{{$dominanceCompliance[10]}},{{$dominanceCompliance[11]}}]
+                    },
+                    {
+                    label: "Dominance and Influence",
+                    backgroundColor: "Red",
+                    borderColor: "Red",
+                    borderWidth: 1,
+                    data: [{{$dominanceInfluence[0]}},{{$dominanceInfluence[1]}},{{$dominanceInfluence[2]}},{{$dominanceInfluence[3]}},{{$dominanceInfluence[4]}},{{$dominanceInfluence[5]}},{{$dominanceInfluence[6]}},{{$dominanceInfluence[7]}},{{$dominanceInfluence[8]}},{{$dominanceInfluence[9]}},{{$dominanceInfluence[10]}},{{$dominanceInfluence[11]}}]
+                    },
+                    {
                     label: "Influence",
-                    backgroundColor: "lightblue",
-                    borderColor: "blue",
+                    backgroundColor: "Green",
+                    borderColor: "Green",
                     borderWidth: 1,
                     data: [{{$influence[0]}},{{$influence[1]}},{{$influence[2]}},{{$influence[3]}},{{$influence[4]}},{{$influence[5]}},{{$influence[6]}},{{$influence[7]}},{{$influence[8]}},{{$influence[9]}},{{$influence[10]}},{{$influence[11]}}]
                     },
                     {
+                    label: "Influence and Dominance",
+                    backgroundColor: "Blue",
+                    borderColor: "Blue",
+                    borderWidth: 1,
+                    data: [{{$influenceDominance[0]}},{{$influenceDominance[1]}},{{$influenceDominance[2]}},{{$influenceDominance[3]}},{{$influenceDominance[4]}},{{$influenceDominance[5]}},{{$influenceDominance[6]}},{{$influenceDominance[7]}},{{$influenceDominance[8]}},{{$influenceDominance[9]}},{{$influenceDominance[10]}},{{$influenceDominance[11]}}]
+                    },
+                    {
+                    label: "Influence and Steadiness",
+                    backgroundColor: "Orange",
+                    borderColor: "Orange",
+                    borderWidth: 1,
+                    data: [{{$influenceSteadiness[0]}},{{$influenceSteadiness[1]}},{{$influenceSteadiness[2]}},{{$influenceSteadiness[3]}},{{$influenceSteadiness[4]}},{{$influenceSteadiness[5]}},{{$influenceSteadiness[6]}},{{$influenceSteadiness[7]}},{{$influenceSteadiness[8]}},{{$influenceSteadiness[9]}},{{$influenceSteadiness[10]}},{{$influenceSteadiness[11]}}]
+                    },
+                    {
                     label: "Steadiness",
-                    backgroundColor: "lightgreen",
-                    borderColor: "green",
+                    backgroundColor: "Grey",
+                    borderColor: "Grey",
                     borderWidth: 1,
                     data: [{{$steadiness[0]}},{{$steadiness[1]}},{{$steadiness[2]}},{{$steadiness[3]}},{{$steadiness[4]}},{{$steadiness[5]}},{{$steadiness[6]}},{{$steadiness[7]}},{{$steadiness[8]}},{{$steadiness[9]}},{{$steadiness[10]}},{{$steadiness[11]}}]
                     },
                     {
+                    label: "Steadiness and Compliance",
+                    backgroundColor: "Pink",
+                    borderColor: "Pink",
+                    borderWidth: 1,
+                    data: [{{$steadinessCompliance[0]}},{{$steadinessCompliance[1]}},{{$steadinessCompliance[2]}},{{$steadinessCompliance[3]}},{{$steadinessCompliance[4]}},{{$steadinessCompliance[5]}},{{$steadinessCompliance[6]}},{{$steadinessCompliance[7]}},{{$steadinessCompliance[8]}},{{$steadinessCompliance[9]}},{{$steadinessCompliance[10]}},{{$steadinessCompliance[11]}}]
+                    },
+                    {
+                    label: "Steadiness and Influence",
+                    backgroundColor: "Yellow",
+                    borderColor: "Yellow",
+                    borderWidth: 1,
+                    data: [{{$steadinessInfluence[0]}},{{$steadinessInfluence[1]}},{{$steadinessInfluence[2]}},{{$steadinessInfluence[3]}},{{$steadinessInfluence[4]}},{{$steadinessInfluence[5]}},{{$steadinessInfluence[6]}},{{$steadinessInfluence[7]}},{{$steadinessInfluence[8]}},{{$steadinessInfluence[9]}},{{$steadinessInfluence[10]}},{{$steadinessInfluence[11]}}]
+                    },
+                    {
                     label: "Compliance",
-                    backgroundColor: "yellow",
-                    borderColor: "orange",
+                    backgroundColor: "Purple",
+                    borderColor: "Purple",
                     borderWidth: 1,
                     data: [{{$compliance[0]}},{{$compliance[1]}},{{$compliance[2]}},{{$compliance[3]}},{{$compliance[4]}},{{$compliance[5]}},{{$compliance[6]}},{{$compliance[7]}},{{$compliance[8]}},{{$compliance[9]}},{{$compliance[10]}},{{$compliance[11]}}]
+                    },
+                    {
+                    label: "Compliance and Dominance",
+                    backgroundColor: "Gold",
+                    borderColor: "Gold",
+                    borderWidth: 1,
+                    data: [{{$complianceDominance[0]}},{{$complianceDominance[1]}},{{$complianceDominance[2]}},{{$complianceDominance[3]}},{{$complianceDominance[4]}},{{$complianceDominance[5]}},{{$complianceDominance[6]}},{{$complianceDominance[7]}},{{$complianceDominance[8]}},{{$complianceDominance[9]}},{{$complianceDominance[10]}},{{$complianceDominance[11]}}]
+                    },
+                    {
+                    label: "Compliance and Steadiness",
+                    backgroundColor: "Navi",
+                    borderColor: "Navi",
+                    borderWidth: 1,
+                    data: [{{$complianceSteadiness[0]}},{{$complianceSteadiness[1]}},{{$complianceSteadiness[2]}},{{$complianceSteadiness[3]}},{{$complianceSteadiness[4]}},{{$complianceSteadiness[5]}},{{$complianceSteadiness[6]}},{{$complianceSteadiness[7]}},{{$complianceSteadiness[8]}},{{$complianceSteadiness[9]}},{{$complianceSteadiness[10]}},{{$complianceSteadiness[11]}}]
                     }
                 ]
                 };

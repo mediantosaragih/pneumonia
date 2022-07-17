@@ -15,21 +15,64 @@
                                 <div style="text-align:center">
                                     <img src="assets/images/walp.png" alt="Chain App Dev" style="width:200px; ">
                                 </div>
-                            </div><br>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
                             <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
-                                <!-- <div class="row justify-content-start" style="padding:10px;">
+                                <div class="row justify-content-start" style="padding:10px;">
                                     <div class="col-12" style="color:lightblue">
-                                        Test DISC
+                                    Tanggal : {{$history->tanggal}}<center><h2>{{$history->hasil}}</h2></center>
                                     </div>
                                     <div class="col-12">
-                                        Berikut Adalah hasil untuk Test DISC anda
+                                        @if($history->hasil == 'Dominance')
+                                            <p>Tipe kepribadian dominance merupakan tipe kepribadian yang cenderung memberikan penekanan kuat pada lingkungan dan membuat keputusan dalam mengatasi sebuah pertentangan</p>
+                                        @endif
+                                        @if($history->hasil == 'Dominance and Compliance')
+                                            <p>Tipe kepribadian Dominance and Compliance (DC) merupakan kombinasi dari tipe kepribadian Dominance dan Compliance dengan major nya adalah Dominance yang memiliki sifat yang cenderung rajin, berpikiran keras dan kreatif, mempengaruhi orang lain melalui standar dan tekad mereka yang tinggi</p>
+                                        @endif
+                                        @if($history->hasil == 'Dominance and Influence')
+                                            <p>Tipe kepribadian Dominance and Influence (DI) merupakan kombinasi dari tipe kepribadian Dominance dan Influence dengan major nya adalah Dominance yang memiliki sifat yang cenderung berorientasi pada hasil, vokal dan antusias, mempengaruhi orang lain melalui pesona dan tindakan berani dari orang yang memiliki kepribadian ini</p>
+                                        @endif
+                                        @if($history->hasil == 'Influence')
+                                            <p>Tipe kepribadian influence merupakan tipe kepribadian yang selalu ingin menambah dan memperluas koneksi mereka. Seseorang dengan tipe kepribadian influence cenderung suka berpindah-pindah dan suka mengerjakan banyak hal yang berbeda dalam satu waktu</p>
+                                        @endif
+                                        @if($history->hasil == 'Influence and Dominance')
+                                            <p>Tipe kepribadian Influence dan Dominance (ID) merupakan kombinasi dari tipe kepribadian Influence dan Dominance dengan major nya adalah Influence yang memiliki sifat yang cenderung berenergi tinggi, karismatik dan suka berpetualang serta mempengaruhi orang lain melalui keberanian dan hasrat mereka</p>
+                                        @endif
+                                        @if($history->hasil == 'Influence and Steadiness')
+                                            <p>Tipe kepribadian Influence dan Steadiness (IS) merupakan kombinasi dari tipe kepribadian Influence dan Steadiness dengan major nya adalah Influence yang memiliki sifat yang cenderung hangat, ramah dan mudah bergaul serta mempengaruhi orang lain melalui keramahan dan empati mereka</p>
+                                        @endif
+                                        @if($history->hasil == 'Steadiness')
+                                            <p>Seseorang dengan tipe kepribadian steadiness adalah seseorang yang bersifat pendiam dan lebih memilih menjadi pendengar yang baik dan berkontribusi saat situasi sudah tenang dan stabil</p>
+                                        @endif
+                                        @if($history->hasil == 'Steadiness and Influence')
+                                            <p>Tipe kepribadian Steadiness dan Influence (SI) merupakan kombinasi dari tipe kepribadian Steadiness dan Influence dengan major nya adalah Steadiness yang memiliki sifat yang cenderung murah hati, mudah didekati dan penuh kasih sayang, serta mempengaruhi orang lain dengan menunjukkan empati dan kesabaran</p>
+                                        @endif
+                                        @if($history->hasil == 'Steadiness and Compliance')
+                                            <p>Tipe kepribadian Steadiness dan Compliance (SC) merupakan kombinasi dari tipe kepribadian Steadiness dan Compliance dengan major nya adalah Steadiness yang memiliki sifat yang cenderung akomodatif, sabar dan dapat diandalkan serta mempengaruhi orang lain melalui diplomasi dan pengendalian diri</p>
+                                        @endif
+                                        @if($history->hasil == 'Compliance')
+                                            <p>Seseorang dengan tipe kepribadian compliance merupakan seseorang dengan sifat pendiam dan cenderung menggunakan logika untuk membuat keputusan</p>
+                                        @endif
+                                        @if($history->hasil == 'Compliance and Dominance')
+                                            <p>Tipe kepribadian Compliance dan Dominance (CD) merupakan kombinasi dari tipe kepribadian Compliance dan Dominance dengan major nya adalah Compliance yang memiliki sifat yang cenderung murah hati, mudah didekati dan penuh kasih sayang, serta mempengaruhi orang lain dengan menunjukkan empati dan kesabaran</p>
+                                        @endif
+                                        @if($history->hasil == 'Compliance and Steadiness')
+                                            <p>Tipe kepribadian Compliance dan Steadiness (CS) merupakan kombinasi dari tipe kepribadian Compliance dan Steadiness dengan major nya adalah Compliance yang memiliki sifat yang cenderung akomodatif, sabar dan dapat diandalkan serta mempengaruhi orang lain melalui diplomasi dan pengendalian diri</p>
+                                        @endif
                                     </div>
-                                    <div class="col-12" style="color:lightblue">
-                                        Minggu, 30 Juni 2022
-                                    </div>
-                                </div> -->
+                                </div>
                             </div>
-                            <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <br>
+                        </div>
+                        <div class="col-sm-4">
+                            <!-- <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                                <div style="text-align:center">
+                                    <img src="assets/images/walp.png" alt="Chain App Dev" style="width:200px; ">
+                                </div>
+                            </div><br> -->
+                            
+                            <!-- <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
                                 <div class="row justify-content-start" style="padding:10px;">
                                     <div class="col-12" style="color:lightblue">
                                         Tanggal : {{$history->tanggal}}
@@ -47,7 +90,35 @@
                                         </ol>
                                     </div>
                                 </div>
+                            </div> -->
+                            @if(count($kepribadian) != 0)
+                            <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                                <div class="row justify-content-start" style="padding:10px;">
+                                    <div class="col-12" style="color:lightblue;text-align:center">
+                                        Kelemahan dan Kelebihan dari kepribadian ini adalah
+                                    </div>
+                                    <div>
+                                        Kelebihan dari tipe kepribadian {{$history->hasil}}
+                                        <ol class="list-group list-group-numbered">
+                                            @forelse($kepribadian as $item)
+                                            <li class="list-group-item">{{$item->kelebihan}}</li>
+                                            @empty
+                                            <li class="list-group-item">Data tidak tersedia</li>
+                                            @endforelse
+                                        </ol>
+                                        <br>
+                                        Kelemahan dari tipe kepribadian {{$history->hasil}}
+                                        <ol class="list-group list-group-numbered">
+                                            @forelse($kepribadian as $item)
+                                            <li class="list-group-item">{{$item->kelemahan}}</li>
+                                            @empty
+                                            <li class="list-group-item">Data tidak tersedia</li>
+                                            @endforelse
+                                        </ol>
+                                    </div>
+                                </div>
                             </div>
+                            @endif
                         </div>
                         <div class="col-sm-4">
                             <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
@@ -75,27 +146,37 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <!-- <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
+                            <br>
+                            <!-- @if(count($kepribadian) != 0)
+                            <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
                                 <div class="row justify-content-start" style="padding:10px;">
-                                    <div class="col-12" style="color:lightblue">
-                                        {{$history->tanggal}}
-                                    </div>
-                                    <div class="col-12" style="color:lightblue">
-                                        Detail mengenai kepribadian Anda :
+                                    <div class="col-12" style="color:lightblue;text-align:center">
+                                        Kelemahan dan Kelebihan dari kepribadian ini adalah
                                     </div>
                                     <div>
+                                        Kelebihan dari tipe kepribadian {{$history->hasil}}
                                         <ol class="list-group list-group-numbered">
-                                            @forelse($identifikasi_get_req as $item)
-                                            <li class="list-group-item">{{$item}}</li>
+                                            @forelse($kepribadian as $item)
+                                            <li class="list-group-item">{{$item->kelebihan}}</li>
+                                            @empty
+                                            <li class="list-group-item">Data tidak tersedia</li>
+                                            @endforelse
+                                        </ol>
+                                        <br>
+                                        Kelemahan dari tipe kepribadian {{$history->hasil}}
+                                        <ol class="list-group list-group-numbered">
+                                            @forelse($kepribadian as $item)
+                                            <li class="list-group-item">{{$item->kelemahan}}</li>
                                             @empty
                                             <li class="list-group-item">Data tidak tersedia</li>
                                             @endforelse
                                         </ol>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                            @endif -->
+                        </div>
+                        <div class="col-sm-4">
                             <br>
                             <div style="background-color:#ffffff; box-shadow:3px 2px #888888; border-radius: 5px;">
                                 <div class="row justify-content-start" style="padding:10px;">

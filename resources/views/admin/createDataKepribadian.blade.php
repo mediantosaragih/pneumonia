@@ -109,28 +109,6 @@
                                 <option value="Compliance">Compliance</option>
                             </select>
                         </p>
-                        <!-- <p>
-                            <label for="">Sifat</label>
-                            <input type="text" name="ciri_ciri" id="ciri_ciri" class="form-control" style="width:100%" required>
-                        </p>
-                        <p>
-                            <label for="">Kelemahan</label>
-                            <input type="text" name="kelebihan" id="kelebihan" class="form-control" style="width:100%">
-                        </p>
-                        <p>
-                            <label for="">Kelebihan</label>
-                            <input type="text" name="kelemahan" id="kelemahan" class="form-control" style="width:100%">
-                        </p>
-                        <p>
-                            <label for="kategori">Pilih Kategori</label>
-                            <select name="kategori" required="" id="kategori" name="kategori" class="form-control">
-                                <option value="">-- Pilih --</option>
-                                <option value="Dominance">Dominance</option>
-                                <option value="Influence">Influence</option>
-                                <option value="Steadiness">Steadiness</option>
-                                <option value="Compliance">Compliance</option>
-                            </select>
-                        </p> -->
                     </div>
                     <div class="text-right " style="margin-right:20px">
                         <a href="/kelolaKepribadian" class="btn btn-secondary">Batal</a>

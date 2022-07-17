@@ -16,7 +16,7 @@ class CreateKarirsTable extends Migration
         Schema::create('karirs', function (Blueprint $table) {
             $table->id();
             $table->string('karir');
-            $table->enum('kategori',['Dominance','Influence','Steadiness','Compliance']);
+            $table->string('kategori');
             $table->timestamps();
         });
     }

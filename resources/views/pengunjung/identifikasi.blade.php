@@ -52,7 +52,10 @@
                             </div>
                         </div><br>
                         <hr>
-
+                        @if($errors->any())
+                            <div class="alert alert-danger">{{$errors->first()}}</div>
+                            <hr>
+                        @endif
                         <div class="container">
                             <div class="row" id="load_data">
 

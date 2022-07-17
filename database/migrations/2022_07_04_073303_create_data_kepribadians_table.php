@@ -17,7 +17,8 @@ class CreateDataKepribadiansTable extends Migration
             $table->id();
             $table->string('kelemahan')->nullable();
             $table->string('kelebihan')->nullable();
-            $table->enum('kategori',['Dominance','Influence','Steadiness','Compliance']);
+            $table->string('kategori');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }

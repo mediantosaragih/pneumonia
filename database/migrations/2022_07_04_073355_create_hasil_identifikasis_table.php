@@ -20,6 +20,7 @@ class CreateHasilIdentifikasisTable extends Migration
             $table->text('karir');
             $table->date('tanggal');
             $table->string('hasil');
+            $table->text('kepribadian')->nullable();
             $table->foreign('pengunjung_id')->references('id')->on('pengunjungs')->onDelete('cascade');
             $table->timestamps();
         });

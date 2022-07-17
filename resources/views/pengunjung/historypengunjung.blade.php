@@ -22,7 +22,6 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Kode</th>
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Pekerjaan</th>
@@ -35,12 +34,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-
-                            </tr>
-                        <tr>
-                            <td class="text-center text-mute" colspan="8">Data tidak tersedia</td>
-                        </tr>
+                            @forelse($history as $item)
+                                <tr>
+                                    <td>{{$item->nama}}</td>
+                                    <td>{{$item->tanggal_lahir}}</td>
+                                    <td>{{$item->pekerjaan}}</td>
+                                    <td>{{$item->no_telp}}</td>
+                                    <td>{{$item->alamat}}</td>
+                                    <td>{{$item->identifikasi_id}}</td>
+                                    <td>{{$item->karir}}</td>
+                                    <td>{{$item->tanggal}}</td>
+                                    <td>{{$item->hasil}}</td>
+                                @empty
+                                <tr>
+                                    <td class="text-center text-mute" colspan="5">Data tidak tersedia</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table><br>
             </div>
