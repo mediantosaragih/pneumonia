@@ -62,8 +62,16 @@
                                 <td>{{$history->pekerjaan}}</td>
                                 <td>{{$history->no_telp}}</td>
                                 <td>{{$history->alamat}}</td>
-                                <td>{{$history->identifikasi_id}}</td>
-                                <td>{{$history->karir}}</td>
+                                <td>@foreach(explode('[', $history->identifikasi_id) as $identifikasi)
+                                        @foreach(explode(']', $identifikasi) as $data) 
+                                            {{$data}}
+                                        @endforeach
+                                @endforeach</td>
+                                <td>@foreach(explode('[', $history->karir) as $karir)
+                                        @foreach(explode(']', $karir) as $data) 
+                                            {{$data}}
+                                        @endforeach
+                                @endforeach</td>
                                 <td>{{$history->tanggal}}</td>
                                 <td>{{$history->hasil}}</td>
                             </tr>

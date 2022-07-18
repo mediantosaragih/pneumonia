@@ -104,14 +104,12 @@ Route::get('/isiDataPribadi', function () {
 //     return view('admin.history');
 // });
 
-Route::get('/cetak-hasil', function () {
-    return view('cetak-hasil');
-});
 Route::get('/profile_admin', function () {
     return view('admin.profile_admin');
 });
 
 //identifikasi
+Route::post('/cetak-hasil', [IdentifikasiController::class, 'cetak'])->middleware('auth');
 Route::get('/identifikasi', [IdentifikasiController::class, 'index'])->middleware('auth');
 Route::post('/identifikasi', [IdentifikasiController::class, 'check'])->middleware('auth');
 Route::get('/hasilIdentifikasi', [IdentifikasiController::class, 'hasil'])->name('hasilIdentifikasi')->middleware('auth');

@@ -41,8 +41,16 @@
                                     <td>{{$item->pekerjaan}}</td>
                                     <td>{{$item->no_telp}}</td>
                                     <td>{{$item->alamat}}</td>
-                                    <td>{{$item->identifikasi_id}}</td>
-                                    <td>{{$item->karir}}</td>
+                                    <td>@foreach(explode('[', $item->identifikasi_id) as $identifikasi)
+                                            @foreach(explode(']', $identifikasi) as $data) 
+                                                {{$data}}
+                                            @endforeach
+                                    @endforeach</td>
+                                    <td>@foreach(explode('[', $item->karir) as $karis)
+                                            @foreach(explode(']', $karis) as $data) 
+                                                {{$data}}
+                                            @endforeach
+                                    @endforeach</td>
                                     <td>{{$item->tanggal}}</td>
                                     <td>{{$item->hasil}}</td>
                                 @empty

@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Karir;
 use App\Models\Pengunjung;
 use App\Models\DataKepribadian;
+use PDF;
 
 class IdentifikasiController extends Controller
 {
@@ -187,7 +188,7 @@ class IdentifikasiController extends Controller
             'hasil' => $hasil
         ]);
         return redirect()->route('hasilIdentifikasi',[
-            'history' => $history,
+            'history' => $history->id,
             'identifikasi_get_req' => $identifikasi_get_req,
             'sumDominance'=>$sumDominance,
             'sumInfluence'=>$sumInfluence,
@@ -199,8 +200,9 @@ class IdentifikasiController extends Controller
     }
 
     public function hasil(Request $request){
+        // dd($request->all());
         $user = User::find(Auth::user()->id);
-        $history = HasilIdentifikasi::find($request->history);
+        $history = HasilIdentifikasi::where('id',$request->history)->first();
         $karir = Karir::where('Kategori',$history->hasil)->get();
         $kepribadian = DataKepribadian::where('kategori',$history->hasil)->get();
         // dd($kepribadian);
@@ -211,9 +213,39 @@ class IdentifikasiController extends Controller
             'sumInfluence'=>$request->sumInfluence,
             'sumSteadiness'=>$request->sumSteadiness,
             'sumCompliance' =>$request->sumCompliance,
-            'count' =>$request->count,
+            // 'count' =>$request->count,
             'karir' =>$karir,
             'kepribadian' => $kepribadian
         ]);
+    }
+    public function cetak(Request $request){
+        $user = Pengunjung::where('user_id',Auth::user()->id)->first();
+        $history = HasilIdentifikasi::where('id',$request->history)->first();
+        // dd($history);
+        $karir = Karir::where('Kategori',$history->hasil)->get();
+        $kepribadian = DataKepribadian::where('kategori',$history->hasil)->get();
+        $pdf = PDF::loadview('pengunjung.cetak-hasil',[
+            'user' => $user,
+            'history' => $history,
+            'sumDominance'=>$request->sumDominance,
+            'sumInfluence'=>$request->sumInfluence,
+            'sumSteadiness'=>$request->sumSteadiness,
+            'sumCompliance' =>$request->sumCompliance,
+            'count' =>$request->count,
+            'karir' =>$karir,
+            'kepribadian' => $kepribadian
+        ])->setOptions(['defaultFont' => 'sans-serif']);
+        
+        return $pdf->download('laporan-kepribadian.pdf');
+        // return view('pengunjung.cetak-hasil', compact('user'),[
+        //     'history' => $history,
+        //     'sumDominance'=>$request->sumDominance,
+        //     'sumInfluence'=>$request->sumInfluence,
+        //     'sumSteadiness'=>$request->sumSteadiness,
+        //     'sumCompliance' =>$request->sumCompliance,
+        //     'count' =>$request->count,
+        //     'karir' =>$karir,
+        //     'kepribadian' => $kepribadian
+        // ]);
     }
 }

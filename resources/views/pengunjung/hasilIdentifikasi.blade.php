@@ -195,10 +195,21 @@
                                 </div>
                             </div><br>
                             <div style="text-align:center">
-                                <li>
-                                    <div class="gradient-button"><a id="modal_trigger"><i class="fa fa-print"></i>
-                                            Simpan Ke PDF</a></div>
-                                </li>
+                                <form role="form" action="/cetak-hasil" method="post">
+                                    @csrf
+                                    <input type="hidden" name="history" value ="{{$history->id}}">
+                                    <input type="hidden" name="sumDominance" value ="{{$sumDominance}}">
+                                    <input type="hidden" name="sumInfluence" value ="{{$sumInfluence}}">
+                                    <input type="hidden" name="sumSteadiness" value ="{{$sumSteadiness}}">
+                                    <input type="hidden" name="sumCompliance" value ="{{$sumCompliance}}">
+                                    <li>
+                                    <div class="gradient-button">
+                                        <button class="btn btn-primary"><i class="fa fa-print"></i>
+                                                Simpan Ke PDF
+                                        </button>
+                                    </div>
+                                    </li>
+                                </form>
                             </div>
                         </div>
                     </div>
