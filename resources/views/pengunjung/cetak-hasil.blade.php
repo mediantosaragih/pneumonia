@@ -41,7 +41,7 @@
 <body>
     <div class="container-fluid">
         <div style="text-align:center;padding:2%">
-            <h1>Test DISC</h1>
+            <h1>Hasil Test DISC</h1>
         </div>
         <div class="col-md-6" style="text-align:right">
                 <label for="">Tanggal : {{$history->tanggal}}</label>
@@ -53,7 +53,7 @@
                 <tr>
                     <td>Nama</td>
                     <td>:</td>
-                    <td>{{$user->nama}}</td>
+                    <td>{{strtoupper($user->nama)}}</td>
                 </tr>
                 <tr>
                     <td>No Telepon</td>
@@ -117,10 +117,25 @@
             <p>Tipe kepribadian Compliance dan Steadiness (CS) merupakan kombinasi dari tipe kepribadian Compliance dan Steadiness dengan major nya adalah Compliance yang memiliki sifat yang cenderung akomodatif, sabar dan dapat diandalkan serta mempengaruhi orang lain melalui diplomasi dan pengendalian diri</p>
         @endif
         </div>
+        @if(count($kepribadian) != 0)
+            <h4>Kelemahan dan Kelebihan dari kepribadian ini adalah</h4>
+            <p>Kelebihan dari tipe kepribadian {{$history->hasil}}</p>
+            @forelse($kepribadian as $data)
+                {{$loop->iteration}}. {{$data->kelebihan}} <br>
+                @empty
+                <li class="list-group-item">Data tidak tersedia</li>
+            @endforelse
+            <p>Kelemahan dari tipe kepribadian {{$history->hasil}}</p>
+            @forelse($kepribadian as $data)
+                {{$loop->iteration}}. {{$data->kelemahan}} <br>
+                @empty
+                <li class="list-group-item">Data tidak tersedia</li>
+            @endforelse
+        @endif
         <div>
             <h4>Dari hasil Identifikasi tersebut, kami menyarankan beberapa karir yang sesuai dengan kepribadin tersebut adalah</h4>
             @forelse($karir as $data)
-                {{$loop->iteration}}.{{$data->karir}} <br>
+                {{$loop->iteration}}. {{$data->karir}} <br>
                 @empty
                 <li class="list-group-item">Data tidak tersedia</li>
             @endforelse
