@@ -4,7 +4,7 @@
 <div>
     <div class="container" style="padding:150px; 0 0 0">
         <div class="card kartu" style="padding:50px 100px 200px 100px">
-            <form role="form" action="/profile_pengunjung/update" method="POST">
+            <form role="form" action="/profile_pengunjung/update" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div style="text-align:center;padding:50px;">
                     <h3>Data Diri</h3>
@@ -63,6 +63,15 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td class="textt">Alamat</td>
+                                                        <td>:</td>
+                                                        <td>
+                                                            <input type="text" id="alamat"
+                                                                value="{{$pengunjung->alamat}}" class="form-control "
+                                                                name="alamat" placeholder="Alamat Anda" required>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <!-- <td valign="top" class="textt">Password</td>
                                                     <td valign="top">:</td>
                                                     <td>
@@ -83,9 +92,13 @@
                     </div>
                     <div class="col-md-4">
                         <div class="foto">
-                            <img src="../../assets/images/im.jpg" alt="Chain App Dev"
-                                style="width:180px; padding-bottom:10px">
-                            <input type="file">
+                            @if($pengunjung->foto != NULL)
+                                <img src="{{asset('uploads/pengunjung/'.$pengunjung->foto)}}" style="width:60%; height:65%; padding-bottom:10px" alt ="Image">
+                            @endif
+                            @if($pengunjung->foto == NULL)
+                            <img src="../../img/images.jpg" alt="Image" style="width:180px; padding-bottom:10px">
+                            @endif
+                            <input type="file" name="foto" class="form-control">
                         </div>
                     </div>
                 </div>

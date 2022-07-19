@@ -28,7 +28,7 @@
                     <form role="form" action="/logout" method="post">
                         @csrf
                         <button class="submit btn btn-primary dropdown-item">
-                            <p style="color:blue"><a href="{{url('profile_admin')}}">Profil</a></p>
+                            <p style="color:blue"><a href="/profile_admin/{{$user->id}}">Profil</a></p>
                         </button>
                         <button class="submit btn btn-primary dropdown-item">
                             <p style="color:blue">Logout</p>
@@ -109,7 +109,7 @@
             <td>{{$datakepribadian->kelemahan}}</td>
             <td>{{$datakepribadian->kelebihan}}</td>
             <td>{{$datakepribadian->kategori}}</td>
-            <td>
+            <td width="90px">
                 <a href="/updateDataKepribadian/update/{{$datakepribadian->id}}">
                 <button class="" style="border:none; color:blue; background:none" ><i class="fa fa-edit" aria-hidden="true"></i></button>
                 </a>

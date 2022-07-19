@@ -15,7 +15,7 @@ class KarirController extends Controller
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $karir = Karir::orderBy('kategori', 'ASC')->get();
+        $karir = Karir::orderBy('updated_at', 'DESC')->get();
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();

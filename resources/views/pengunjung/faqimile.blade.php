@@ -37,10 +37,15 @@
         @if($komentar->balasan != NULL)
         <div class="row" style="padding:1%">
             <div class="col-md-1">
-                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
+                @if($pengunjung->foto != NULL)
+                    <img class="rounded-circle me-lg-2" src="{{asset('uploads/pengunjung/'.$pengunjung->foto)}}" style="height:100%" alt ="">
+                @endif
+                @if($pengunjung->foto == NULL)
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="height:100%">
+                @endif
             </div>
             <div class="col-md-11">
-                <h5>{{$user->username}}</h5>
+                <h5>{{$pengunjung->nama}}</h5>
                 <h6>{{$komentar->komentar}}</h6>
             </div>
         </div>

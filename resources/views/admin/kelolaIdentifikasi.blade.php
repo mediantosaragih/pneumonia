@@ -28,7 +28,7 @@
                     <form role="form" action="/logout" method="post">
                         @csrf
                         <button class="submit btn btn-primary dropdown-item">
-                            <p style="color:blue"><a href="{{url('profile_admin')}}">Profil</a></p>
+                            <p style="color:blue"><a href="/profile_admin/{{$user->id}}">Profil</a></p>
                         </button>
                         <button class="submit btn btn-primary dropdown-item">
                             <p style="color:blue">Logout</p>
@@ -46,7 +46,7 @@
         <div class="row g-4">
             <div class="col-sm-6 col-xl-4">
                 <div class="bg-light  d-flex p-4 ">
-                    <i class="fa fa-chart-line fa-3x text-primary"  style="margin-left:20%"></i>
+                    <i class="fa fa-chart-line fa-3x text-primary" style="margin-left:20%"></i>
                     <div class="ms-3">
                         <p class="mb-2" style="text-align:center;">Pengecekan Harian</p>
                         <h6 class="mb-0 font-weight-bolder" style="text-align:center;">{{$harian}}</h6>
@@ -80,55 +80,59 @@
     <!-- Recent Sales Start -->
     <div class="container-fluid pt-4 px-4">
         @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                {{session('success')}}
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
         @endif
         <div class="bg-light text-center rounded p-4">
-            <h4 >Kelola Data Identifikasi Kepribadian</h4>
-            <div class="mb-4" style="text-align:right" >
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                <a href="{{url('createKepribadian')}}" style="color:white">
+            <h4>Kelola Data Identifikasi Kepribadian</h4>
+            <div class="mb-4" style="text-align:right">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a href="{{url('createKepribadian')}}" style="color:white">
                         <i class="fa fa-plus-circle " aria-hidden="true">Tambah</i>
-                </a>
+                    </a>
                 </button>
             </div>
             <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-        <tr>
-            <th>Dominance</th>
-            <th>Influence</th>
-            <th>Steadiness</th>
-            <th>Compliance</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse($identifikasis as $identifikasi)
-        <tr>
-            <td>{{$identifikasi->dominance}}</td>
-            <td>{{$identifikasi->influence}}</td>
-            <td>{{$identifikasi->steadiness}}</td>
-            <td>{{$identifikasi->compliance}}</td>
-            <td>
-                <a href="/kelolaKepribadian/edit/{{$identifikasi->id}}">
-                <button class="" style="border:none; color:blue; background:none" ><i class="fa fa-edit" aria-hidden="true"></i></button>
-                </a>
-                <form action="/kelolaKepribadian/delete/{{$identifikasi->id}}" method="post" class="d-inline">
-                    <!-- @method('delete') -->
-                    @csrf
-                    <button class="" style="color:blue;border:none;background:none" onclick="return confrim('Are you sure?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </form>
-            </td>
-        </tr>
-        @empty
-        <tr>
-            <td class="text-center text-mute" colspan="5">Data tidak tersedia</td>
-        </tr>
-        @endforelse
-    </tbody>
-</table><br>
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Dominance</th>
+                            <th>Influence</th>
+                            <th>Steadiness</th>
+                            <th>Compliance</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($identifikasis as $identifikasi)
+                        <tr>
+                            <td>{{$identifikasi->dominance}}</td>
+                            <td>{{$identifikasi->influence}}</td>
+                            <td>{{$identifikasi->steadiness}}</td>
+                            <td>{{$identifikasi->compliance}}</td>
+                            <td width="90px">
+                                <a href="/kelolaKepribadian/edit/{{$identifikasi->id}}">
+                                    <button class="" style="border:none; color:blue; background:none"><i
+                                            class="fa fa-edit" aria-hidden="true"></i></button>
+                                </a>
+                                <form action="/kelolaKepribadian/delete/{{$identifikasi->id}}" method="post"
+                                    class="d-inline">
+                                    <!-- @method('delete') -->
+                                    @csrf
+                                    <button class="" style="color:blue;border:none;background:none"
+                                        onclick="return confrim('Are you sure?')"><i class="fa fa-trash"
+                                            aria-hidden="true"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td class="text-center text-mute" colspan="5">Data tidak tersedia</td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table><br>
             </div>
         </div>
     </div>

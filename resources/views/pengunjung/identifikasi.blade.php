@@ -38,15 +38,14 @@
                                 <div class="peringatan-item third-service">
                                     <img src="https://static.neris-assets.com/images/test-header-2.svg"
                                         style="width:50px">
-                                    <h4 style="padding:10px -5px 10px -10px">Jawab dengan jujur,bahkan jika Anda tidak
-                                        suka jawabannya.</h4>
+                                    <h4 style="padding:10px -5px 10px -10px">Pilihlah salah satu pernyataan yang paling sesuai dengan diri Anda.</h4>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="peringatan-item fourth-service">
                                     <img src="https://static.neris-assets.com/images/test-header-3.svg"
                                         style="width:50px">
-                                    <h4 style="padding:10px 0px 10px 0px">Cobalah untuk tidak mengikuti jawaban orang lain.
+                                    <h4 style="padding:10px 0px 10px 0px">Cobalah untuk tidak mendengarkan jawaban orang lain.
                                     </h4>
                                 </div>
                             </div>

@@ -20,6 +20,6 @@ class HistoryPengunjungController extends Controller
         ->where('hasil_identifikasis.pengunjung_id','=',$pengunjung->id)
         ->get();
         // dd($history);
-        return view('pengunjung.historypengunjung', compact('user','history'));
+        return view('pengunjung.historypengunjung', compact('user','history','pengunjung'));
     }
 }

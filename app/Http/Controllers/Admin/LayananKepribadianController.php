@@ -15,7 +15,7 @@ class LayananKepribadianController extends Controller
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $layanans = LayananKepribadian::orderBy('jenis_kepribadian', 'ASC')->get();
+        $layanans = LayananKepribadian::orderBy('updated_at', 'DESC')->get();
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();

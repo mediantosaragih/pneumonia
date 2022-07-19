@@ -23,7 +23,7 @@
                             <form role="form" action="/logout" method="post">
                                 @csrf
                                 <button class="submit btn btn-primary dropdown-item">
-                                    <p style="color:blue"><a href="{{url('profile_admin')}}">Profil</a></p>
+                                    <p style="color:blue"><a href="/profile_admin/{{$user->id}}">Profil</a></p>
                                 </button>
                                 <button class="submit btn btn-primary dropdown-item">
                                     <p style="color:blue">Logout</p>

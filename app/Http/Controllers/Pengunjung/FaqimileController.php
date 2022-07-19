@@ -9,11 +9,13 @@ use App\Models\User;
 use App\Models\Komentar;
 use App\Models\Balasan;
 use Illuminate\Support\Facades\DB;
+use App\Models\Pengunjung;
 
 class FaqimileController extends Controller
 {
     public function index(){
         // $komentars = Komentar::where('user_id', Auth::user()->id)->get();
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
         $komentars = DB::table('komentars')
                 ->select('komentars.komentar', 'balasans.balasan')
                 ->rightjoin('balasans','balasans.komentar_id','=','komentars.id')
@@ -21,7 +23,7 @@ class FaqimileController extends Controller
                 ->get();
                 
         $user = User::find(Auth::user()->id);
-        return view('pengunjung.faqimile ',compact('komentars','user'));
+        return view('pengunjung.faqimile ',compact('komentars','user','pengunjung'));
     }
 
     public function create(Request $request){

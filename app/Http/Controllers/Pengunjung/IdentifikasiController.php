@@ -20,8 +20,8 @@ class IdentifikasiController extends Controller
     public function index(){
         $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
         $user = User::find(Auth::user()->id);
-
-        return view('pengunjung.identifikasi', compact('identifikasis','user'));
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
+        return view('pengunjung.identifikasi', compact('identifikasis','user','pengunjung'));
     }
 
     public function check(Request $request){
@@ -201,12 +201,13 @@ class IdentifikasiController extends Controller
 
     public function hasil(Request $request){
         // dd($request->all());
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
         $user = User::find(Auth::user()->id);
         $history = HasilIdentifikasi::where('id',$request->history)->first();
         $karir = Karir::where('Kategori',$history->hasil)->get();
         $kepribadian = DataKepribadian::where('kategori',$history->hasil)->get();
         // dd($kepribadian);
-        return view('pengunjung.hasilIdentifikasi', compact('user'),[
+        return view('pengunjung.hasilIdentifikasi', compact('user','pengunjung'),[
             'history' => $history,
             'identifikasi_get_req' => $request->identifikasi_get_req,
             'sumDominance'=>$request->sumDominance,

@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Models\HasilIdentifikasi;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Admin;
 
 class DashboardController extends Controller
 {
@@ -354,5 +355,12 @@ class DashboardController extends Controller
                             ->with('influence', $influence)->with('influenceDominance', $influenceDominance)->with('influenceSteadiness', $influenceSteadiness)
                             ->with('steadiness', $steadiness)->with('steadinessCompliance', $steadinessCompliance)->with('steadinessInfluence', $steadinessInfluence)
                             ->with('compliance', $compliance)->with('complianceDominance', $complianceDominance)->with('complianceSteadiness', $complianceSteadiness);
+    }
+
+    public function profile($id){
+        $user = User::where('id',Auth::user()->id)->first();
+        $admin = Admin::where('user_id',$id)->first();
+        
+        return view('admin.profile_admin',compact('user','admin'));
     }
 }

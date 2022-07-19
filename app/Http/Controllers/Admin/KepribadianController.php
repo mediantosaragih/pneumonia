@@ -15,7 +15,7 @@ class KepribadianController extends Controller
     public function index(){
 
         $user = User::find(Auth::user()->id);
-        $identifikasis = Identifikasi::orderBy('id', 'ASC')->get();
+        $identifikasis = Identifikasi::orderBy('updated_at', 'DESC')->get();
         $harian = HasilIdentifikasi::where('tanggal', Carbon::now()->format('Y-m-d'))->count();
         $bulanan = HasilIdentifikasi::whereDate('created_at','>', Carbon::now()->subMonth())->count();
         $all = HasilIdentifikasi::all()->count();

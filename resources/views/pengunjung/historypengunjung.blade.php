@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="bg1"><br><br>
-    <div class="container-fluid" style="padding:80px;">
+    <div class="container-fluid" style="padding-top:5%;padding-left:4%;"width="100%">
         <div class="row"
             style="background-color:#145285;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="col-md-6" style="padding:30px;padding-left:70px;">
+            <div class="col-md-6" style="padding:3%;padding-left:7%;">
                 <p style="color:white;font-size: 40px;"><b> Tipe Kepribadian DISC</b></p><br>
                 <p style="color:white;font-size: 28px;"><b> Temukan Manfaat menerapkan DISC bagi Organisasimu</b></p>
                 <br>
@@ -69,7 +69,7 @@
         background-image: url("assets/images/left-bg.png");
         background-repeat: no-repeat;
 
-        background-size: 710px 760px;
+        background-size: 100% 100%;
     }
     .cek{
         display:block;

@@ -104,9 +104,10 @@ Route::get('/isiDataPribadi', function () {
 //     return view('admin.history');
 // });
 
-Route::get('/profile_admin', function () {
-    return view('admin.profile_admin');
-});
+Route::get('/profile_admin/{id}', [DashboardController::class, 'profile'])->middleware('auth');
+// Route::get('/profile_admin', function () {
+//     return view('admin.profile_admin');
+// });
 
 //identifikasi
 Route::post('/cetak-hasil', [IdentifikasiController::class, 'cetak'])->middleware('auth');

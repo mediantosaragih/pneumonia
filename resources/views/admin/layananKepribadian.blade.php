@@ -23,7 +23,7 @@
                             <form role="form" action="/logout" method="post">
                                 @csrf
                                 <button class="submit btn btn-primary dropdown-item">
-                                    <p style="color:blue"><a href="{{url('profile_admin')}}">Profil</a></p>
+                                    <p style="color:blue"><a href="/profile_admin/{{$user->id}}">Profil</a></p>
                                 </button>
                                 <button class="submit btn btn-primary dropdown-item">
                                     <p style="color:blue">Logout</p>
@@ -103,12 +103,11 @@
             <td>{{$layanan->keterangan}}</td>
             <td>
                 <a href="/layananKepribadian/update/{{$layanan->id}}"><span class="fa fa-edit"></span></a>
-                <form action="/layananKepribadian/delete/{{$layanan->id}}" method="post" class="d-inline">
-                    <!-- @method('delete') -->
+                <!-- <form action="/layananKepribadian/delete/{{$layanan->id}}" method="post" class="d-inline">
+                   
                     @csrf
                     <button class="" style="color:blue;border:none" onclick="return confrim('Are you sure?')"><span class="fa fa-trash" data-feather="x-crircle"></span></button>
-                </form>
-                <!-- <a href="#"><span class="fa fa-trash"></span></a> -->
+                </form> -->
             </td>
         </tr>
         @empty

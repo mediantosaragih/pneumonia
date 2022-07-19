@@ -13,7 +13,8 @@ class DashboardPengunjungController extends Controller
 {
     public function index(){
         $user = User::find(Auth::user()->id);
-        return view('pengunjung.dashboard_pengunjung', compact('user'));
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
+        return view('pengunjung.dashboard_pengunjung', compact('pengunjung','user'));
     }
 
     public function profile($id){
@@ -32,9 +33,25 @@ class DashboardPengunjungController extends Controller
             'username' => 'required|string|max:155',
             'pekerjaan' => 'required',
             'email' => 'required',
-            'no_telp' => 'required'
+            'no_telp' => 'required',
+            'alamat' => 'required',
         ]);
-
+        
+        if (request()->hasFile('foto')){
+            $uploadedImage = $request->file('foto');
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/pengunjung/');
+            $uploadedImage->move('uploads/pengunjung/', $imageName);
+        }
+        if($request->foto != null){
+            if(\File::exists(public_path('uploads/pengunjung/'.$pengunjung->foto))){
+                \File::delete(public_path('uploads/pengunjung/'.$pengunjung->foto));
+            }
+        }
+        if($request->foto == null){
+            $imageName = $pengunjung->foto;
+        }
+        
         $pengunjung->update([
             'nama' => $request->username,
             'pekerjaan' => $request->pekerjaan,
@@ -42,7 +59,9 @@ class DashboardPengunjungController extends Controller
             'no_telp' => $request->no_telp,
             'nama' => $request->username,
             'alamat' => $request->alamat,
+            'foto' => $imageName
         ]);
+        
         $user->update([
             'email' => $request->email,
         ]);

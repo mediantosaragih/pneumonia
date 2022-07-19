@@ -11,6 +11,7 @@ class DataPribadiPengunjungController extends Controller
 {
     public function index(){
         $user = User::find(Auth::user()->id);
-        return view('pengunjung.datapribadi',compact('user'));
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
+        return view('pengunjung.datapribadi',compact('pengunjung','user'));
     }
 }
