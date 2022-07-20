@@ -182,7 +182,7 @@
 
     }
     .left .text {
-        margin-right:-320px;
+        margin-left:50%;
         position: relative;
         transform: translate(0%, 45%);
     }

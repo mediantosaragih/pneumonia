@@ -70,7 +70,7 @@
 
     }
     .login_box {
-        width: 75%;
+        width: 70%;
         height: 90%;
         position: fixed;
         top: 50%;
@@ -168,7 +168,7 @@
         text-align : right;
     }
     .left .text {
-        margin-right:-320px;
+        margin-left:50%;
         position: relative;
         transform: translate(0%, 50%);
     }
