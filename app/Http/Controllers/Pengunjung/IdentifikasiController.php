@@ -220,7 +220,8 @@ class IdentifikasiController extends Controller
         ]);
     }
     public function cetak(Request $request){
-        $user = Pengunjung::where('user_id',Auth::user()->id)->first();
+        $user = User::where('id',Auth::user()->id)->first();
+        $pengunjung = Pengunjung::where('user_id',Auth::user()->id)->first();
         $history = HasilIdentifikasi::where('id',$request->history)->first();
         // dd($history);
         $karir = Karir::where('Kategori',$history->hasil)->get();
@@ -234,7 +235,8 @@ class IdentifikasiController extends Controller
             'sumCompliance' =>$request->sumCompliance,
             'count' =>$request->count,
             'karir' =>$karir,
-            'kepribadian' => $kepribadian
+            'kepribadian' => $kepribadian,
+            'pengunjung' => $pengunjung
         ])->setOptions(['defaultFont' => 'sans-serif']);
         
         return $pdf->download('laporan-kepribadian.pdf');
